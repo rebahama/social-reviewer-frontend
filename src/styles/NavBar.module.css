@@ -1,6 +1,8 @@
 .NavBar {
     font-size: 1rem;
-    font-weight: bold
+    font-weight: bold;
+    
+    
 }
 
 
@@ -11,4 +13,9 @@ a:hover i {
 i {
     color: #000000;
     font-size: 1.5rem;
+}
+.BrandLogo i:hover {
+    color: #FFFF00;
+    transition: color ease-in-out 1.5s;
+
 }
