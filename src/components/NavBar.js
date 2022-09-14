@@ -1,11 +1,10 @@
-import React from 'react'
-import styles from '../styles/NavBar.module.css'
+import React from 'react';
+import styles from '../styles/NavBar.module.css';
 import Logo from '../assets/Logo-social-reviewer.png';
 import { Container, Navbar, Nav, Form, Button, FormControl, NavDropdown } from 'react-bootstrap'
 
 const NavBar = () => {
     return (
-
         <Navbar bg="light" variant="light" className={styles.NavBar} expand="lg">
             <Navbar.Brand href="#home" className={`"ml-auto" ${styles.BrandLogo}`}> <i className="fa-solid fa-star"></i> Social Reviewer </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />

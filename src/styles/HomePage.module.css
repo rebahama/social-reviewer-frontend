@@ -1,0 +1,8 @@
+.HeroImage {
+    max-width: 100%;
+    background-image: url('../assets/smiley.jpg');
+    background-repeat: no-repeat;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+}
