@@ -6,3 +6,11 @@
     background-size: cover;
     background-position: center;
 }
+.HeroText {
+    background-color: black;
+    color:white;
+    position: absolute;
+    bottom: 45%;
+    width: 100%;
+    
+}
