@@ -1,7 +1,8 @@
 import React from 'react'
-import { Row, Col, Container, Carousel } from 'react-bootstrap'
+import { Row, Col, Container} from 'react-bootstrap'
 import styles from '../../styles/HomePage.module.css'
 import SlideShow from './SlideShow'
+import Footer from './Footer'
 
 
 function HomePage() {
@@ -13,7 +14,8 @@ function HomePage() {
             </Row>
             <h2> Check out our Most popular posts</h2>
             <hr/>
-            <SlideShow/>
+            <SlideShow/>   
+            <Footer/>      
         </Container>
         
 
