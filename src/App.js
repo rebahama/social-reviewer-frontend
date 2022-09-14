@@ -9,10 +9,10 @@ function App() {
   return (
     <div className={styles.App}>
     <NavBar/>
-    <HomePage/>
+    
     <Switch>
 
-      <Route exact path="/" render={()=> <h1> Home page</h1>}/>
+      <Route exact path="/" render={()=> <HomePage/>}/>
       <Route exact path="/signup" render={()=> <h1> Sign up page</h1>}/>
     </Switch>
     </div>

@@ -12,7 +12,7 @@ function HomePage() {
                 <Col md={12} className={styles.HeroImage}> </Col>
                 <h1 className={styles.HeroText}> Social Reviewer, the review site for all reviews!</h1>
             </Row>
-            <h2> Check out our Most popular posts</h2>
+            <h2 className={styles.PopularText}>Most popular posts</h2>
             <hr/>
             <SlideShow/>   
             <Footer/>      

@@ -6,11 +6,26 @@
     background-size: cover;
     background-position: center;
 }
+/*Intro text*/
 .HeroText {
-    background-color: black;
-    color:white;
+    
+    color:black;
     position: absolute;
     bottom: 45%;
     width: 100%;
+    font-family: "Amatic SC", sans-serif;
+    font-size:50px;
+    text-shadow: 1px 1px 1px rgb(0 0 0 / 90%);
     
+}
+hr {
+    border-top:3px solid #acadad;
+    opacity: 0.5;
+    width: 70%;
+
+}
+.PopularText {
+    font-family: "Amatic SC", sans-serif;
+    font-size:50px;
+    font-weight: bold;
 }
