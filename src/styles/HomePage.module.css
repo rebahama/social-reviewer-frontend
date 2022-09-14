@@ -2,7 +2,7 @@
     max-width: 100%;
     background-image: url('../assets/smiley.jpg');
     background-repeat: no-repeat;
-    height: 500px;
+    height: 400px;
     background-size: cover;
     background-position: center;
 }
@@ -11,7 +11,7 @@
     
     color:black;
     position: absolute;
-    bottom: 45%;
+    bottom: 60%;
     width: 100%;
     font-family: "Amatic SC", sans-serif;
     font-size:50px;
