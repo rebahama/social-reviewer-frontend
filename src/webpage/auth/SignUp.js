@@ -44,11 +44,13 @@ const SignUp = () => {
 
 
     <Container >
+      <h3 className={styles.AccountText}> Create an account </h3>
+      <hr/>
       <div className={styles.AllContent}>
-        <Row md={12}  >
+        <Row md={12}>
           <Col md={6}>
             <Form onSubmit={submitForm}>
-              <h1> Are you ready for take of? Please create an account to get started</h1>
+              <h2 className={styles.AccountText}> Are you ready for take of? Please create an account to get started</h2>
               <Form.Group className="mb-3" controlId="username">
                 <Form.Label>Username</Form.Label>
                 <Form.Control type="text" placeholder="Username" value={username} name="username" onChange={handleInput} />
