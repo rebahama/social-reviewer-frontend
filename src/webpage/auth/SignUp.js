@@ -1,8 +1,9 @@
 import axios from 'axios';
 import React, {useState} from 'react'
-import {Alert, Button, Container, Form } from'react-bootstrap'
+import {Alert, Button, Container, Form, Col, Row } from'react-bootstrap'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
-
+import rocket from '../../assets/rocket.png'
+import styles from '../../styles/SignUp.module.css'
 
 
 const SignUp = () => {
@@ -42,9 +43,11 @@ const submitForm = async (event) =>{
     return (
 
 
-
+<Container>
+  <Row>
         <Form onSubmit={submitForm}>
-
+      <h1> Are you ready for take of? Please create an account to get started</h1>
+      <img src={rocket} className={styles.RocketImage}></img>
         <Form.Group className="mb-3" controlId="username">
           <Form.Label>Username</Form.Label>
           <Form.Control type="text" placeholder="Username" value={username} name="username" onChange={handleInput} />
@@ -75,8 +78,6 @@ const submitForm = async (event) =>{
         
         )}
 
-       
-
         <Button variant="primary" type="submit">
           Submit
         </Button>
@@ -85,8 +86,9 @@ const submitForm = async (event) =>{
         <Alert variant="warning" key={idx}> {message} </Alert>
         
         )}
-
       </Form>
+      </Row>
+      </Container>
 
 
 
