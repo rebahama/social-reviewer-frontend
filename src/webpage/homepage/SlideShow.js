@@ -46,8 +46,6 @@ function SlideShow() {
                         </Carousel.Item>
                     </Carousel>
                 </Col>
-
-                
             </Row>
         </Container>
     )

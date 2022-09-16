@@ -13,7 +13,7 @@ const setCurrentUser = useSetCurrentUser()
   });
   const { username, password } = SignIn;
   const [error, setError] = useState({})
-  const history = useHistory;
+  const history = useHistory();
 
   
   const submitForm = async (event) => {
@@ -21,7 +21,7 @@ const setCurrentUser = useSetCurrentUser()
     try {
       const {data} = await axios.post("/dj-rest-auth/login/", SignIn)
       setCurrentUser(data.user)
-      
+      history.push('/')
     } catch (err) {
       setError(err.response?.data)
     }
