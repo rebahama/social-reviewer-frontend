@@ -7,8 +7,19 @@ import { useCurrentUser } from '../context/CurrentUserContext';
 
 
 const NavBar = () => {
+    const addReviewSymbol = (
+
+        <NavLink className={styles.NavLink} to="/create"><i className="fa-sharp fa-solid fa-plus"></i> Create review </NavLink>
+
+    )
     const currentUser = useCurrentUser();
-    const loggedIn =<> {currentUser?.username}
+    const loggedIn =<> 
+    <NavLink to="/myreviews" className={styles.NavLink}><i className="fa-solid fa-bars"></i> My reviews</NavLink>
+    <NavDropdown title="Account" id="basic-nav-dropdown">
+                        <NavDropdown.Item href="#action/3.1"> {currentUser && addReviewSymbol} </NavDropdown.Item>
+                        <NavDropdown.Divider />
+                        <NavDropdown.Item href="#action/3.4">{currentUser?.username}</NavDropdown.Item>
+                    </NavDropdown>
     
     </>
     const loggedOut = <>
@@ -17,20 +28,14 @@ const NavBar = () => {
     </>
     return (
         <Navbar bg="light" variant="light" className={styles.NavBar} expand="lg">
-            <Navbar.Brand href="#home" className={`"ml-auto" ${styles.BrandLogo}`}> <i className="fa-solid fa-star"></i> Social Reviewer </Navbar.Brand>
-            {currentUser ? loggedIn:loggedOut}
+             <NavLink to="/">
+            <Navbar.Brand className={`"ml-auto" ${styles.BrandLogo}`}> <i className="fa-solid fa-star"></i> Social Reviewer </Navbar.Brand>
+            </NavLink>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ml-auto text-left">
-                    
                     <NavLink to="/"  className={styles.NavLink}> <i className="fas fa-home" > </i>Home</NavLink>
-                    <NavDropdown title="Category" id="basic-nav-dropdown">
-                        <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                        <NavDropdown.Divider />
-                        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-                    </NavDropdown>
+                    {currentUser ? loggedIn:loggedOut}
                     <Nav.Link href="#link">Show all reviews</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
