@@ -21,7 +21,7 @@ const setCurrentUser = useSetCurrentUser()
     try {
       const {data} = await axios.post("/dj-rest-auth/login/", SignIn)
       setCurrentUser(data.user)
-      history.push("/");
+      
     } catch (err) {
       setError(err.response?.data)
     }
