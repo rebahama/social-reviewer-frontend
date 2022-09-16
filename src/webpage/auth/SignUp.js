@@ -86,12 +86,9 @@ const SignUp = () => {
             </Form>
           </Col>
         </Row>
-        <img src={rocket} className={styles.RocketImage}></img>
+        <img src={rocket} className={styles.RocketImage} alt="rocket taking off"></img>
       </div>
     </Container>
-
-
-
   )
 }
 
