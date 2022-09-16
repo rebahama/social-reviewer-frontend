@@ -8,21 +8,16 @@ import { Container } from 'react-bootstrap'
 import Footer from './webpage/homepage/Footer';
 import './api/axios';
 
-
 function App() {
   return (
-    <div className={styles.App}>
-      <NavBar />
-        <Switch>
-          <Route exact path="/" render={() => <HomePage/>} />
-          <Route exact path="/signup" render={() => <SignUp/>} />
-          <Route exact path="/signin" render={() => <SignIn/>} />
-        </Switch>
-    </div>
- 
-
-
-
+        <div className={styles.App}>
+          <NavBar />
+          <Switch>
+            <Route exact path="/" render={() => <HomePage />} />
+            <Route exact path="/signup" render={() => <SignUp />} />
+            <Route exact path="/signin" render={() => <SignIn />} />
+          </Switch>
+        </div>
   );
 }
 

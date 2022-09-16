@@ -1,10 +1,11 @@
-import axios from 'axios';
 import React, { useState } from 'react'
+import axios from 'axios';
 import { Link, useHistory } from "react-router-dom";
 import { Alert, Button, Container, Form, Col, Row } from 'react-bootstrap'
+import {useSetCurrentUser } from '../../context/CurrentUserContext';
 
 const SignIn = () => {
-
+const setCurrentUser = useSetCurrentUser()
   const [SignIn, SetSignIn] = useState({
     username: "",
     password: "",
@@ -14,6 +15,19 @@ const SignIn = () => {
   const [error, setError] = useState({})
   const history = useHistory;
 
+  
+  const submitForm = async (event) => {
+    event.preventDefault();
+    try {
+      const {data} = await axios.post("/dj-rest-auth/login/", SignIn)
+      setCurrentUser(data.user)
+      history.push("/");
+    } catch (err) {
+      setError(err.response?.data)
+    }
+
+  }
+
   const handleInput = (event) => {
     SetSignIn({
       ...SignIn,
@@ -21,18 +35,6 @@ const SignIn = () => {
 
     });
   };
-
-  const submitForm = async (event) => {
-    event.preventDefault()
-    try {
-      await axios.post("/dj-rest-auth/login/", SignIn)
-      history.push("/")
-    } catch (err) {
-      setError(err.response?.data)
-    }
-
-
-  }
 
   return (
     <Container>
