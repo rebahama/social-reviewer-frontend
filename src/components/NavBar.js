@@ -24,7 +24,7 @@ const NavBar = () => {
 
     const addReviewSymbol = (
 
-        <NavLink className={styles.NavLink} to="/create"><i className="fa-sharp fa-solid fa-plus"></i> Create review </NavLink>
+        <NavLink className={styles.NavLink} to="/createreview"><i className="fa-sharp fa-solid fa-plus"></i> Create review </NavLink>
 
     )
     const currentUser = useCurrentUser();

@@ -7,6 +7,7 @@ import { Route, Switch } from "react-router-dom";
 import { Container } from 'react-bootstrap'
 import Footer from './webpage/homepage/Footer';
 import './api/axios';
+import CreateReview from './webpage/review/CreateReview';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route exact path="/" render={() => <HomePage />} />
             <Route exact path="/signup" render={() => <SignUp />} />
             <Route exact path="/signin" render={() => <SignIn />} />
+            <Route exact path="/createreview" render={() => <CreateReview/>} />
           </Switch>
         </div>
   );
