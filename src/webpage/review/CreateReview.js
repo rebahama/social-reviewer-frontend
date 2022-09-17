@@ -1,6 +1,7 @@
 import React, { useRef } from 'react'
 import { useState } from 'react';
 import { Alert, Button, Container, Form, Col, Row } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
 import { axiosReq } from '../../api/axios';
 
 function CreateReview() {
@@ -14,7 +15,8 @@ function CreateReview() {
   const imageInput= useRef(null)
   const{title, content, image, price, category} = createReview
   const [error, setError] = useState({});
-
+  const history = useHistory()
+  
   const handleReview = (event) => {
     setCreateReview({
       ...createReview,
@@ -35,6 +37,7 @@ function CreateReview() {
     }
 
   }
+
   const handleSubmit = async (event) =>{
     event.preventDefault()
     const formData = new FormData();
@@ -47,6 +50,7 @@ function CreateReview() {
     try{
 
       const {data} = await axiosReq.post('/posts/', formData)
+      history.push(`/posts/${data.id}`);
 
     }
     catch(err){
@@ -72,14 +76,33 @@ function CreateReview() {
     <Form.Label> Title </Form.Label>
     <Form.Control type="text" name="title" placeholder="Enter title" value={title} onChange={handleReview} />
   </Form.Group>
+  {error?.title?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+
 
   <Form.Group>
 <Form.Label> Body content </Form.Label>
 <Form.Control as="textarea" name="content" value={content} onChange={handleReview}></Form.Control>
   </Form.Group>
 
+  {error?.content?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+
+
 <Form.Label> Image upload </Form.Label>
-<Form.File id="image-upload" onchange={handleImage} ref={imageInput} accept="image/*"/>
+<Form.File id="image-upload" onChange={handleImage} ref={imageInput} accept="image/*"/>
+
+{error?.image?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
 
 
   <Form.Group>
@@ -87,18 +110,30 @@ function CreateReview() {
     <Form.Control type="number" placeholder="Enter price" name="price" value={price} onChange={handleReview}  min="0" max="1000000"/>
   </Form.Group> 
 
+  {error?.price?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+
+
+
   <Form.Group>
     <Form.Label>Category</Form.Label>
     <Form.Control as="select" name="category" value={category} onChange={handleReview}>
-      <option>Clothes</option>
-      <option>Electronics </option>
+      <option>Electronics  </option>
       <option>Vehicles</option>
       <option>Sports</option>
-      <option>Games</option>
+      <option>{6}</option>
       <option>Other</option>
     </Form.Control>
   </Form.Group>
 
+  {error?.category?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
 
 
   <Button variant="primary" type="submit">

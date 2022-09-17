@@ -11,10 +11,11 @@ export const useSetCurrentUser =()=> useContext(SetCurrentUserContext)
 export const CurrentUserProvider = ({children})=>{
     const [currentUser, setCurrentUser] = useState(null)
     const history = useHistory()
+    
     const handleData = async () => {
       try {
   
-        const { data } = await axios.get('dj-rest-auth/user/')
+        const { data } = await axiosRes.get('dj-rest-auth/user/')
         setCurrentUser(data)
   
       }
