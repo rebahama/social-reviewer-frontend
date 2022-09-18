@@ -15,6 +15,17 @@ function CreateReview() {
   const imageInput= useRef(null)
   const{title, content, image, price, category} = createReview
   const [error, setError] = useState({});
+  
+  const [categorySub, setCategory] = useState({
+    electronics:1,
+    clothes:2,
+    other:3,
+    vehicles:4,
+    sports:5,
+    games:6,
+
+  })
+  const {electronics, clothes, other, vehicles, sports, games} = categorySub;
   const history = useHistory()
   
   const handleReview = (event) => {
@@ -121,11 +132,12 @@ function CreateReview() {
   <Form.Group>
     <Form.Label>Category</Form.Label>
     <Form.Control as="select" name="category" value={category} onChange={handleReview}>
-      <option>Electronics  </option>
-      <option>Vehicles</option>
-      <option>Sports</option>
-      <option>{6}</option>
-      <option>Other</option>
+      <option value={electronics}>Electronics </option> 
+      <option value={clothes}>Clothes</option>
+      <option value={vehicles}>Vehicles</option>
+      <option value={sports}>Sports</option>
+      <option value={games}>Games</option>
+      <option value={other}>Other</option>
     </Form.Control>
   </Form.Group>
 
@@ -143,8 +155,6 @@ function CreateReview() {
 </Col>
 </Row>
 </Container>
-
-
 
   )
 }
