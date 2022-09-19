@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import { Alert, Button, Container, Form, Col, Row } from 'react-bootstrap'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
-import rocket from '../../assets/rocket.png'
+import rocketGif from '../../assets/rocket.gif'
 import styles from '../../styles/SignUp.module.css'
 
 
@@ -86,7 +86,7 @@ const SignUp = () => {
             </Form>
           </Col>
         </Row>
-        <img src={rocket} className={styles.RocketImage} alt="rocket taking off"></img>
+        <img src={rocketGif} className={styles.RocketImage} alt="rocket taking off"></img>
       </div>
     </Container>
   )
