@@ -45,7 +45,7 @@ const SignUp = () => {
 
     <Container >
       <h3 className={styles.AccountText}> Create an account </h3>
-      <hr/>
+      <hr />
       <div className={styles.AllContent}>
         <Row md={12}>
           <Col md={6}>

@@ -1,0 +1,25 @@
+.SignInFront{
+    color: white;
+    padding: 80px;
+    border-radius: 1%;
+    background-color: #6A359C;
+    margin-top: 6%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-evenly;
+    box-shadow: 0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+.LogInGif{
+    max-width: 40%;
+    min-width: 40%;
+    border-radius: 5%;
+    height: 330px;
+    margin-left:6%;
+    margin-top: 3%;
+
+}
+.LogInText{
+    font-family: "Amatic SC", sans-serif;
+    font-size:50px;
+    font-weight: bold;
+}

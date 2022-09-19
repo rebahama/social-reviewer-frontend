@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../../assets/Logo-social-reviewer.png'
+import logo from '../assets/Logo-social-reviewer.png'
 import { Row, Col, Container, Carousel } from 'react-bootstrap'
 function SlideShow() {
     return (

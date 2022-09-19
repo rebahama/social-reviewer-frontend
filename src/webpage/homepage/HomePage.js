@@ -1,7 +1,7 @@
 import React from 'react'
 import { Row, Col, Container} from 'react-bootstrap'
 import styles from '../../styles/HomePage.module.css'
-import SlideShow from './SlideShow'
+import SlideShow from '../../components/SlideShow'
 
 
 
