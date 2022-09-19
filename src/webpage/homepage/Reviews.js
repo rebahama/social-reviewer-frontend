@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min'
 import { axiosReq } from '../../api/axios';
+import ReviewPage from './ReviewPage';
 
 function Reviews () {
 
@@ -26,8 +27,11 @@ function Reviews () {
 
     }, [id])
 
+
+
+
   return (
-    <div> <h1> this is review page </h1></div>
+    <div> <ReviewPage {...review.results[0]} setReview={setReview}/> </div>
   )
 }
 
