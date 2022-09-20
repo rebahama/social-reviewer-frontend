@@ -25,7 +25,7 @@ const ReviewPage = (props) => {
 
 
    return (
-      <div>
+      <div className={styles.ReviewContainer}>
          <Container >
             <h3 className={styles.ReviewText}> {title}</h3>
             <hr />
@@ -35,14 +35,17 @@ const ReviewPage = (props) => {
                   <img src={image} className={styles.ReviewImage}></img>
 
                   <Col md={6} className={styles.ExtraFields}>
-                     <h3> Pros</h3>
+                     <h3 className={styles.HeadingFields}> <i className="fa-solid fa-thumbs-up"></i> Pros</h3>
                      <p> With so many different options at different price points, picking out the best iPhone can be tricky. </p>
-                     <h3> Cons</h3>
+                     
+                     <h3 className={styles.HeadingFields}> <i className="fa-sharp fa-solid fa-thumbs-down"></i> Cons</h3>
                      <p> With so many different options at different price points, picking out the best iPhone can be tricky. </p>
-                     <h3> Price </h3>
+                     
+                     <h3 className={styles.HeadingFields}> <i className="fa-solid fa-euro-sign"></i> Price </h3>
                      <p>{price} </p>
-                     <h3> Category </h3>
-                     {category_name}
+                     
+                     <h3 className={styles.HeadingFields}> <i className="fa-solid fa-table-columns"></i> Category </h3>
+                     <p>{category_name}</p>
 
 
                   </Col>

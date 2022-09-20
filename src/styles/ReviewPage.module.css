@@ -1,4 +1,5 @@
 .ReviewContainer{
+padding: 40px;
 
 
 }
@@ -13,7 +14,9 @@
 }
 .ExtraFields {
     font-family: "Amatic SC", sans-serif;
-    font-size:30px;
-    border: 1px solid black;
+    font-size:35px;
+}
+.HeadingFields {
+    text-decoration: underline;
 
 }
