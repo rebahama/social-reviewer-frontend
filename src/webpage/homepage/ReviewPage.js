@@ -17,7 +17,7 @@ const ReviewPage = (props) => {
       comment_counter,
       like_counter,
       update_at,
-
+      
 
 
 
@@ -51,7 +51,9 @@ const ReviewPage = (props) => {
                   </Col>
                   <Col md={6}>
                      <h3> Description </h3>
-                     <p className={styles.ContentText}> {content}</p>
+                     <p className={styles.ContentText}> {content} </p>
+                     <i className="fa-solid fa-thumbs-up"></i> {like_counter}
+                    
                      
                      <p className={styles.CreateDateText}>Created {created_at} ago by user : {owner}</p>
                   </Col>
@@ -59,10 +61,6 @@ const ReviewPage = (props) => {
 
             </div>
          </Container>
-
-
-
-
       </div>
    )
 }
