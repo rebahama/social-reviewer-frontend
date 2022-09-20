@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from '../../styles/ReviewPage.module.css'
 import { Row, Col, Container } from 'react-bootstrap'
+import { axiosRes } from '../../api/axios'
 
 const ReviewPage = (props) => {
 
@@ -17,12 +18,26 @@ const ReviewPage = (props) => {
       comment_counter,
       like_counter,
       update_at,
-      
+      setPosts
 
 
 
    } = props
-
+const handleLikes = async ()=> {
+   try {
+      const { data } = await axiosRes.post("/likes/", { post: id });
+      setPosts((prevPosts) => ({
+        ...prevPosts,
+        results: prevPosts.results.map((post) => {
+          return post.id === id
+            ? { ...post, likes_count: post.likes_count + 1, like_id: data.id }
+            : post;
+        }),
+      }));
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
    return (
       <div className={styles.ReviewContainer}>
@@ -52,7 +67,8 @@ const ReviewPage = (props) => {
                   <Col md={6}>
                      <h3> Description </h3>
                      <p className={styles.ContentText}> {content} </p>
-                     <i className="fa-solid fa-thumbs-up"></i> {like_counter}
+                     <i className={`fa-solid fa-thumbs-up ${styles.LikeThumb}`} onClick={handleLikes}></i>
+                      {like_counter}
                     
                      
                      <p className={styles.CreateDateText}>Created {created_at} ago by user : {owner}</p>
