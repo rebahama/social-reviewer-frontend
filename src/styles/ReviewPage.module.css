@@ -1,0 +1,19 @@
+.ReviewContainer{
+
+
+}
+.ReviewText {
+    font-family: "Amatic SC", sans-serif;
+    font-size:50px;
+    font-weight: bold;
+}
+.ReviewImage {
+    border-radius: 3%;
+    max-width: 50%;
+}
+.ExtraFields {
+    font-family: "Amatic SC", sans-serif;
+    font-size:30px;
+    border: 1px solid black;
+
+}
