@@ -50,8 +50,10 @@ const ReviewPage = (props) => {
 
                   </Col>
                   <Col md={6}>
-                     <h3> Describtion </h3>
-                     <p> {content}</p>
+                     <h3> Description </h3>
+                     <p className={styles.ContentText}> {content}</p>
+                     
+                     <p className={styles.CreateDateText}>Created {created_at} ago by user : {owner}</p>
                   </Col>
                </Row>
 
