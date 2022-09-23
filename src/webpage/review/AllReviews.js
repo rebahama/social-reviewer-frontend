@@ -40,7 +40,6 @@ const AllReviews = (props) => {
 {review.results.map((review) => (
                   <ReviewPage key={review.id} {...review}/>
                 ))}
-      
     </div>
   )
 }

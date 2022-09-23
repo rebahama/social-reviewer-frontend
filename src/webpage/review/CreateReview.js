@@ -8,12 +8,14 @@ function CreateReview() {
   const [createReview, setCreateReview] = useState({
     title:"",
     content:"",
+    pros:"",
+    cons:"",
     image:"",
     price:"",
     category:"",
   })  
   const imageInput= useRef(null)
-  const{title, content, image, price, category} = createReview
+  const{title, content, image, price, category,pros,cons} = createReview
   const [error, setError] = useState({});
   
   const [categorySub, setCategory] = useState({
@@ -54,6 +56,8 @@ function CreateReview() {
     const formData = new FormData();
     formData.append('title', title)
     formData.append('content', content)
+    formData.append('pros',pros)
+    formData.append('cons', cons)
     formData.append('image', imageInput.current.files[0])
     formData.append('price', price)
     formData.append('category', category)
@@ -104,6 +108,28 @@ function CreateReview() {
           {message}
         </Alert>
       ))}
+
+  <Form.Group>
+<Form.Label> Pros </Form.Label>
+<Form.Control as="textarea" name="pros" value={pros} onChange={handleReview}></Form.Control>
+  </Form.Group>
+  {error?.pros?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+
+  <Form.Group>
+<Form.Label> Cons </Form.Label>
+<Form.Control as="textarea" name="cons" value={cons} onChange={handleReview}></Form.Control>
+  </Form.Group>
+
+  {error?.cons?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+
 
 
 <Form.Label> Image upload </Form.Label>

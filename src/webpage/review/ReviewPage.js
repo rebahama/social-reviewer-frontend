@@ -2,6 +2,7 @@ import React from 'react'
 import styles from '../../styles/ReviewPage.module.css'
 import { Row, Col, Container } from 'react-bootstrap'
 import { axiosRes } from '../../api/axios'
+import { Link } from 'react-router-dom'
 
 const ReviewPage = (props) => {
 
@@ -16,6 +17,8 @@ const ReviewPage = (props) => {
       like_id,
       price,
       owner,
+      pros,
+      cons,
       comment_counter,
       like_counter,
       update_at,
@@ -59,19 +62,22 @@ const handleUnlike = async () => {
    return (
       <div className={styles.ReviewContainer}>
          <Container >
+         <Link to={`/reviews/${id}`}>
             <h3 className={styles.ReviewText}> {title}</h3>
+         </Link>
             <hr />
             <div className={styles.AllContent}>
                <Row md={12}>
-
+               
                   <img src={image} className={styles.ReviewImage}></img>
+               
 
                   <Col md={6} className={styles.ExtraFields}>
                      <h3 className={styles.HeadingFields}> <i className="fa-solid fa-thumbs-up"></i> Pros</h3>
-                     <p> With so many different options at different price points, picking out the best iPhone can be tricky. </p>
+                     <p> {pros} </p>
                      
                      <h3 className={styles.HeadingFields}> <i className="fa-sharp fa-solid fa-thumbs-down"></i> Cons</h3>
-                     <p> With so many different options at different price points, picking out the best iPhone can be tricky. </p>
+                     <p> {cons} </p>
                      
                      <h3 className={styles.HeadingFields}> <i className="fa-solid fa-euro-sign"></i> Price </h3>
                      <p>{price} </p>
