@@ -22,22 +22,14 @@ const NavBar = () => {
     }
 
 
-    const addReviewSymbol = (
-
-        <NavLink className={styles.NavLink} to="/createreview"><i className="fa-sharp fa-solid fa-plus"></i> Create review </NavLink>
-
-    )
+   
     const currentUser = useCurrentUser();
     const loggedIn =<> 
     <NavLink to="/myreviews" className={styles.NavLink}> <i className="fa-solid fa-bars"></i> My reviews</NavLink>
     <NavLink to={`/profilepage${currentUser?.profile_id}`} className={styles.NavLink} onClick={()=>{}}> <i className="fa-solid fa-user"></i> My page </NavLink>
+    <NavLink className={styles.NavLink} to="/createreview"><i className="fa-sharp fa-solid fa-plus"></i> Create review </NavLink> 
     <NavLink to="/" className={styles.NavLink} onClick={handleLogOut}> <i className="fa-solid fa-arrow-right-from-bracket"> </i> Log out</NavLink>
-    <NavDropdown title="Account" id="basic-nav-dropdown" >
-                        <NavDropdown.Item href="#action/3.1"> {currentUser && addReviewSymbol}  </NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.1">   <i className="fa-solid fa-arrow-right-from-bracket"> </i> Log out </NavDropdown.Item>
-                        <NavDropdown.Divider />
-                        <NavDropdown.Item href="#action/3.4">{currentUser?.username}</NavDropdown.Item>
-                    </NavDropdown>
+    {currentUser?.username}
     
     </>
     const loggedOut = <>
