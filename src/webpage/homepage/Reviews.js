@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min'
 import { axiosReq } from '../../api/axios';
-import ReviewPage from './ReviewPage';
+import ReviewPage from '../review/ReviewPage';
 
 function Reviews () {
 

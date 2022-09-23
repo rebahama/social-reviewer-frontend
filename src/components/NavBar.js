@@ -54,7 +54,7 @@ const NavBar = () => {
                 <Nav className="ml-auto text-left">
                     <NavLink to="/"  className={styles.NavLink}> <i className="fas fa-home" > </i>Home</NavLink>
                     {currentUser ? loggedIn:loggedOut}
-                    <Nav to="/" className={styles.NavLink} >Show all reviews</Nav>
+                    <NavLink to="/reviews" className={styles.NavLink}><i className="fa-solid fa-users"> </i> All reviews</NavLink>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

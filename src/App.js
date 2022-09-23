@@ -9,6 +9,7 @@ import Footer from './webpage/homepage/Footer';
 import './api/axios';
 import CreateReview from './webpage/review/CreateReview';
 import Reviews from './webpage/homepage/Reviews';
+import AllReviews from './webpage/review/AllReviews';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <NavBar />
           <Switch>
             <Route exact path="/" render={() => <HomePage />} />
+            <Route exact path="/reviews" render={() => <AllReviews message="No results found" />} />
             <Route exact path="/signup" render={() => <SignUp />} />
             <Route exact path="/signin" render={() => <SignIn />} />
             <Route exact path="/createreview" render={() => <CreateReview/>} />
