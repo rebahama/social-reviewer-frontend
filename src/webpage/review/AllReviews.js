@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-
 import { axiosReq } from '../../api/axios';
 import ReviewPage from './ReviewPage';
+import SpinnerAsset from '../../components/SpinnerAsset'
 
 const AllReviews = (props) => {
 
@@ -36,10 +36,12 @@ const AllReviews = (props) => {
   
   return (
     <div>
-
+<SpinnerAsset/>
 {review.results.map((review) => (
                   <ReviewPage key={review.id} {...review}/>
+                  
                 ))}
+                
     </div>
   )
 }
