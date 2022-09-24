@@ -70,7 +70,7 @@ const handleUnlike = async () => {
    }
  };
 
-const realOwner = <> <Link to={`/reviews/edit${id}`}> <h3 className={styles.ReviewText}> Edit</h3></Link>
+const realOwner = <> <Link to={`/reviews/${id}/edit`}> <h3 className={styles.ReviewText}> Edit</h3></Link>
 
 <Link onClick={handleDelete} to={`/reviews/${id}`}>
 <h3 className={styles.ReviewText}> Delete </h3></Link> </>

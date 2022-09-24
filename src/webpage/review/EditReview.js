@@ -38,16 +38,20 @@ useEffect(()=>{
 
         try{
             const { data } = await axiosReq.get(`/posts/${id}/`);
+            const {title, content, pros, cons,image,price,category, is_owner} = data;
+
+            is_owner ? setCreateReview({title, content, pros, cons,image,price,category}): history.push("/")
         }
         catch(err){
             console.log(err)
         }
 
     }
+    handleRequestEdit()
 
 
 
-})
+}, [history,id])
 
   const handleReview = (event) => {
     setCreateReview({
