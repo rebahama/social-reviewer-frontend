@@ -4,7 +4,8 @@ import Spinner from 'react-bootstrap/Spinner';
 function SpinnerAsset() {
   return (
     <div>
-    <Spinner animation="grow" variant="primary" />
+      
+    <p> Page Loading.....</p><Spinner animation="grow" variant="primary" />
     </div>
   )
 }
