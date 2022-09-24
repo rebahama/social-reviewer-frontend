@@ -81,14 +81,16 @@ useEffect(()=>{
     formData.append('content', content)
     formData.append('pros',pros)
     formData.append('cons', cons)
-    formData.append('image', imageInput.current.files[0])
     formData.append('price', price)
     formData.append('category', category)
+    
+    if (imageInput?.current?.files[0])
+    formData.append('image', imageInput.current.files[0])
 
-    try{
+    try {
 
-      const {data} = await axiosReq.post('/posts/', formData)
-      history.push(`/posts/${data.id}`);
+      await axiosReq.put(`/posts/${id}/`, formData)
+      history.push(`/reviews/${id}`);
 
     }
     catch(err){
