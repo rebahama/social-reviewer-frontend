@@ -9,6 +9,7 @@ import './api/axios';
 import CreateReview from './webpage/review/CreateReview';
 import Reviews from './webpage/homepage/Reviews';
 import AllReviews from './webpage/review/AllReviews';
+import EditReview from './webpage/review/EditReview';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route exact path="/signin" render={() => <SignIn />} />
             <Route exact path="/createreview" render={() => <CreateReview/>} />
             <Route exact path="/reviews/:id" render={() => <Reviews/>} />
+            <Route exact path="/reviews/:id/edit" render={() => <EditReview/>} />
           </Switch>
         </div>
   );
