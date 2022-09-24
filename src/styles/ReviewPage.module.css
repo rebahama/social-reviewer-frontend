@@ -10,6 +10,7 @@ padding: 40px;
 }
 .ReviewImage {
     border-radius: 3%;
+    max-height: 700px;
     max-width: 50%;
 }
 .ExtraFields {

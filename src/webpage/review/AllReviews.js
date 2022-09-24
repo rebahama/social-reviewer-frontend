@@ -39,7 +39,7 @@ const AllReviews = (props) => {
 
   return (
     <div>
-
+      
       {loaded ?
         (<>{review.results.map((review) => (<ReviewPage key={review.id} {...review} />))} </>) : (<SpinnerAsset />) }
     </div>
