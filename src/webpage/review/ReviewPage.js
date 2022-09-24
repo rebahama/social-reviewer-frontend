@@ -2,7 +2,7 @@ import React from 'react'
 import styles from '../../styles/ReviewPage.module.css'
 import { Row, Col, Container } from 'react-bootstrap'
 import { axiosRes } from '../../api/axios'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
 const ReviewPage = (props) => {
 
@@ -27,6 +27,7 @@ const ReviewPage = (props) => {
 
 
    } = props
+const history = useHistory();
 const handleLikes = async ()=> {
    try {
       const { data } = await axiosRes.post("/likes/", { post: id });
@@ -59,7 +60,23 @@ const handleUnlike = async () => {
    }
  };
 
-   return (
+ const handleDelete = async () => {
+   try {
+     await axiosRes.delete(`/posts/${id}/`);
+     history.goBack();
+   
+   } catch (err) {
+     console.log(err);
+   }
+ };
+
+const realOwner = <> <Link to={`/reviews/edit${id}`}> <h3 className={styles.ReviewText}> Edit</h3></Link>
+
+<Link onClick={handleDelete} to={`/reviews/${id}`}>
+<h3 className={styles.ReviewText}> Delete </h3></Link> </>
+   
+
+return (
       <div className={styles.ReviewContainer}>
          <Container >
          <Link to={`/reviews/${id}`}>
@@ -84,6 +101,8 @@ const handleUnlike = async () => {
                      
                      <h3 className={styles.HeadingFields}> <i className="fa-solid fa-table-columns"></i> Category </h3>
                      <p>{category_name}</p>
+                     
+                     {is_owner && realOwner} 
 
 
                   </Col>
@@ -94,6 +113,10 @@ const handleUnlike = async () => {
                      
                       {like_counter}
                       <i className={`fa-solid fa-thumbs-down ${styles.LikeThumb}`} onClick={handleUnlike}></i>
+                      
+                      
+                      <i className="fa-regular fa-comment-dots">{comment_counter}</i>
+                      
 
                     
                      
