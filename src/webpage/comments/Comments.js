@@ -2,7 +2,7 @@ import React from 'react'
 
 const Comments = (props) => {
 
-const {profile_id, content, owner,post } = props
+const {profile_id, content, rating, owner,post } = props
   return (
     <div>
       
@@ -10,6 +10,8 @@ const {profile_id, content, owner,post } = props
         <p> Owner: {owner}</p>
         <p> Content: {content}</p>
         <p> Post number id: {post}</p>
+        <p> Rating: {rating}</p>
+        <hr/>
      
 
     </div>

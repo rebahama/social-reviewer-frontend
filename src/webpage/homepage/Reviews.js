@@ -3,10 +3,12 @@ import { useParams } from 'react-router-dom/cjs/react-router-dom.min'
 import { axiosReq } from '../../api/axios';
 import ReviewPage from '../review/ReviewPage';
 import Comments from '../comments/Comments';
+import { useCurrentUser } from '../../context/CurrentUserContext';
 
 function Reviews () {
 
     const {id} = useParams();
+    const currentUser = useCurrentUser
     const [review, setReview] = useState({results: []});
     const [comments, setComment] = useState({results: []});
     
@@ -17,7 +19,7 @@ function Reviews () {
                     axiosReq.get(`/posts/${id}`),
                     axiosReq.get(`/comments/?post=${id}`),
                     
-                ])
+                ]);
                 setReview({results: [review]})
                 setComment(comments)
                 console.log(comments)
@@ -43,20 +45,17 @@ function Reviews () {
     
     <ReviewPage {...review.results[0]} setReview={setReview} Reviews comments={comments}/>
     
-    {comments.results.map((comments)=> {
-
-      return <Comments key={comments.id} {...comments}/>
     
-   
-    })}
-    
+  
+  {comments.results.map((comments)=> {
 
- 
-
-    
-    </div>
+ return <Comments key={comments.id} {...comments}/>
 
 
+  })}
+
+
+  </div>
   )
 }
 
