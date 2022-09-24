@@ -1,4 +1,3 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min'
 import { axiosReq } from '../../api/axios';
@@ -42,12 +41,12 @@ function Reviews () {
     
     
     
-    <ReviewPage {...review.results[0]} setReview={setReview} Reviews/>
+    <ReviewPage {...review.results[0]} setReview={setReview} Reviews comments={comments}/>
     
     {comments.results.map((comments)=> {
 
+      return <Comments key={comments.id} {...comments}/>
     
-    return <Comments key={comments.id} {...comments}/>
    
     })}
     
