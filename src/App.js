@@ -10,6 +10,8 @@ import CreateReview from './webpage/review/CreateReview';
 import Reviews from './webpage/homepage/Reviews';
 import AllReviews from './webpage/review/AllReviews';
 import EditReview from './webpage/review/EditReview';
+import ProfilePage from './webpage/profiles/ProfilePage';
+import ShowAllProfile from './webpage/profiles/ShowAllProfile';
 
 function App() {
   return (
@@ -23,6 +25,7 @@ function App() {
             <Route exact path="/createreview" render={() => <CreateReview/>} />
             <Route exact path="/reviews/:id" render={() => <Reviews/>} />
             <Route exact path="/reviews/:id/edit" render={() => <EditReview/>} />
+            <Route exact path="/profilepage/" render={() => <ShowAllProfile/>} />
           </Switch>
         </div>
   );

@@ -3,6 +3,7 @@ import { Button } from 'react-bootstrap'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 import { axiosRes } from '../../api/axios'
 
+
 const Comments = (props) => {
 const history = useHistory();
 const {profile_id, content, rating, owner,post, id,setPost,setComments,is_owner} = props

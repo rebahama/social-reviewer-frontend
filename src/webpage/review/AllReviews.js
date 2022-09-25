@@ -5,14 +5,7 @@ import SpinnerAsset from '../../components/SpinnerAsset'
 
 const AllReviews = (props) => {
 
-  const {
-
-    owner
-
-
-
-
-  } = props
+  const {id} = props
   const [review, setReview] = useState({ results: [] });
   const [loaded, loadedcomplete] = useState(false)
 
@@ -33,13 +26,13 @@ const AllReviews = (props) => {
     loadedcomplete(false)
     handleData()
 
-  }, [])
+  }, [id])
 
 
 
   return (
     <div>
-      
+
       {loaded ?
         (<>{review.results.map((review) => (<ReviewPage key={review.id} {...review} />))} </>) : (<SpinnerAsset />) }
     </div>
