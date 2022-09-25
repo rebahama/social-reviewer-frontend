@@ -5,9 +5,7 @@ import { axiosRes } from '../../api/axios'
 
 const Comments = (props) => {
 const history = useHistory();
-const {profile_id, content, rating, owner,post, id,setPost,setComments,} = props
-  
-
+const {profile_id, content, rating, owner,post, id,setPost,setComments,is_owner} = props
 
 const handleCommentDelete = async ()=>{
 
@@ -33,9 +31,7 @@ setPost((prevPost) => ({
         results: prevComments.results.filter((comment) => comment.id !== id),
       }));
 }
-
-
-
+const realowner= <> <Button variant="primary" type="submit" onClick={handleCommentDelete}> Delete </Button></>
 return (
     <div>
        <p> profile id : {profile_id} </p> 
@@ -43,9 +39,7 @@ return (
         <p> Content: {content}</p>
         <p> Post number id: {post}</p>
         <p> Rating: {rating}</p>
-        <Button variant="primary" type="submit" onClick={handleCommentDelete}>
-    Delete
-  </Button>
+        {is_owner && realowner}
         <hr/>
     </div>
   )
