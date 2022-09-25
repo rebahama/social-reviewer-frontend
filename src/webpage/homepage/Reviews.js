@@ -41,7 +41,7 @@ function Reviews() {
 
                 return <Comments key={comments.id} {...comments} />
             })}
-            <CreateComment post={id} setPost={setReview} setComment={setComment}/>
+            <CreateComment post={id} setReview={setReview} setComment={setComment}/>
         </div>
     )
 }

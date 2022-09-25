@@ -1,12 +1,18 @@
 import React, { useState } from 'react'
 import { Form, Container, Button, Alert } from 'react-bootstrap'
+import { useParams } from 'react-router-dom/cjs/react-router-dom.min'
+import { useHistory } from 'react-router-dom'
 import { axiosRes } from '../../api/axios'
 
 function CreateComment(props) {
+
 const [error, setError] = useState({});
  
-const { post, setPost, setComments, rating } = props;
+const { post, setPost, setComments, rating, id } = props;
 const [content, setContent] = useState("");
+const history = useHistory()
+
+
 
 
 const handleComment = (event) => {
@@ -24,6 +30,7 @@ const handleComment = (event) => {
         rating,
         post,
       });
+      history.go(0)
       setComments((prevComments) => ({
         ...prevComments,
         results: [data, ...prevComments.results],
@@ -36,11 +43,15 @@ const handleComment = (event) => {
           },
         ],
       }));
+      
       setContent("");
+      
+      
     } catch (err) {
      setError(err.response?.data)
     }
   };
+
 return (
     <Container>
     <Form onSubmit={handleSubmit}>
