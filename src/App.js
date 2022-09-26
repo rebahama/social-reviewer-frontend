@@ -27,7 +27,7 @@ function App() {
             <Route exact path="/reviews/:id" render={() => <Reviews/>} />
             <Route exact path="/reviews/:id/edit" render={() => <EditReview/>} />
             <Route exact path="/profilepage/" render={() => <ShowAllProfile/>} />
-            <Route exact path="/profilepage/:id/edit" render={() => <PersonalProfilePage/>} />
+            <Route exact path="/profiles/:id" render={() => <PersonalProfilePage/>} />
           </Switch>
         </div>
   );
