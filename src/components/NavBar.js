@@ -5,11 +5,13 @@ import { Container, Navbar, Nav, Form, Button, FormControl, NavDropdown } from '
 import { NavLink } from 'react-router-dom';
 import { useCurrentUser, useSetCurrentUser } from '../context/CurrentUserContext';
 import axios from 'axios';
+import { axiosReq } from '../api/axios';
+import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 
 
-const NavBar = (props) => {
+const NavBar = () => {
 
-    const {id}=props
+    
     const setCurrentUser = useSetCurrentUser()
 
     const handleLogOut = async () =>{
@@ -23,12 +25,10 @@ const NavBar = (props) => {
 
     }
 
-
-   
+    const id = useParams()
     const currentUser = useCurrentUser();
     const loggedIn =<>  
     <NavLink to="/myreviews" className={styles.NavLink}> <i className="fa-solid fa-bars"></i> My reviews</NavLink>
-    <NavLink to={`/profiles/${id}`} className={styles.NavLink} onClick={()=>{}}> <i className="fa-solid fa-user"></i> My page </NavLink>
     <NavLink className={styles.NavLink} to="/createreview"><i className="fa-sharp fa-solid fa-plus"></i> Create review </NavLink> 
     <NavLink to="/" className={styles.NavLink} onClick={handleLogOut}> <i className="fa-solid fa-arrow-right-from-bracket"> </i> Log out</NavLink>
     {currentUser?.username}

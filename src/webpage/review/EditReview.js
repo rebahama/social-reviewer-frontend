@@ -31,7 +31,7 @@ function EditReview() {
   })
   const {electronics, clothes, other, vehicles, sports, games} = categorySub;
   const history = useHistory()
-  
+
 useEffect(()=>{
 
     const handleRequestEdit = async () =>{

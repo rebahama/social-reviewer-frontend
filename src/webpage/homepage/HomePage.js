@@ -4,8 +4,6 @@ import styles from '../../styles/HomePage.module.css'
 import SlideShow from '../../components/SlideShow'
 
 
-
-
 function HomePage() {
     return (
         <Container fluid>
@@ -17,8 +15,6 @@ function HomePage() {
             <hr/>
             <SlideShow/>    
         </Container>
-        
-
         
     )
 }

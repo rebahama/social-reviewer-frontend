@@ -4,6 +4,8 @@ import { useHistory, useParams } from 'react-router-dom/cjs/react-router-dom.min
 import { axiosReq } from '../../api/axios'
 
 function PersonalProfilePage() {
+
+    
     const [profile, SetEditProfile] = useState({
         name: "",
         content: "",
@@ -11,7 +13,7 @@ function PersonalProfilePage() {
     })
     const history = useHistory()
     const imageInput = useRef(null)
-    const { id } = useParams()
+    const {id} = useParams() 
     const { name, content, image } = profile
     const [error, setError] = useState({});
 
@@ -20,7 +22,7 @@ function PersonalProfilePage() {
 
             try {
                 const { data } = await axiosReq.get(`profiles/${id}`)
-                const { name, content, image, is_owner,id } = data
+                const { name, content, image, is_owner} = data
 
                 is_owner ? SetEditProfile({ name, image, content, is_owner }) : history.push("/")
 
@@ -75,9 +77,6 @@ function PersonalProfilePage() {
                 setError(err.response?.data);
             }
         }
-
-
-
 
     }
 

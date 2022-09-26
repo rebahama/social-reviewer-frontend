@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 import { axiosReq } from '../../api/axios';
 
 const ProfilePage = (props) => {
@@ -26,10 +27,11 @@ const ProfilePage = (props) => {
   
 return (
     <div>
+       
 <p> Username: {owner}</p>
 <p> Reviews created: {review_counter}</p>
 <p> Likes recived: {profile_like}</p>
-<img src={image}/>
+<Link to={`/profiles/${id}`}><img src={image}/> </Link> 
     </div>
   )
 }
