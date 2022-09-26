@@ -10,11 +10,13 @@ import CreateReview from './webpage/review/CreateReview';
 import Reviews from './webpage/homepage/Reviews';
 import AllReviews from './webpage/review/AllReviews';
 import EditReview from './webpage/review/EditReview';
-import ProfilePage from './webpage/profiles/ProfilePage';
 import ShowAllProfile from './webpage/profiles/ShowAllProfile';
 import PersonalProfilePage from './webpage/profiles/PersonalProfilePage';
+import MyReviews from './webpage/review/MyReviews';
+
 
 function App() {
+
   return (
         <div className={styles.App}>
           <NavBar />
@@ -28,6 +30,7 @@ function App() {
             <Route exact path="/reviews/:id/edit" render={() => <EditReview/>} />
             <Route exact path="/profilepage/" render={() => <ShowAllProfile/>} />
             <Route exact path="/profiles/:id" render={() => <PersonalProfilePage/>} />
+            <Route exact path="/myreviews/" render={() => <MyReviews/>} />
           </Switch>
         </div>
   );
