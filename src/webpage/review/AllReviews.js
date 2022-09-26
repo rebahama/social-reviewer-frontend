@@ -26,8 +26,15 @@ const AllReviews = (props) => {
 
     }
     loadedcomplete(false)
-    handleData()
+    const time = setTimeout(()=>{
+      handleData()
 
+
+    }, 1500)
+   
+return ()=>{
+  clearTimeout(time)
+}
   }, [id,query])
 
 
