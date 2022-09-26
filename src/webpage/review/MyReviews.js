@@ -3,17 +3,18 @@ import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 
 import { axiosReq } from '../../api/axios'
 import MyReviewsPage from './MyReviewsPage';
-
+import {useCurrentUser} from '../../context/CurrentUserContext';
 
 function MyReviews(props) {
     const {pathname}= useLocation()
-    const {id}=props
+    const currentuser= useCurrentUser()
+    const id = currentuser?.profile_id
     const [Myreview, setMyReview] = useState({ results: [] });
 
     useEffect(() => {
         const handleData = async () => {
           try {
-            const { data } = await axiosReq.get(`/posts/?owner__profile=${4}`);
+            const { data } = await axiosReq.get(`/posts/?owner__profile=${id}`);
             setMyReview(data)
             console.log(Myreview)
           }
