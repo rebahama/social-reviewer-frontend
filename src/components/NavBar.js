@@ -7,7 +7,9 @@ import { useCurrentUser, useSetCurrentUser } from '../context/CurrentUserContext
 import axios from 'axios';
 
 
-const NavBar = () => {
+const NavBar = (props) => {
+
+    const {id}=props
     const setCurrentUser = useSetCurrentUser()
 
     const handleLogOut = async () =>{
@@ -24,9 +26,9 @@ const NavBar = () => {
 
    
     const currentUser = useCurrentUser();
-    const loggedIn =<> 
+    const loggedIn =<>  
     <NavLink to="/myreviews" className={styles.NavLink}> <i className="fa-solid fa-bars"></i> My reviews</NavLink>
-    <NavLink to={"/profilepage"} className={styles.NavLink} onClick={()=>{}}> <i className="fa-solid fa-user"></i> My page </NavLink>
+    <NavLink to={`/profilepage/${id}/edit`} className={styles.NavLink} onClick={()=>{}}> <i className="fa-solid fa-user"></i> My page </NavLink>
     <NavLink className={styles.NavLink} to="/createreview"><i className="fa-sharp fa-solid fa-plus"></i> Create review </NavLink> 
     <NavLink to="/" className={styles.NavLink} onClick={handleLogOut}> <i className="fa-solid fa-arrow-right-from-bracket"> </i> Log out</NavLink>
     {currentUser?.username}
@@ -47,6 +49,7 @@ const NavBar = () => {
                     <NavLink to="/"  className={styles.NavLink}> <i className="fas fa-home" > </i>Home</NavLink>
                     {currentUser ? loggedIn:loggedOut}
                     <NavLink to="/reviews" className={styles.NavLink}><i className="fa-solid fa-users"> </i> All reviews</NavLink>
+                    <NavLink to={"/profilepage"} className={styles.NavLink} onClick={()=>{}}> <i className="fa-solid fa-user"></i>Profiles </NavLink>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
