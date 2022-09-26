@@ -119,15 +119,7 @@ return (
                       
                       
                       <i className="fa-regular fa-comment-dots">{comment_counter}</i>
-                      
-
-                    
-                     
-                     <p className={styles.CreateDateText}>Created {created_at} ago by user : {owner}</p>
-                     
-                    
-                     
-                     
+                     <p className={styles.CreateDateText}>Created {created_at} ago by user : {owner}</p> 
                   </Col>
                </Row>
 

@@ -70,7 +70,7 @@ function PersonalProfilePage() {
 
         try {
             await axiosReq.put(`/profiles/${id}/`, formData);
-            history.push(`/profiles/${id}`);
+            history.push("/profilepage/");
         } catch (err) {
             console.log(err);
             if (err.response?.status !== 401) {
