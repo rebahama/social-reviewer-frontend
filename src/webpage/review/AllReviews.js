@@ -42,7 +42,7 @@ return ()=>{
   return (
     <div>
       <Form onSubmit={(event)=> event.preventDefault()}>
-    <Form.Control type="text" value={query} onChange={(event)=> setQuery(event.target.value)}/> 
+    <Form.Control type="text" placeholder="Search a review" value={query} onChange={(event)=> setQuery(event.target.value)}/> 
 
 
       </Form>
