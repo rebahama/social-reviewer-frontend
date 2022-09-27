@@ -32,7 +32,10 @@ const MostLikedReview = () => {
  
  
   return (
-    <div>MostLikedReview</div>
+    <div>{mostLiked.results.map(reviews=>
+        <p key={reviews.id}> {reviews.owner}</p>
+        
+        )} </div>
   )
 }
 
