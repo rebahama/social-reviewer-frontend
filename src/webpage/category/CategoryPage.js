@@ -33,7 +33,6 @@ handleData()
         <p key={category.id}> {category.title} {category.id}</p>
         </Link>
         )}
-
     </div>
   )
 }

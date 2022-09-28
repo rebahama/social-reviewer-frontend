@@ -65,7 +65,7 @@ function CreateReview() {
     try{
 
       const {data} = await axiosReq.post('/posts/', formData)
-      history.push(`/posts/${data.id}`);
+      history.push(`/reviews/${data.id}`);
 
     }
     catch(err){

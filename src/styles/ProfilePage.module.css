@@ -1,0 +1,8 @@
+.Container{
+    display: flex;
+    flex-direction: column;
+}
+
+.ProfileImage{
+    max-width: 15%;
+}
