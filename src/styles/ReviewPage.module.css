@@ -22,7 +22,7 @@ padding: 40px;
 
 }
 .ContentText {
-    padding: 20px;
+   padding: 20px;
    border: 1px solid black;
 
 }
@@ -31,4 +31,18 @@ padding: 40px;
 }
 .LikeThumb{
     color: blue;
+}
+
+@media screen and (max-width: 770px) {
+.ReviewImage{
+    min-width: 100%;
+    max-height: 330px;
+}
+
+i {
+    cursor: pointer;
+    color: red;
+}
+
+
 }

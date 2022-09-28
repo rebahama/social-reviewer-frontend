@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from '../../styles/ReviewPage.module.css'
-import { Row, Col, Container } from 'react-bootstrap'
+import { Row, Col, Container,Modal, Button } from 'react-bootstrap'
 import { axiosRes } from '../../api/axios'
 import { Link, useHistory } from 'react-router-dom'
 import Comments from '../comments/Comments'
@@ -29,6 +29,10 @@ const ReviewPage = (props) => {
 
 
    } = props
+
+const [show, setShow] = useState(false);
+const handleClose = () => setShow(false);
+const handleShow = () => setShow(true);
 const history = useHistory();
 const handleLikes = async ()=> {
    try {
@@ -71,12 +75,30 @@ const handleUnlike = async () => {
    } catch (err) {
      console.log(err);
    }
- };
+};
+
+
+
+
 
 const realOwner = <> <Link to={`/reviews/${id}/edit`}> <h3 className={styles.ReviewText}> Edit</h3></Link>
-
-<Link onClick={handleDelete} to={`/reviews/${id}`}>
-<h3 className={styles.ReviewText}> Delete </h3></Link> </>
+<>
+         <i className="fa-solid fa-trash-can-arrow-up" onClick={handleShow}> </i>
+         <Modal show={show} onHide={handleClose}>
+            <Modal.Header closeButton>
+               <Modal.Title>Deleting review!</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>Warning you are about to delete this review </Modal.Body>
+            <Modal.Footer>
+               <Button variant="secondary" onClick={handleClose}>
+                  Close
+               </Button>
+               <Link onClick={handleDelete} to={`/reviews/${id}`}>
+                  <h3 className={styles.ReviewText}> Delete</h3> </Link>
+            </Modal.Footer>
+         </Modal>
+      </>
+ </>
    
 
 return (
@@ -103,9 +125,9 @@ return (
                      <p>{price} </p>
                     
                      <h3 className={styles.HeadingFields}> <i className="fa-solid fa-table-columns"></i> Category </h3>
-                     <Link onClick={handleDelete} to={`/reviews/${id}`}>
+                    
                      <p>{category_name}</p>
-                     </Link>
+                     
                      {is_owner && realOwner} 
 
 
