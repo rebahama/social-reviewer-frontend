@@ -5,6 +5,7 @@
     font-size: 30px;
     display: flex;
     flex-direction: column;
+    padding: 70px;
 }
 
 .TopText {
@@ -16,4 +17,7 @@
 
 .ProfileImage{
     max-width: 15%;
+    border: 20%;
+    background-color: red;
+    
 }

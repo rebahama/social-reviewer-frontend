@@ -34,6 +34,7 @@ const ProfilePage = (props) => {
         
         <Col md={12}>
         <div className={styles.Container}>
+        <img src={image} className={styles.ProfileImage} rounded/>
       <p> Username: {owner}</p>
       <p> Reviews created: {review_counter}</p>
       <p> Likes recived: {profile_like}</p>
@@ -41,7 +42,8 @@ const ProfilePage = (props) => {
       <p> Bio: </p>
       {content ? <>{content}</>:(<p> Bio not created yet....</p>) }
       
-      <img src={image} className={styles.ProfileImage} />
+      
+      
       {is_owner && realOwner}
       </div>
       <hr/>
