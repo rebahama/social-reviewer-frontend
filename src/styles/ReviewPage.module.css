@@ -50,6 +50,11 @@
     padding: 20px;
 }
 
+.SearchBar {
+    margin-top: 3%;
+    display: flex;
+}
+
 @media screen and (max-width: 770px) {
 .ReviewImage{
     min-width: 100%;

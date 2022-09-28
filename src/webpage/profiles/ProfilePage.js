@@ -34,7 +34,7 @@ const ProfilePage = (props) => {
         
         <Col md={12}>
         <div className={styles.Container}>
-        <img src={image} className={styles.ProfileImage} rounded/>
+        <img src={image} className={styles.ProfileImage}/>
       <p> Username: {owner}</p>
       <p> Reviews created: {review_counter}</p>
       <p> Likes recived: {profile_like}</p>
