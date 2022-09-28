@@ -1,47 +1,54 @@
 .ReviewContainer{
-padding: 40px;
-
+    padding: 40px;
 
 }
+
 .ReviewText {
     font-family: "Amatic SC", sans-serif;
     font-size:50px;
     font-weight: bold;
 }
+
 .ReviewImage {
     border-radius: 3%;
     max-height: 700px;
     max-width: 50%;
 }
+
 .ExtraFields {
     font-family: "Amatic SC", sans-serif;
     font-size:35px;
 }
+
 .HeadingFields {
     text-decoration: underline;
 
 }
+
 .ContentText {
    padding: 20px;
    border: 1px solid black;
 
 }
+
 .CreateDateText {
     font-weight: bold;
 }
+
 .LikeThumb{
     color: blue;
+}
+
+.TrashCan i:hover {
+    color: red;
+    cursor: pointer;
+    
 }
 
 @media screen and (max-width: 770px) {
 .ReviewImage{
     min-width: 100%;
     max-height: 330px;
-}
-
-i {
-    cursor: pointer;
-    color: red;
 }
 
 
