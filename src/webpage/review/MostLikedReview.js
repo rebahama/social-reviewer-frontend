@@ -25,11 +25,6 @@ const MostLikedReview = () => {
 
 
 
-  
- 
- 
- 
- 
  
   return (
     <div>{mostLiked.results.map(reviews=>

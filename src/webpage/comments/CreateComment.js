@@ -66,6 +66,8 @@ return (
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
+
+        
       ))}
 
 <Form.Group controlId="rating">
@@ -79,8 +81,6 @@ return (
       <option value={5}>6</option>
     </Form.Control>
   </Form.Group>
-
-      
         
               </Form.Group>
               <Button variant="primary" type="submit">

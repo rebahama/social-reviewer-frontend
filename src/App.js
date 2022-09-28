@@ -13,6 +13,7 @@ import EditReview from './webpage/review/EditReview';
 import ShowAllProfile from './webpage/profiles/ShowAllProfile';
 import PersonalProfilePage from './webpage/profiles/PersonalProfilePage';
 import MyReviews from './webpage/review/MyReviews';
+import CategoryPageShow from './webpage/category/CategoryPageShow';
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
             <Route exact path="/profilepage/" render={() => <ShowAllProfile/>} />
             <Route exact path="/profiles/:id" render={() => <PersonalProfilePage/>} />
             <Route exact path="/myreviews/" render={() => <MyReviews/>} />
+            <Route exact path="/category/:id" render={() => <CategoryPageShow/>} />
           </Switch>
         </div>
   );

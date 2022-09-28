@@ -101,10 +101,11 @@ return (
                      
                      <h3 className={styles.HeadingFields}> <i className="fa-solid fa-euro-sign"></i> Price </h3>
                      <p>{price} </p>
-                     
+                    
                      <h3 className={styles.HeadingFields}> <i className="fa-solid fa-table-columns"></i> Category </h3>
+                     <Link onClick={handleDelete} to={`/reviews/${id}`}>
                      <p>{category_name}</p>
-                     
+                     </Link>
                      {is_owner && realOwner} 
 
 
