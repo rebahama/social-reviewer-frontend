@@ -116,6 +116,7 @@ useEffect(()=>{
   <Form.Group>
     <Form.Label> Title </Form.Label>
     <Form.Control type="text" name="title" placeholder="Enter title" value={title} onChange={handleReview} />
+
   </Form.Group>
   {error?.title?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
@@ -128,6 +129,7 @@ useEffect(()=>{
 <Form.Label> Body content </Form.Label>
 <Form.Control as="textarea" name="content" value={content} onChange={handleReview}></Form.Control>
   </Form.Group>
+ 
 
   {error?.content?.map((message, idx) => (
         <Alert variant="warning" key={idx}>

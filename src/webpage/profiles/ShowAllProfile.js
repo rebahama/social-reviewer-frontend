@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { axiosReq } from '../../api/axios';
 import ProfilePage from './ProfilePage'
+import styles from '../../styles/ProfilePage.module.css'
 
 
 function ShowAllProfile(props) {
     const {id} = props
+    const [loaded, loadedcomplete] = useState(false)
     const [profile, setProfile] = useState({ results: [] });
 
 
@@ -27,7 +29,7 @@ function ShowAllProfile(props) {
     
     return (
         <div>
-            <h1> Profilepage</h1>
+            <h3 className={styles.TopText}> Profiles</h3>
             {profile.results.map((profile) => {
 
               return  <ProfilePage key={profile.id} {...profile}/>
