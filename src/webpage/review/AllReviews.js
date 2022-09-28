@@ -17,7 +17,7 @@ const AllReviews = (props) => {
         const { data } = await axiosReq.get(`/posts/?search=${query}`);
         setReview(data)
         loadedcomplete(true)
-        console.log(review)
+        
       }
       catch (err) {
         console.log(err)

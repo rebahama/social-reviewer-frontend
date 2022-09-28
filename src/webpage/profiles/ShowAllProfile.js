@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { axiosReq } from '../../api/axios';
 import ProfilePage from './ProfilePage'
 import styles from '../../styles/ProfilePage.module.css'
+import SpinnerAsset from '../../components/SpinnerAsset';
 
 
 function ShowAllProfile(props) {
@@ -15,7 +16,7 @@ function ShowAllProfile(props) {
           try {
             const { data } = await axiosReq.get("/profiles/");
             setProfile(data)
-            console.log(profile)
+            loadedcomplete(true)
           }
           catch (err) {
             console.log(err)
@@ -23,6 +24,7 @@ function ShowAllProfile(props) {
           }
     
         }
+        loadedcomplete(false)
         handleData()
     
       }, [id])
@@ -30,13 +32,12 @@ function ShowAllProfile(props) {
     return (
         <div>
             <h3 className={styles.TopText}> Profiles</h3>
-            {profile.results.map((profile) => {
-
-              return  <ProfilePage key={profile.id} {...profile}/>
-
-            })}
+            
+            {loaded ?
+            (<>{profile.results.map((profile) => { return  <ProfilePage key={profile.id} {...profile}/>})} </>)
+            : (<SpinnerAsset/>)}
         </div>
-    )
+  )
 }
 
 export default ShowAllProfile
