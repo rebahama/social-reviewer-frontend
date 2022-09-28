@@ -39,10 +39,15 @@
     color: blue;
 }
 
-.TrashCan i:hover {
-    color: red;
+.TrashCan:hover {
+    color: #40E0D0;
     cursor: pointer;
     
+}
+
+.TrashCan{
+    font-size: 50px;
+    padding: 20px;
 }
 
 @media screen and (max-width: 770px) {

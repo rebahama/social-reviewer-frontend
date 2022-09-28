@@ -80,10 +80,10 @@ const ReviewPage = (props) => {
 
 
 
-
-   const realOwner = <> <Link to={`/reviews/${id}/edit`}> <h3 className={styles.ReviewText}> Edit</h3></Link>
-
-      <i className={`fa-solid fa-trash-can-arrow-up ${styles.TrashCan}`} onClick={handleShow}> </i>
+   
+   const realOwner = <> <Link to={`/reviews/${id}/edit`}><i className={`fa-regular fa-pen-to-square ${styles.TrashCan}`}> </i>  </Link>
+<div> </div>
+      <i className={`fa-solid fa-trash ${styles.TrashCan}`} onClick={handleShow}> </i>
       <Modal show={show} onHide={handleClose}>
          <Modal.Header closeButton>
             <Modal.Title>Deleting review!</Modal.Title>
