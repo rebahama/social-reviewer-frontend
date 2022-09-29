@@ -7,7 +7,7 @@ import { Col, Container, Form, Row } from 'react-bootstrap';
 
 const AllReviews = (props) => {
 
-  const {id} = props
+  const { id } = props
   const [review, setReview] = useState({ results: [] });
   const [loaded, loadedcomplete] = useState(false)
   const [query, setQuery] = useState("")
@@ -18,7 +18,7 @@ const AllReviews = (props) => {
         const { data } = await axiosReq.get(`/posts/?search=${query}`);
         setReview(data)
         loadedcomplete(true)
-        
+
       }
       catch (err) {
         console.log(err)
@@ -27,16 +27,17 @@ const AllReviews = (props) => {
 
     }
     loadedcomplete(false)
-    const time = setTimeout(()=>{
+    const time = setTimeout(() => {
       handleData()
 
 
     }, 1500)
-   
-return ()=>{
-  clearTimeout(time)
-}
-  }, [id,query])
+
+
+    return () => {
+      clearTimeout(time)
+    }
+  }, [id, query])
 
 
 
@@ -45,14 +46,13 @@ return ()=>{
       <Container>
         <Row md={12}>
           <Col>
-      <Form onSubmit={(event)=> event.preventDefault()}>
-    <Form.Control type="text" className={styles.SearchBar} placeholder="Search a review" value={query} onChange={(event)=> setQuery(event.target.value)}/> 
-      </Form>
-      </Col>
-      </Row>
+            <Form onSubmit={(event) => event.preventDefault()}>
+              <Form.Control type="text" className={styles.SearchBar} placeholder="Search a review" value={query} onChange={(event) => setQuery(event.target.value)} />
+            </Form>
+          </Col>
+        </Row>
       </Container>
-      {loaded ?
-        (<>{review.results.map((review) => (<ReviewPage key={review.id} {...review} />))} </>) : (<SpinnerAsset />) }
+      {loaded ? (<> {review.results.map((review) => (<ReviewPage key={review.id} {...review} />))} </>) : (<SpinnerAsset />)}
     </div>
   )
 }
