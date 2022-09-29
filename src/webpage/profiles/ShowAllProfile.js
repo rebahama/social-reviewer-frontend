@@ -25,7 +25,17 @@ function ShowAllProfile(props) {
     
         }
         loadedcomplete(false)
-        handleData()
+        const time = setTimeout(() => {
+          handleData()
+    
+    
+        }, 1000)
+    
+    
+        return () => {
+          clearTimeout(time)
+        }
+        
     
       }, [id])
     
