@@ -22,7 +22,18 @@ const ProfilePage = (props) => {
       }
 
     }
-    handleData()
+    
+    const time = setTimeout(() => {
+      handleData()
+
+
+    }, 1000)
+
+
+    return () => {
+      clearTimeout(time)
+    }
+    
 
   }, [id])
 

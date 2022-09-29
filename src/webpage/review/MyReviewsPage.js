@@ -17,10 +17,11 @@ const MyReviewsPage = (props) => {
             <Card.Img variant="top" src={image} />
             <Card.Body>
               <Card.Text>
-                
-              </Card.Text>
               {is_owner&&realOwner}
+              </Card.Text>
               
+
+              <Link to={`/reviews/${id}`}> View </Link>
             </Card.Body>
             
           </Card>
