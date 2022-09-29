@@ -161,6 +161,7 @@ function CreateReview() {
             <Form.Group>
               <Form.Label>Category</Form.Label>
               <Form.Control as="select" name="category" value={category} onChange={handleReview}>
+                <option className={styles.Hide}> </option>
                 <option value={electronics}>Electronics </option>
                 <option value={clothes}>Clothes</option>
                 <option value={vehicles}>Vehicles</option>

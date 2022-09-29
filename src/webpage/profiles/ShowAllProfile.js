@@ -25,7 +25,7 @@ function ShowAllProfile(props) {
     
         }
         loadedcomplete(false)
-        const time = setTimeout(() => {
+        const time = setInterval(() => {
           handleData()
     
     
@@ -33,7 +33,7 @@ function ShowAllProfile(props) {
     
     
         return () => {
-          clearTimeout(time)
+          clearInterval(time)
         }
         
     

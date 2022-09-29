@@ -20,8 +20,16 @@ useEffect(()=>{
         }
 
     };
-handleData()
-
+    const time = setTimeout(() => {
+        handleData()
+  
+  
+      }, 1500)
+  
+  
+      return () => {
+        clearTimeout(time)
+      }
 
 }, [])
 
@@ -30,9 +38,11 @@ handleData()
     <div>categoryPage
 {category.results.map(category=>
         <Link to={`category/${category.id}`}>
-        <p key={category.id}> {category.title} {category.id}</p>
+        <h3 key={category.id}> {category.title} {category.id}</h3>
         </Link>
+        
         )}
+        
     </div>
   )
 }

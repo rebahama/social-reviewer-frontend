@@ -16,8 +16,8 @@ function HomePage() {
             <h2 className={styles.PopularText}>Most liked reviews</h2>
             <MostLikedReview/>
             <hr/>
+            
             <SlideShow/>    
-            <CategoryPage/>
         </Container>
         
     )

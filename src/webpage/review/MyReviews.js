@@ -28,7 +28,7 @@ function MyReviews() {
         }
         loadedcomplete(false)
         
-        const time = setTimeout(() => {
+        const time = setInterval(() => {
           handleData()
     
     
@@ -36,7 +36,7 @@ function MyReviews() {
     
     
         return () => {
-          clearTimeout(time)
+          clearInterval(time)
         }
     
       }, [id,pathname])

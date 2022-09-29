@@ -23,7 +23,7 @@ const ProfilePage = (props) => {
 
     }
     
-    const time = setTimeout(() => {
+    const time = setInterval(() => {
       handleData()
 
 
@@ -31,7 +31,7 @@ const ProfilePage = (props) => {
 
 
     return () => {
-      clearTimeout(time)
+      clearInterval(time)
     }
     
 
