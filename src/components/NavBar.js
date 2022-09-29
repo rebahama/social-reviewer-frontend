@@ -47,7 +47,6 @@ const NavBar = () => {
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ml-auto text-left">
                     <NavLink to="/"  className={styles.NavLink}> <i className="fas fa-home" > </i>Home</NavLink>
-                    <NavLink to="/category" className={styles.NavLink}><i className="fa-solid fa-arrow-right-to-bracket"></i> Category</NavLink>
                     {currentUser ? loggedIn:loggedOut}
                     <NavLink to="/reviews" className={styles.NavLink}><i className="fa-solid fa-users"> </i> All reviews</NavLink>
                     <NavLink to={"/profilepage"} className={styles.NavLink} onClick={()=>{}}> <i className="fa-solid fa-user"></i>Profiles </NavLink>
