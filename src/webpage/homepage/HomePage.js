@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { axiosReq } from '../../api/axios'
 import { Row, Col, Container} from 'react-bootstrap'
 import styles from '../../styles/HomePage.module.css'
 import SlideShow from '../../components/SlideShow'
@@ -7,6 +8,9 @@ import CategoryPage from '../category/CategoryPage'
 
 
 function HomePage() {
+
+
+
     return (
         <Container fluid>
             <Row>
@@ -16,8 +20,8 @@ function HomePage() {
             <h2 className={styles.PopularText}>Most liked reviews</h2>
             <MostLikedReview/>
             <hr/>
-            
             <SlideShow/>    
+            <CategoryPage/>
         </Container>
         
     )
