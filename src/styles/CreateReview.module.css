@@ -1,10 +1,10 @@
 .Container {
     padding: 30px;
-    resize: none;
+    display: flex;
+    flex-direction: column;
+    
 }
-textarea {
-    resize: none;
-}
+
 .CreateText {
     font-family: "Amatic SC", sans-serif;
     font-size:50px;

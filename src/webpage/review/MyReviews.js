@@ -5,7 +5,7 @@ import { axiosReq } from '../../api/axios'
 import MyReviewsPage from './MyReviewsPage';
 import {useCurrentUser} from '../../context/CurrentUserContext';
 
-function MyReviews(props) {
+function MyReviews() {
     const {pathname}= useLocation()
     const currentuser= useCurrentUser()
     const id = currentuser?.profile_id

@@ -1,9 +1,12 @@
 import React, { useRef } from 'react'
 import { useState } from 'react';
-import { Alert, Button, Container, Form, Col, Row } from 'react-bootstrap';
+import { Alert, Button, Container, Form, Col, Row, Modal } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { axiosReq } from '../../api/axios';
+import creategif from '../../assets/create.gif'
 import styles from '../../styles/CreateReview.module.css'
+
+
 function CreateReview() {
   const [createReview, setCreateReview] = useState({
     title: "",
@@ -17,6 +20,7 @@ function CreateReview() {
   const imageInput = useRef(null)
   const { title, content, image, price, category, pros, cons } = createReview
   const [error, setError] = useState({});
+ 
 
   const [categorySub, setCategory] = useState({
     electronics: 1,
@@ -86,6 +90,7 @@ function CreateReview() {
       <Row md={6}>
         <Col md={6} sm={6} className={`offset-3 ${styles.Container}`}>
           <h3 className={styles.CreateText }> Create a Review</h3>
+          <div className={styles.Container}>
           <Form onSubmit={handleSubmit}>
             <Form.Group>
               <Form.Label> Title </Form.Label>
@@ -170,13 +175,15 @@ function CreateReview() {
                 {message}
               </Alert>
             ))}
-
-
+ 
             <Button variant="primary" type="submit">
               Submit
             </Button>
           </Form>
+          </div>
         </Col>
+        
+        
       </Row>
     </Container>
 
