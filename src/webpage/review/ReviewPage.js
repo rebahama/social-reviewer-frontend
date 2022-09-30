@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styles from '../../styles/ReviewPage.module.css'
-import { Row, Col, Container, Modal, Button } from 'react-bootstrap'
+import { Row, Col, Container, Modal, Button, Alert } from 'react-bootstrap'
 import { axiosRes } from '../../api/axios'
 import { Link, useHistory } from 'react-router-dom'
 
@@ -22,15 +22,16 @@ const ReviewPage = (props) => {
       cons,
       comment_counter,
       like_counter,
-      
+
       setReview,
-      
+
 
 
 
    } = props
 
    const [show, setShow] = useState(false);
+   const [message, setMessage] = useState("");
    const handleClose = () => setShow(false);
    const handleShow = () => setShow(true);
    const history = useHistory();
@@ -71,7 +72,8 @@ const ReviewPage = (props) => {
       try {
          await axiosRes.delete(`/posts/${id}/`);
          history.goBack();
-
+         setMessage("Your review have deleted")
+         alert("Your review have been successfully deleted")
       } catch (err) {
          console.log(err);
       }
@@ -80,9 +82,9 @@ const ReviewPage = (props) => {
 
 
 
-   
+
    const realOwner = <> <Link to={`/reviews/${id}/edit`}><i className={`fa-regular fa-pen-to-square ${styles.TrashCan}`}> </i>  </Link>
-<div> </div>
+      <div> </div>
       <i className={`fa-solid fa-trash ${styles.TrashCan}`} onClick={handleShow}> </i>
       <Modal show={show} onHide={handleClose}>
          <Modal.Header closeButton>
@@ -100,9 +102,15 @@ const ReviewPage = (props) => {
    </>
 
    return (
+      <div>
+         <div className={styles.ReviewContainer}>
+            <Alert variant="success">
+               <p>{message}</p>
 
-      <div className={styles.ReviewContainer}>
-         <Container >
+            </Alert>
+         </div>
+         
+         <Container>
             <Link to={`/reviews/${id}`}>
                <h3 className={styles.ReviewText}> {title}</h3>
             </Link>
