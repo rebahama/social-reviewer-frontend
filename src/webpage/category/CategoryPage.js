@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { Carousel, Col, Container } from 'react-bootstrap';
+import styles from '../../styles/CategoryPage.module.css'
+import { Carousel, Col, Container, Row } from 'react-bootstrap';
 import logo from '../../assets/Logo-social-reviewer.png'
 import { Link } from 'react-router-dom';
 import { axiosReq } from '../../api/axios'
 
 import SpinnerAsset from '../../components/SpinnerAsset';
+import MostLikedReview from '../review/MostLikedReview';
 
 const CategoryPage = () => {
 
@@ -44,10 +46,10 @@ const CategoryPage = () => {
   return (
     <div>
       <Container>
-        <Carousel>
+        <Carousel faded>
 
           <Carousel.Item>
-          <h3>First slide label</h3>
+          <h3 className={styles.CategoryHeading}>Categories</h3>
             <img
               className="d-block w-100"
               src={logo}
@@ -56,10 +58,12 @@ const CategoryPage = () => {
             <Carousel.Caption>
               
               {loaded ? (<> {category.results.map(category =>
-                (<Link to={`category/${category.id}`} key={category.id} > <h3> {category.title} </h3> </Link>))} </>)
+              
+                (<Link to={`category/${category.id}`} key={category.id} className={styles.CategoryChoiches} > <h3 className={styles.CategoryLinks}> {category.title} </h3> </Link>))} </>)
                 : (<SpinnerAsset />)}
+                
             </Carousel.Caption>
-
+            
           </Carousel.Item>
 
 
@@ -71,9 +75,7 @@ const CategoryPage = () => {
               alt="First slide"
             />
             <Carousel.Caption>
-              {loaded ? (<> {category.results.map(category =>
-                (<Link to={`category/${category.id}`} key={category.id} > <h3> {category.title} </h3> </Link>))} </>)
-                : (<SpinnerAsset />)}
+            <MostLikedReview/>
             </Carousel.Caption>
 
           </Carousel.Item>
@@ -82,9 +84,7 @@ const CategoryPage = () => {
       </Container>
 
 
-      {loaded ? (<> {category.results.map(category =>
-        (<Link to={`category/${category.id}`} key={category.id} > <h3> {category.title} </h3> </Link>))} </>)
-        : (<SpinnerAsset />)}
+     
 
 
     </div>

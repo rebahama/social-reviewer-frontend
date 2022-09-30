@@ -1,0 +1,21 @@
+/* style the category links inside carousel*/
+.CategoryLinks{
+    color:#000000;
+    font-size: 60px;
+    padding: 15px;
+    font-weight: bold;
+    font-family: "Amatic SC", sans-serif;
+    cursor: pointer;
+    color: #000000;
+
+}
+
+.CategoryLinks:hover{
+    color: #40E0D0;
+}
+
+.CategoryHeading {
+    font-family: "Amatic SC", sans-serif;
+    font-size:50px;
+    font-weight: bold;
+}

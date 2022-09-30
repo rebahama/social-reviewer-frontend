@@ -18,7 +18,7 @@ function HomePage() {
                 <h1 className={styles.HeroText}> Social Reviewer, the review site for all reviews!</h1>
             </Row>
             <h2 className={styles.PopularText}>Most liked reviews</h2>
-            <MostLikedReview/>
+            
             <hr/>
            
             <CategoryPage/>
