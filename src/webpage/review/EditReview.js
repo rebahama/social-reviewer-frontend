@@ -1,5 +1,6 @@
 import React, { useRef,useEffect } from 'react'
 import { useState } from 'react';
+import styles from '../../styles/EditReviewPage.module.css'
 import { Alert, Button, Container, Form, Col, Row } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
@@ -105,7 +106,13 @@ useEffect(()=>{
 
   }
 
-  
+
+const showBlock = ()=>{
+  let displaying = document.getElementById('display')
+  displaying.style.display='block'
+}
+
+
   return (
    
    
@@ -200,11 +207,13 @@ useEffect(()=>{
           {message}
         </Alert>
       ))}
-<Alert variant="success">
+
+
+<Alert variant="success" id="display" className={styles.HideMessage}>
 {message}
 </Alert>
 
-  <Button variant="primary" type="submit">
+  <Button variant="primary" type="submit" onClick={showBlock}>
     Submit
   </Button>
 </Form>
