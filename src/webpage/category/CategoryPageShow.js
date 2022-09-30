@@ -34,7 +34,7 @@ function CategoryPageShow(props) {
       clearTimeout(time)
     }
 
-  }, [])
+  }, [id])
 
 
   return (

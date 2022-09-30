@@ -3,7 +3,7 @@ import styles from '../../styles/ReviewPage.module.css'
 import { Row, Col, Container, Modal, Button } from 'react-bootstrap'
 import { axiosRes } from '../../api/axios'
 import { Link, useHistory } from 'react-router-dom'
-import Comments from '../comments/Comments'
+
 
 const ReviewPage = (props) => {
 
@@ -22,9 +22,9 @@ const ReviewPage = (props) => {
       cons,
       comment_counter,
       like_counter,
-      update_at,
+      
       setReview,
-      comments
+      
 
 
 

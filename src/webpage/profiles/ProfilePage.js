@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Button, Col, Container, Row } from 'react-bootstrap';
+import {Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { axiosReq } from '../../api/axios';
 import styles from '../../styles/ProfilePage.module.css'
@@ -35,7 +35,7 @@ const ProfilePage = (props) => {
     }
     
 
-  }, [id])
+  }, [id,profile])
 
   return (
 
@@ -45,7 +45,7 @@ const ProfilePage = (props) => {
         
         <Col md={12}>
         <div className={styles.Container}>
-        <img src={image} className={styles.ProfileImage}/>
+        <img src={image} className={styles.ProfileImage} alt={content}/>
       <p> Username: {owner}</p>
       <p> Reviews created: {review_counter}</p>
       <p> Likes recived: {profile_like}</p>

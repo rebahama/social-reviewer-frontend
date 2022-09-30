@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styles from '../../styles/CategoryPage.module.css'
 import reviewGif from '../../assets/review-rating.gif'
-import { Carousel, Col, Container, Row } from 'react-bootstrap';
+import { Carousel, Container,} from 'react-bootstrap';
 import logo from '../../assets/Logo-social-reviewer.png'
 import { Link } from 'react-router-dom';
 import { axiosReq } from '../../api/axios'

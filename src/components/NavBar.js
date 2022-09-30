@@ -1,12 +1,10 @@
-import React, { useContext, useState } from 'react';
+import React, {useState} from 'react';
 import styles from '../styles/NavBar.module.css';
-import Logo from '../assets/Logo-social-reviewer.png';
-import { Container, Navbar, Nav, Form, Button, FormControl, NavDropdown, Modal, } from 'react-bootstrap'
-import { Link, NavLink } from 'react-router-dom';
+import {Navbar, Nav, Button, Modal, } from 'react-bootstrap'
+import {NavLink } from 'react-router-dom';
 import { useCurrentUser, useSetCurrentUser } from '../context/CurrentUserContext';
 import axios from 'axios';
-import { axiosReq } from '../api/axios';
-import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
+
 
 
 const NavBar = () => {
@@ -27,7 +25,6 @@ const NavBar = () => {
 
     }
 
-    const id = useParams()
     const currentUser = useCurrentUser();
     const UserName = <NavLink to="/profilepage" className={styles.NavLink}>  <i className="fa-solid fa-user"> </i> Username: {currentUser?.username} </NavLink>
     

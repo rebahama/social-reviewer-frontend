@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Form, Container, Button, Alert } from 'react-bootstrap'
-import { useParams } from 'react-router-dom/cjs/react-router-dom.min'
 import { useHistory } from 'react-router-dom'
 import { axiosRes } from '../../api/axios'
 
@@ -8,7 +7,7 @@ function CreateComment(props) {
 
 const [error, setError] = useState({});
  
-const { post, setPost, setComments, rating, id } = props;
+const { post, setPost, setComments} = props;
 const [content, setContent] = useState("");
 const history = useHistory()
 const [ratingValue, setRating] = useState("")

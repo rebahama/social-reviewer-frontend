@@ -1,9 +1,8 @@
 import React, { useRef } from 'react'
 import { useState } from 'react';
-import { Alert, Button, Container, Form, Col, Row, Modal } from 'react-bootstrap';
+import { Alert, Button, Container, Form, Col, Row} from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { axiosReq } from '../../api/axios';
-import creategif from '../../assets/create.gif'
 import styles from '../../styles/CreateReview.module.css'
 
 

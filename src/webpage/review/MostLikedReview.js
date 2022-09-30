@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Container, Card, Button } from 'react-bootstrap'
+import { Container} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { axiosReq } from '../../api/axios'
 import styles from '../../styles/MostLikedReview.module.css'
@@ -37,7 +37,7 @@ const MostLikedReview = () => {
               <div className={`${styles.HeroImage}`}>
               <p className={styles.PopularDescribeText}> <i className="fa-regular fa-user"> {reviews.owner} </i>  </p> <i className="fa-solid fa-thumbs-up"> {reviews.like_counter} </i>  
               <Link to={`/reviews/${reviews.id}`}>
-              <img src={reviews.image} className={styles.PopularImage}/>
+              <img src={reviews.image} className={styles.PopularImage} alt={reviews.content}/>
               </Link>
               </div>
               

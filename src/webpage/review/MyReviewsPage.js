@@ -4,7 +4,7 @@ import { Container, Row, Card, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 const MyReviewsPage = (props) => {
-  const { id, owner, title, content, image,is_owner } = props
+  const { id, title, image,is_owner } = props
   const realOwner = <Link to={`/reviews/${id}/edit`}> Edit </Link>
   return (
     <div>

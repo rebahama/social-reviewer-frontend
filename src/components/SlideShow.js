@@ -1,7 +1,7 @@
 import React from 'react'
 import logo from '../assets/Logo-social-reviewer.png'
 import { Row, Col, Container, Carousel } from 'react-bootstrap'
-import AllReviews from '../webpage/review/AllReviews'
+
 function SlideShow() {
     return (
         <Container>
