@@ -24,7 +24,9 @@
     font-family: "Amatic SC", sans-serif;
     font-size:50px;
     font-weight: bold;
+    text-decoration: underline;
 }
 .ContainerCarousel {
+    background-color: #46beffff;
     padding:50px;
 }
