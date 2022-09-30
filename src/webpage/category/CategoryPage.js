@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styles from '../../styles/CategoryPage.module.css'
+import reviewGif from '../../assets/review-rating.gif'
 import { Carousel, Col, Container, Row } from 'react-bootstrap';
 import logo from '../../assets/Logo-social-reviewer.png'
 import { Link } from 'react-router-dom';
@@ -46,47 +47,34 @@ const CategoryPage = () => {
   return (
     <div>
       <Container>
-        <Carousel faded>
-
+        <Carousel>
           <Carousel.Item>
-          <h3 className={styles.CategoryHeading}>Categories</h3>
+            <h3 className={styles.CategoryHeading}>Categories</h3>
             <img
               className="d-block w-100"
               src={logo}
               alt="First slide"
             />
             <Carousel.Caption>
-              
               {loaded ? (<> {category.results.map(category =>
-              
+
                 (<Link to={`category/${category.id}`} key={category.id} className={styles.CategoryChoiches} > <h3 className={styles.CategoryLinks}> {category.title} </h3> </Link>))} </>)
                 : (<SpinnerAsset />)}
-                
             </Carousel.Caption>
-            
           </Carousel.Item>
-
-
-          <Carousel.Item>
-
+          <Carousel.Item className={styles.ContainerCarousel}>
+          <h3 className={styles.PopularText}> Most liked Reviews </h3>
             <img
-              className="d-block w-100"
-              src={logo}
+              className="d-block w-50"
+              src={reviewGif}
               alt="First slide"
             />
             <Carousel.Caption>
-            <MostLikedReview/>
+              <MostLikedReview />
             </Carousel.Caption>
-
           </Carousel.Item>
-
         </Carousel>
       </Container>
-
-
-     
-
-
     </div>
   )
 }

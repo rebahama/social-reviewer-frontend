@@ -19,3 +19,12 @@
     font-size:50px;
     font-weight: bold;
 }
+.PopularText {
+    margin-bottom: 10%;
+    font-family: "Amatic SC", sans-serif;
+    font-size:50px;
+    font-weight: bold;
+}
+.ContainerCarousel {
+    padding:50px;
+}

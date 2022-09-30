@@ -1,10 +1,12 @@
-
 import React, { useEffect, useState } from 'react'
+import { Container, Card, Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import { axiosReq } from '../../api/axios'
+import styles from '../../styles/MostLikedReview.module.css'
 
 const MostLikedReview = () => {
-  const [likedReview, setLikedReview] = useState({mostLiked:{results :[]}})
-  const {mostLiked}=likedReview
+  const [likedReview, setLikedReview] = useState({ mostLiked: { results: [] } })
+  const { mostLiked } = likedReview
 
   useEffect(() => {
     const handleMount = async () => {
@@ -25,12 +27,27 @@ const MostLikedReview = () => {
 
 
 
- 
+
   return (
-    <div>{mostLiked.results.map(reviews=>
-        <p key={reviews.id}> {reviews.owner}</p>
+    <div>
+      <Container>
         
-        )} </div>
+        {mostLiked.results.map(reviews =>
+          <div key={reviews.id}> 
+              <div className={`${styles.HeroImage}`}>
+              <p className={styles.PopularDescribeText}> <i className="fa-regular fa-user"> {reviews.owner} </i>  </p> <i className="fa-solid fa-thumbs-up"> {reviews.like_counter} </i>  
+              <Link to={`/reviews/${reviews.id}`}>
+              <img src={reviews.image} className={styles.PopularImage}/>
+              </Link>
+              </div>
+              
+          </div>
+          
+
+        )}
+      </Container>
+    </div>
+
   )
 }
 
