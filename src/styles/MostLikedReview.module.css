@@ -11,6 +11,10 @@
     padding: 20px;
 }
 
-.PopularDescribeText {
-    color: #000000;
+.PopularDescribeText i {
+    font-size: 15px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    
+    
 }

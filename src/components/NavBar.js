@@ -29,7 +29,7 @@ const NavBar = () => {
 
     const id = useParams()
     const currentUser = useCurrentUser();
-    const UserName = <NavLink to="/profilepage" className={styles.NavLink}> Username: {currentUser?.username} </NavLink>
+    const UserName = <NavLink to="/profilepage" className={styles.NavLink}>  <i className="fa-solid fa-user"> </i> Username: {currentUser?.username} </NavLink>
     
     const emptyUsername =""
     const loggedIn =<>  
@@ -71,9 +71,11 @@ const NavBar = () => {
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ml-auto text-left">
                     <NavLink to="/"  className={styles.NavLink}> <i className="fas fa-home" > </i>Home</NavLink>
+                    
+                    <NavLink to="/reviews" className={styles.NavLink}><i className="fa-solid fa-book-open"> </i> All reviews</NavLink>
+                    <NavLink to={"/profilepage"} className={styles.NavLink} > <i className="fa-solid fa-users"></i>Profiles </NavLink>
+                    
                     {currentUser ? loggedIn:loggedOut}
-                    <NavLink to="/reviews" className={styles.NavLink}><i className="fa-solid fa-users"> </i> All reviews</NavLink>
-                    <NavLink to={"/profilepage"} className={styles.NavLink} onClick={()=>{}}> <i className="fa-solid fa-user"></i>Profiles </NavLink>
                     {currentUser ? UserName:emptyUsername}
                     
                 </Nav>
