@@ -73,6 +73,7 @@ useEffect(()=>{
     }
 
   }
+  const [message, setMessage] = useState("");
 
   const handleSubmit = async (event) =>{
     event.preventDefault()
@@ -90,7 +91,8 @@ useEffect(()=>{
     try {
 
       await axiosReq.put(`/posts/${id}/`, formData)
-      history.push(`/reviews/${id}`);
+      setMessage("sucsess")
+      history.push(`/reviews/${id}/edit`);
 
     }
     catch(err){
@@ -129,7 +131,7 @@ useEffect(()=>{
 <Form.Label> Body content </Form.Label>
 <Form.Control as="textarea" name="content" value={content} onChange={handleReview}></Form.Control>
   </Form.Group>
- 
+ {message}
 
   {error?.content?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
