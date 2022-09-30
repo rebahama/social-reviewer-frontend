@@ -31,7 +31,9 @@ const handleRating = (event) =>{
         ratingValue,
         post,
       });
+      setMessage("Your comment have been created")
       history.go(0)
+      
       setComments((prevComments) => ({
         ...prevComments,
         results: [data, ...prevComments.results],
@@ -64,10 +66,11 @@ return (
                 {error?.content?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
-        </Alert>
-
-        
+        </Alert>        
       ))}
+<Alert variant="warning">
+{message}
+</Alert>
 
 <Form.Group controlId="rating">
     <Form.Label>Rating</Form.Label>
