@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { useState } from 'react';
-import { Alert, Button, Container, Form, Col, Row} from 'react-bootstrap';
-import { useHistory } from 'react-router-dom';
+import { Alert, Button, Container, Form, Col, Row } from 'react-bootstrap';
+import { Link, useHistory } from 'react-router-dom';
 import { axiosReq } from '../../api/axios';
 import styles from '../../styles/CreateReview.module.css'
 
@@ -19,7 +19,7 @@ function CreateReview() {
   const imageInput = useRef(null)
   const { title, content, image, price, category, pros, cons } = createReview
   const [error, setError] = useState({});
- 
+  const [message, setMessage] = useState("");
 
   const [categorySub, setCategory] = useState({
     electronics: 1,
@@ -68,7 +68,9 @@ function CreateReview() {
     try {
 
       const { data } = await axiosReq.post('/posts/', formData)
-      history.push(`/reviews/${data.id}`);
+      setMessage("Your review have been created")
+      history.push(`/createreview`);
+      <Link to={`/reviews/${data.id}`}>Check out your review </Link>
 
     }
     catch (err) {
@@ -88,102 +90,107 @@ function CreateReview() {
     <Container>
       <Row md={6}>
         <Col md={6} sm={6} className={`offset-3 ${styles.Container}`}>
-          <h3 className={styles.CreateText }> Create a Review</h3>
+          <h3 className={styles.CreateText}> Create a Review</h3>
           <div className={styles.Container}>
-          <Form onSubmit={handleSubmit}>
-            <Form.Group>
-              <Form.Label> Title </Form.Label>
-              <Form.Control type="text" name="title" placeholder="Enter title" value={title} onChange={handleReview} />
-            </Form.Group>
-            {error?.title?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
+            <Form onSubmit={handleSubmit}>
+              <Form.Group>
+                <Form.Label> Title </Form.Label>
+                <Form.Control type="text" name="title" placeholder="Enter title" value={title} onChange={handleReview} />
+              </Form.Group>
+              {error?.title?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+              <Form.Group>
+                <Form.Label> Body content </Form.Label>
+                <Form.Control as="textarea" name="content" value={content} onChange={handleReview}></Form.Control>
+              </Form.Group>
+
+              {error?.content?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+
+              <Form.Group>
+                <Form.Label> Pros </Form.Label>
+                <Form.Control as="textarea" name="pros" value={pros} onChange={handleReview}></Form.Control>
+              </Form.Group>
+              {error?.pros?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+
+              <Form.Group>
+                <Form.Label> Cons </Form.Label>
+                <Form.Control as="textarea" name="cons" value={cons} onChange={handleReview}></Form.Control>
+              </Form.Group>
+
+              {error?.cons?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+
+
+
+              <Form.Label> Image upload </Form.Label>
+              <Form.File id="image-upload" onChange={handleImage} ref={imageInput} accept="image/*" />
+
+              {error?.image?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+
+
+              <Form.Group>
+                <Form.Label>Price</Form.Label>
+                <Form.Control type="number" placeholder="Enter price" name="price" value={price} onChange={handleReview} min="0" max="1000000" />
+              </Form.Group>
+
+              {error?.price?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+
+
+
+              <Form.Group>
+                <Form.Label>Category</Form.Label>
+                <Form.Control as="select" name="category" value={category} onChange={handleReview}>
+                  <option className={styles.Hide}> </option>
+                  <option value={electronics}>Electronics </option>
+                  <option value={clothes}>Clothes</option>
+                  <option value={vehicles}>Vehicles</option>
+                  <option value={sports}>Sports</option>
+                  <option value={games}>Games</option>
+                  <option value={other}>Other</option>
+                </Form.Control>
+              </Form.Group>
+
+              {error?.category?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                  
+                </Alert>
+              ))}
+
+              <Button variant="primary" type="submit">
+                Submit
+              </Button>
+              <Alert variant="success">
+               <p>{message}</p>
+                <Link to={`/reviews/`}>Check out your review here </Link>
               </Alert>
-            ))}
-            <Form.Group>
-              <Form.Label> Body content </Form.Label>
-              <Form.Control as="textarea" name="content" value={content} onChange={handleReview}></Form.Control>
-            </Form.Group>
-
-            {error?.content?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-
-            <Form.Group>
-              <Form.Label> Pros </Form.Label>
-              <Form.Control as="textarea" name="pros" value={pros} onChange={handleReview}></Form.Control>
-            </Form.Group>
-            {error?.pros?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-
-            <Form.Group>
-              <Form.Label> Cons </Form.Label>
-              <Form.Control as="textarea" name="cons" value={cons} onChange={handleReview}></Form.Control>
-            </Form.Group>
-
-            {error?.cons?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-
-
-
-            <Form.Label> Image upload </Form.Label>
-            <Form.File id="image-upload" onChange={handleImage} ref={imageInput} accept="image/*" />
-
-            {error?.image?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-
-
-            <Form.Group>
-              <Form.Label>Price</Form.Label>
-              <Form.Control type="number" placeholder="Enter price" name="price" value={price} onChange={handleReview} min="0" max="1000000" />
-            </Form.Group>
-
-            {error?.price?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
-
-
-
-            <Form.Group>
-              <Form.Label>Category</Form.Label>
-              <Form.Control as="select" name="category" value={category} onChange={handleReview}>
-                <option className={styles.Hide}> </option>
-                <option value={electronics}>Electronics </option>
-                <option value={clothes}>Clothes</option>
-                <option value={vehicles}>Vehicles</option>
-                <option value={sports}>Sports</option>
-                <option value={games}>Games</option>
-                <option value={other}>Other</option>
-              </Form.Control>
-            </Form.Group>
-
-            {error?.category?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
- 
-            <Button variant="primary" type="submit">
-              Submit
-            </Button>
-          </Form>
+            </Form>
           </div>
         </Col>
-        
-        
+
+
       </Row>
     </Container>
 

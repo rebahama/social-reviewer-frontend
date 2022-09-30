@@ -91,7 +91,7 @@ useEffect(()=>{
     try {
 
       await axiosReq.put(`/posts/${id}/`, formData)
-      setMessage("sucsess")
+      setMessage("Your information have been updated")
       history.push(`/reviews/${id}/edit`);
 
     }
@@ -131,7 +131,7 @@ useEffect(()=>{
 <Form.Label> Body content </Form.Label>
 <Form.Control as="textarea" name="content" value={content} onChange={handleReview}></Form.Control>
   </Form.Group>
- {message}
+ 
 
   {error?.content?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
@@ -159,8 +159,6 @@ useEffect(()=>{
           {message}
         </Alert>
       ))}
-
-
 
 <Form.Label> Image upload </Form.Label>
 <Form.File id="image-upload" onChange={handleImage} ref={imageInput} accept="image/*"/>
@@ -202,7 +200,9 @@ useEffect(()=>{
           {message}
         </Alert>
       ))}
-
+<Alert variant="success">
+{message}
+</Alert>
 
   <Button variant="primary" type="submit">
     Submit
