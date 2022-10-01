@@ -42,7 +42,6 @@ function ShowAllProfile(props) {
     return (
         <div>
             <h3 className={styles.TopText}> Profiles</h3>
-            
             {loaded ?
             (<>{profile.results.map((profile) => { return  <ProfilePage key={profile.id} {...profile}/>})} </>)
             : (<SpinnerAsset/>)}

@@ -8,6 +8,7 @@ import { axiosReq } from '../../api/axios'
 
 import SpinnerAsset from '../../components/SpinnerAsset';
 import MostLikedReview from '../review/MostLikedReview';
+import MostCommentedReview from '../review/MostCommentedReview';
 
 const CategoryPage = () => {
 
@@ -73,6 +74,12 @@ const CategoryPage = () => {
               <MostLikedReview />
             </Carousel.Caption>
           </Carousel.Item>
+          
+          <Carousel.Item>
+          <MostCommentedReview/>
+          </Carousel.Item>
+          
+          
         </Carousel>
       </Container>
     </div>

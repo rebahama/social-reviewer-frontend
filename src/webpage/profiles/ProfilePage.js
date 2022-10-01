@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { axiosReq } from '../../api/axios';
 import styles from '../../styles/ProfilePage.module.css'
@@ -22,7 +22,7 @@ const ProfilePage = (props) => {
       }
 
     }
-    
+
     const time = setInterval(() => {
       handleData()
 
@@ -33,34 +33,28 @@ const ProfilePage = (props) => {
     return () => {
       clearInterval(time)
     }
-    
 
-  }, [id,profile])
+
+  }, [id, profile])
 
   return (
 
     <Container>
-     
       <Row>
-        
         <Col md={12}>
-        <div className={styles.Container}>
-        <img src={image} className={styles.ProfileImage} alt={content}/>
-      <p> Username: {owner}</p>
-      <p> Reviews created: {review_counter}</p>
-      <p> Likes recived: {profile_like}</p>
-      {name ? <>{name}</>:(<p> name not created yet....</p>) }
-      <p> Bio: </p>
-      {content ? <>{content}</>:(<p> Bio not created yet....</p>) }
-      
-      
-      
-      {is_owner && realOwner}
-      </div>
-      <hr/>
-      </Col>
-</Row>
-
+          <div className={styles.Container}>
+            <img src={image} className={styles.ProfileImage} alt={content} />
+            <p> Username: {owner}</p>
+            <p> Reviews created: {review_counter}</p>
+            <p> Likes recived: {profile_like}</p>
+            {name ? <>{name}</> : (<p> name not created yet....</p>)}
+            <p> Bio: </p>
+            {content ? <>{content}</> : (<p> Bio not created yet....</p>)}
+            {is_owner && realOwner}
+          </div>
+          <hr />
+        </Col>
+      </Row>
     </Container>
   )
 }
