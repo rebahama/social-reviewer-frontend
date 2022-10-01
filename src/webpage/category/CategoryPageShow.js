@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min'
 import { axiosReq } from '../../api/axios'
+import SpinnerAsset from '../../components/SpinnerAsset'
+import ReviewPage from '../review/ReviewPage'
 
 function CategoryPageShow(props) {
-
+  const {title}=props
+  const [loaded, loadedcomplete] = useState(false)
   const [category, setCategory] = useState({ results: [] })
   
   const { id } = useParams()
@@ -15,6 +18,7 @@ function CategoryPageShow(props) {
         const { data } = await axiosReq.get(`/posts/?owner__profile=&category=${id}`)
         setCategory(data)
         console.log(data)
+        loadedcomplete(true)
 
       }
       catch (err) {
@@ -24,6 +28,7 @@ function CategoryPageShow(props) {
 
 
     }
+    loadedcomplete(false)
     const time = setTimeout(() => {
       handleData()
 
@@ -38,12 +43,9 @@ function CategoryPageShow(props) {
 
 
   return (
-    <div>CategoryPageShow
-      {category.results.map(post =>
-
-        <p key={post.id}> {post.title} {post.id}</p>
-
-      )}
+    <div> {category.title}
+      {loaded ? (<> {category.results.map((review) => (<ReviewPage key={review.id} {...review} />))} </>) : (<SpinnerAsset />)}
+      
 
 
     </div>
