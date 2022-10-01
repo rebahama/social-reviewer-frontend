@@ -1,5 +1,5 @@
-import React from 'react'
-import { Button } from 'react-bootstrap'
+import React, { useState } from 'react'
+import { Button, Modal } from 'react-bootstrap'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 import { axiosRes } from '../../api/axios'
 
@@ -13,6 +13,7 @@ const handleCommentDelete = async ()=>{
   try{
       await axiosRes.delete(`comments/${id}`)
       history.go(0)
+      alert("Your comment have been deleted")
   }
   catch(err)
   {
@@ -32,7 +33,31 @@ setPost((prevPost) => ({
         results: prevComments.results.filter((comment) => comment.id !== id),
       }));
 }
-const realowner= <> <Button variant="primary" type="submit" onClick={handleCommentDelete}> Delete </Button></>
+
+const [show, setShow] = useState(false);
+const handleClose = () => setShow(false);
+const handleShow = () => setShow(true);
+const realowner= <> <Button variant="primary" type="submit" onClick={handleShow}> Delete </Button>
+
+      <Modal show={show} onHide={handleClose}>
+         <Modal.Header closeButton>
+            <Modal.Title>Deleting review!</Modal.Title>
+         </Modal.Header>
+         <Modal.Body>Warning you are about to delete this comment </Modal.Body>
+         <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+               Close
+            </Button>
+            <Button variant="danger" type="submit" onClick={handleCommentDelete}> Delete </Button>
+
+         </Modal.Footer>
+      </Modal>
+
+
+
+</>
+
+
 return (
     <div>
        <p> profile id : {profile_id} </p> 

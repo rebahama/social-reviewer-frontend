@@ -84,7 +84,7 @@ const ReviewPage = (props) => {
 
 
    const realOwner = <> <Link to={`/reviews/${id}/edit`}><i className={`fa-regular fa-pen-to-square ${styles.TrashCan}`}> </i>  </Link>
-      <div> </div>
+      
       <i className={`fa-solid fa-trash ${styles.TrashCan}`} onClick={handleShow}> </i>
       <Modal show={show} onHide={handleClose}>
          <Modal.Header closeButton>
@@ -103,14 +103,12 @@ const ReviewPage = (props) => {
 
    return (
       <div>
-         <div className={styles.ReviewContainer}>
-            <Alert variant="success">
+                  
+         <Container>
+         <Alert variant="success" id="Displaying" className={styles.DisplayHide}>
                <p>{message}</p>
 
             </Alert>
-         </div>
-         
-         <Container>
             <Link to={`/reviews/${id}`}>
                <h3 className={styles.ReviewText}> {title}</h3>
             </Link>

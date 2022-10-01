@@ -55,6 +55,11 @@
     display: flex;
 }
 
+.DisplayHide {
+    display: none;
+}
+    
+
 @media screen and (max-width: 770px) {
 .ReviewImage{
     min-width: 100%;

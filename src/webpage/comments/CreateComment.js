@@ -31,7 +31,7 @@ const handleRating = (event) =>{
         ratingValue,
         post,
       });
-      setMessage("Your comment have been created")
+      
       history.go(0)
       
       setComments((prevComments) => ({
@@ -68,9 +68,7 @@ return (
           {message}
         </Alert>        
       ))}
-<Alert variant="warning">
-{message}
-</Alert>
+
 
 <Form.Group controlId="rating">
     <Form.Label>Rating</Form.Label>
