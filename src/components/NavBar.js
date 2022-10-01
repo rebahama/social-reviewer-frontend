@@ -24,9 +24,10 @@ const NavBar = () => {
         }
 
     }
+    
 
     const currentUser = useCurrentUser();
-    const UserName = <NavLink to="/profilepage" className={styles.NavLink}>  <i className="fa-solid fa-user"> </i> Username: {currentUser?.username} </NavLink>
+    const UserName = <NavLink to={`/profiles/${currentUser?.profile_id}`} className={styles.NavLink}>  <i className="fa-solid fa-user"> </i> Username: {currentUser?.username} </NavLink>
     
     const emptyUsername =""
     const loggedIn =<>  
