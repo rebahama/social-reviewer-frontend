@@ -49,7 +49,7 @@ const CategoryPage = () => {
       <Container>
         <Carousel>
           <Carousel.Item>
-            <h3 className={styles.CategoryHeading}>Categories</h3>
+       
             <img
               className="d-block w-100"
               src={logo}

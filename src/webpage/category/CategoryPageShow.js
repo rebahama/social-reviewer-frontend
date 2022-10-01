@@ -5,7 +5,7 @@ import SpinnerAsset from '../../components/SpinnerAsset'
 import ReviewPage from '../review/ReviewPage'
 
 function CategoryPageShow(props) {
-  const {title}=props
+  const {owner}=props
   const [loaded, loadedcomplete] = useState(false)
   const [category, setCategory] = useState({ results: [] })
   
@@ -43,8 +43,10 @@ function CategoryPageShow(props) {
 
 
   return (
-    <div> {category.title}
-      {loaded ? (<> {category.results.map((review) => (<ReviewPage key={review.id} {...review} />))} </>) : (<SpinnerAsset />)}
+    <div> 
+      {loaded ? (<> 
+      
+      {category.results.map((review) => ( <ReviewPage key={review.id} {...review} />))} </>) : (<SpinnerAsset />)}
       
 
 
