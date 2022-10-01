@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import styles from '../../styles/CategoryPage.module.css'
 import reviewGif from '../../assets/review-rating.gif'
-import { Carousel, Container,} from 'react-bootstrap';
+import commentGif  from '../../assets/comment.gif'
+import { Carousel, Container, } from 'react-bootstrap';
 import logo from '../../assets/Logo-social-reviewer.png'
 import { Link } from 'react-router-dom';
 import { axiosReq } from '../../api/axios'
@@ -50,7 +51,7 @@ const CategoryPage = () => {
       <Container>
         <Carousel>
           <Carousel.Item>
-       
+
             <img
               className="d-block w-100"
               src={logo}
@@ -64,7 +65,7 @@ const CategoryPage = () => {
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item className={styles.ContainerCarousel}>
-          <h3 className={styles.PopularText}> Most liked Reviews </h3>
+            <h3 className={styles.PopularText}> Most liked Reviews </h3>
             <img
               className="d-block w-50"
               src={reviewGif}
@@ -74,12 +75,18 @@ const CategoryPage = () => {
               <MostLikedReview />
             </Carousel.Caption>
           </Carousel.Item>
-          
-          <Carousel.Item>
-          <MostCommentedReview/>
+
+          <Carousel.Item className={styles.ContainerCarouselThird}>
+            <h3 className={styles.PopularText}> Most Commented Reviews </h3>
+            <img
+              className="d-block w-50"
+              src={commentGif}
+              alt="First slide"
+            />
+            <Carousel.Caption>
+              <MostCommentedReview />
+            </Carousel.Caption>
           </Carousel.Item>
-          
-          
         </Carousel>
       </Container>
     </div>
