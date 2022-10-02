@@ -11,8 +11,8 @@ const MyReviewsPage = (props) => {
       <Container>
         <Row>
         <Col md={6} className={`offset-3`}>
-        
-          <Card md={12} sm={6}>
+        <h3 className={styles.CreateText}> My reviews</h3>
+          <Card md={12} sm={6} className={styles.CardStyling}>
             <Card.Title>{title}</Card.Title>
             <Card.Img variant="top" src={image} />
             <Card.Body>

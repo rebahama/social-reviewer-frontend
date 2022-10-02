@@ -4,3 +4,12 @@
     flex-direction: column;
     margin: auto;
 }
+.CardStyling {
+    margin-top: 8%;
+}
+
+.CreateText {
+    font-family: "Amatic SC", sans-serif;
+    font-size:50px;
+    font-weight: bold;
+}

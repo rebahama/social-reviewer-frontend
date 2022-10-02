@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+# Social reviewer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+According to our research many review site lacks the social media feeling, also another problem is that on many review sites only focus on a specific subject category.
+Social reviewer makes reviewing more fun and interacts the user with the reviewer in a fun way and the important part is that in the category you can choose to review everything from electronics to cars. Users can create account, create reviews, comment, upvote, see the most popular and most commented reviews. Users can also see all the profiles that are listed on the site. The target group here is anyone that would like all the reviews from diffrent categories to be on the same webpage in a fun way.
 
-## Available Scripts
+# Website link
 
-In the project directory, you can run:
+* [Social reviewer website](https://social-reviewer-frontend.herokuapp.com)
 
-### `npm start`
+# User stories
+* As a user I would like to view a public page where all the reviews are displayed on one page so I can see everything on one page.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* As a user I would like to be able to delete/edit my comments, and delete my likes if I changed my mind.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+* As a user I would like to be able to se how long a comment and a review was created so i know how relevant the review is.
 
-### `npm test`
+* As a logged in user, I would like to be able to access and list my personal created reviews, so I know which reveiws are mine.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* As a user I would like to be able to create a like and comment on diffrent reviews
 
-### `npm run build`
+* As a user I would like to see how many likes and comments a review has so I Know how popular that review is.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* As a user I would like to be able to search after a profile based on a name or username profile.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* As a user I would like to be able to choose a category for my reviews so that I can on the review what category the reviews belong to.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* As a user I would like to be able to edit/delete a review so that I can have the freedom to edit/delete the review
 
-### `npm run eject`
+* As a user I would like to be able to log out from the account whenever I want to
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+* As a user I would like to know if I am logged in so I don't have to log in every time.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* As a user I would like to be able to sign up and create my own account on the website.
