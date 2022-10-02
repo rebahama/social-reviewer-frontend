@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react'
 import styles from '../../styles/CategoryPage.module.css'
 import reviewGif from '../../assets/review-rating.gif'
 import commentGif  from '../../assets/comment.gif'
-import { Button, Carousel, Container, } from 'react-bootstrap';
+import signupGif from '../../assets/sign-up.gif'
+import { Button, Carousel, Container, NavLink, } from 'react-bootstrap';
 import logo from '../../assets/Logo-social-reviewer.png'
 import { Link } from 'react-router-dom';
 import { axiosReq } from '../../api/axios'
@@ -87,19 +88,19 @@ const CategoryPage = () => {
               <MostCommentedReview />
             </Carousel.Caption>
           </Carousel.Item>
-          <Carousel.Item>
+          <Carousel.Item className={styles.ContainerCarouselFourth}>
             
           <h3 className={styles.PopularText}> Create account or checkout the reviews</h3>
           <img
               className="d-block w-50"
-              src={commentGif}
+              src={signupGif}
               alt="First slide"
             />
 <Carousel.Caption>
-<Button variant="primary"> Reviews</Button>
-<Button variant="primary"> Sign up</Button>
+<Link to="/reviews" className={styles.BtnCarouselFourth}> All reviews</Link>
 
 </Carousel.Caption>
+
 
           </Carousel.Item>
 
