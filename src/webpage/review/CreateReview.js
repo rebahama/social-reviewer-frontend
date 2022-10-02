@@ -69,8 +69,10 @@ function CreateReview() {
 
       const { data } = await axiosReq.post('/posts/', formData)
       setMessage("Your review have been created")
+      
       history.push(`/createreview`);
       <Link to={`/reviews/${data.id}`}>Check out your review </Link>
+      
 
     }
     catch (err) {

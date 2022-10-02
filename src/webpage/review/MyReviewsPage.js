@@ -9,10 +9,10 @@ const MyReviewsPage = (props) => {
   return (
     <div>
       <Container>
-        <Row md={6}>
-        <Col md={6}  className={`offset-4 ${styles.Container}`}>
+        <Row>
+        <Col md={6} className={`offset-3`}>
         
-          <Card style={{ width: '20rem' }}>
+          <Card md={12} sm={6}>
             <Card.Title>{title}</Card.Title>
             <Card.Img variant="top" src={image} />
             <Card.Body>
@@ -25,9 +25,11 @@ const MyReviewsPage = (props) => {
             </Card.Body>
             
           </Card>
-          
+        
+        
         
         </Col>
+        <hr/>
         </Row>
 
 

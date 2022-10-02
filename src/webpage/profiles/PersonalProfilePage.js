@@ -1,11 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { Alert, Container, Form, Button } from 'react-bootstrap'
+import { Alert, Container, Form, Button,Col,Row } from 'react-bootstrap'
 import { useHistory, useParams } from 'react-router-dom/cjs/react-router-dom.min'
 import { axiosReq } from '../../api/axios'
 
 function PersonalProfilePage() {
 
-    
+
     const [profile, SetEditProfile] = useState({
         name: "",
         content: "",
@@ -13,7 +13,7 @@ function PersonalProfilePage() {
     })
     const history = useHistory()
     const imageInput = useRef(null)
-    const {id} = useParams() 
+    const { id } = useParams()
     const { name, content, image } = profile
     const [error, setError] = useState({});
 
@@ -22,7 +22,7 @@ function PersonalProfilePage() {
 
             try {
                 const { data } = await axiosReq.get(`profiles/${id}`)
-                const { name, content, image, is_owner} = data
+                const { name, content, image, is_owner } = data
 
                 is_owner ? SetEditProfile({ name, image, content, is_owner }) : history.push("/")
 
@@ -30,7 +30,7 @@ function PersonalProfilePage() {
             catch (err) {
 
             }
-         handleProfileEdit()
+            handleProfileEdit()
 
         }
 
@@ -86,45 +86,50 @@ function PersonalProfilePage() {
     return (
 
         <Container>
-
-            <Form onSubmit={handleSubmit}>
-                <Form.Group>
-                    <Form.Label> Name </Form.Label>
-                    <Form.Control type="text" name="name" value={name} placeholder="Enter name" onChange={handleProfileEdit} />
-                </Form.Group>
-                {error?.name?.map((message, idx) => (
-                    <Alert variant="warning" key={idx}>
-                        {message}
-                    </Alert>
-                ))}
-
-
-                <Form.Group>
-                    <Form.Label> Bio content </Form.Label>
-                    <Form.Control as="textarea" name="content" placeholder="Biography" value={content} onChange={handleProfileEdit}></Form.Control>
-                </Form.Group>
-
-                {error?.content?.map((message, idx) => (
-                    <Alert variant="warning" key={idx}>
-                        {message}
-                    </Alert>
-                ))}
+            <Row md={6}>
+                <Col md={6} sm={12} className={`offset-3`}>
+                    <h3> My page</h3>
+                <Form onSubmit={handleSubmit}>
+                    <Form.Group>
+                        <Form.Label> Name </Form.Label>
+                        <Form.Control type="text" name="name" value={name} placeholder="Enter name" onChange={handleProfileEdit} />
+                    </Form.Group>
+                    {error?.name?.map((message, idx) => (
+                        <Alert variant="warning" key={idx}>
+                            {message}
+                        </Alert>
+                    ))}
 
 
-                <Form.Label> Image upload </Form.Label>
-                <Form.File id="image-upload" onChange={handleImage} ref={imageInput} accept="image/*" />
+                    <Form.Group>
+                        <Form.Label> Bio content </Form.Label>
+                        <Form.Control as="textarea" name="content" placeholder="Biography" value={content} onChange={handleProfileEdit}></Form.Control>
+                    </Form.Group>
 
-                {error?.image?.map((message, idx) => (
-                    <Alert variant="warning" key={idx}>
-                        {message}
-                    </Alert>
-                ))}
-                <Button variant="primary" type="submit">
-                    Submit
-                </Button>
+                    {error?.content?.map((message, idx) => (
+                        <Alert variant="warning" key={idx}>
+                            {message}
+                        </Alert>
+                    ))}
 
-            </Form>
-        </Container>
+
+                    <Form.Label> Image upload </Form.Label>
+                    <Form.File id="image-upload" onChange={handleImage} ref={imageInput} accept="image/*" />
+
+                    {error?.image?.map((message, idx) => (
+                        <Alert variant="warning" key={idx}>
+                            {message}
+                        </Alert>
+                    ))}
+                    <Button variant="primary" type="submit">
+                        Submit
+                    </Button>
+
+                </Form>
+                </Col>
+            </Row>
+        
+        </Container >
     )
 }
 
