@@ -24,3 +24,12 @@ hr {
     width: 70%;
 
 }
+
+.PresentationText {
+    font-family: "Amatic SC", sans-serif;
+    font-weight: bold;
+    background-color: #acadad;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    color: white;
+}
