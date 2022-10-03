@@ -4,7 +4,7 @@ import SignUp from './webpage/auth/SignUp';
 import SignIn from './webpage/auth/SignIn';
 import HomePage from './webpage/homepage/HomePage';
 import { Route, Switch } from "react-router-dom";
-import Footer from './webpage/homepage/Footer';
+import Footer from './components/Footer'
 import './api/axios';
 import CreateReview from './webpage/review/CreateReview';
 import Reviews from './webpage/homepage/Reviews';
@@ -14,6 +14,7 @@ import ShowAllProfile from './webpage/profiles/ShowAllProfile';
 import PersonalProfilePage from './webpage/profiles/PersonalProfilePage';
 import MyReviews from './webpage/review/MyReviews';
 import CategoryPageShow from './webpage/category/CategoryPageShow';
+
 
 
 function App() {
@@ -34,7 +35,9 @@ function App() {
             <Route exact path="/myreviews/" render={() => <MyReviews/>} />
             <Route exact path="/category/:id" render={() => <CategoryPageShow/>} />
           </Switch>
+          <Footer />
         </div>
+        
   );
 }
 
