@@ -74,3 +74,31 @@ Here the user will be able to edit the profile details such as name,bio and uplo
 This will show up every time a user makes a delete, exampale when deleting a review.
 
 ![Wireframe delete](docs/websitemockups/delete.png)
+
+# Database diagrams
+
+The database is used together with framework Django, the software is called: PostgresSql and it is a relational database. The is 6 diffrent models and all wil be displayed below:
+
+## Category
+
+![Database category](docs/database/database-category.png)
+
+## Comments
+
+![Database comments](docs/database/database-comments.png)
+
+## Likes
+
+![Database likes](docs/database/database-likes.png)
+
+## Post
+
+![Database post](docs/database/database-post.png)
+
+## Profile grades
+
+![Database profile-grades](docs/database/database-profile-grades.png)
+
+## Profile
+
+![Database profile](docs/database/database-profile.png)
