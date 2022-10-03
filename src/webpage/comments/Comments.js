@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
-import { Button, Modal } from 'react-bootstrap'
+import styles from '../../styles/Comments.module.css'
+import { Button, Container, Modal, Row} from 'react-bootstrap'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 import { axiosRes } from '../../api/axios'
 
 
 const Comments = (props) => {
 const history = useHistory();
-const {profile_id, content, rating, owner, post, id, setPost, setComments, is_owner} = props
+const {profile_image, content, rating, owner, created_at, id, setPost, setComments, is_owner} = props
 
 const handleCommentDelete = async ()=>{
 
@@ -59,15 +60,23 @@ const realowner= <> <Button variant="primary" type="submit" onClick={handleShow}
 
 
 return (
-    <div>
-       <p> profile id : {profile_id} </p> 
-        <p> Owner: {owner}</p>
-        <p> Content: {content}</p>
-        <p> Post number id: {post}</p>
+    
+      <Container>
+        <div className={styles.CommentContainer}>
+        <img src={profile_image} className={styles.CommentAvatar}/>
+       <p className={styles.UserNameStyles}> Username: {owner}</p>
+      
+        
+        
+        </div>
+        <div className={` offset-3 ${styles.ContentStyles}`}>
+        <p> {content} </p>
+        </div>
+        <span> {created_at} </span>
         <p> Rating: {rating}</p>
         {is_owner && realowner}
         <hr/>
-    </div>
+    </Container>
   )
 }
 
