@@ -13,7 +13,7 @@ const AllReviews = (props) => {
   const [loaded, loadedcomplete] = useState(false)
   const [query, setQuery] = useState("")
   const [clicked, setClick] = useState(false)
-  
+
   useEffect(() => {
     const handleData = async () => {
       try {
@@ -29,12 +29,12 @@ const AllReviews = (props) => {
 
     }
     loadedcomplete(false)
-    
+
     const time = setInterval(() => {
       handleData()
 
 
-    },1000)
+    }, 1000)
 
 
     return () => {
@@ -43,30 +43,25 @@ const AllReviews = (props) => {
 
   }, [id, query])
 
-const handleSort =()=>{
-  setClick(true)
+  const handleSort = () => {
+    setClick(true)
 
-}
+  }
+
+  const showSearch =
+    <Container>
+      <Row md={12}>
+      <Col>
+        <Form onSubmit={(event) => event.preventDefault()}>
+          <Form.Control type="text" className={styles.SearchBar} placeholder="Search a review" value={query} onChange={(event) => setQuery(event.target.value)} />
+        </Form>
+        </Col>
+      </Row>
+    </Container>
 
   return (
     <div>
-      <Container>
-        <Row md={12}>
-          <Col>
-            <Form onSubmit={(event) => event.preventDefault()}>
-              <Form.Control type="text" className={styles.SearchBar} placeholder="Search a review" value={query} onChange={(event) => setQuery(event.target.value)} />
-            </Form>
-            
-          </Col>
-        </Row>
-      </Container>
-      
-     
-     {clicked ? (<SortByPrice/>):<> <Button onClick={handleSort}> Sort by price </Button> {review.results.map((review) => (<ReviewPage key={review.id} {...review} />))}  <SpinnerAsset/> </> } 
-    
-     
-     
-     
+      {clicked ? (<SortByPrice />) : <> {showSearch}<Button onClick={handleSort}> Sort by price </Button> {review.results.map((review) => (<ReviewPage key={review.id} {...review} />))} <SpinnerAsset /> </>}
     </div>
   )
 }

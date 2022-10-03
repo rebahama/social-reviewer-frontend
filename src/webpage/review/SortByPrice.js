@@ -25,7 +25,7 @@ function SortByPrice() {
   
     return (
     <div>
-        <p> Reviews are sorted by price from highest to lowest </p>
+        <p> Reviews are sorted now by price from highest to lowest </p>
         {sortedReviews.results.map((sort)=>
         {return <ReviewPage key={sort.id} {...sort}/>})}
 
