@@ -35,7 +35,7 @@ function App() {
             <Route exact path="/myreviews/" render={() => <MyReviews/>} />
             <Route exact path="/category/:id" render={() => <CategoryPageShow/>} />
           </Switch>
-          <Footer />
+          
         </div>
         
   );
