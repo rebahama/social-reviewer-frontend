@@ -58,6 +58,12 @@
 .DisplayHide {
     display: none;
 }
+
+.SortBtn{
+
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
     
 
 @media screen and (max-width: 770px) {

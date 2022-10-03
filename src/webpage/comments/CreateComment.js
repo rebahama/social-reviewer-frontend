@@ -11,7 +11,7 @@ const { post, setPost, setComments} = props;
 const [content, setContent] = useState("");
 const history = useHistory()
 const [ratingValue, setRating] = useState("")
-const [message, setMessage] = useState(null)
+
 
 
 const handleComment = (event) => {

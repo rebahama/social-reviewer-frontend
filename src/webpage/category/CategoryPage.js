@@ -3,11 +3,10 @@ import styles from '../../styles/CategoryPage.module.css'
 import reviewGif from '../../assets/review-rating.gif'
 import commentGif  from '../../assets/comment.gif'
 import signupGif from '../../assets/sign-up.gif'
-import { Button, Carousel, Container, NavLink, } from 'react-bootstrap';
+import {Carousel, Container, } from 'react-bootstrap';
 import logo from '../../assets/Logo-social-reviewer.png'
 import { Link } from 'react-router-dom';
 import { axiosReq } from '../../api/axios'
-
 import SpinnerAsset from '../../components/SpinnerAsset';
 import MostLikedReview from '../review/MostLikedReview';
 import MostCommentedReview from '../review/MostCommentedReview';

@@ -4,8 +4,7 @@ import { axiosReq } from '../../api/axios'
 import SpinnerAsset from '../../components/SpinnerAsset'
 import ReviewPage from '../review/ReviewPage'
 
-function CategoryPageShow(props) {
-  const {owner,title}=props
+function CategoryPageShow() {
   const [loaded, loadedcomplete] = useState(false)
   const [category, setCategory] = useState({ results: [] })
   

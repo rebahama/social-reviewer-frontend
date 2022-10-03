@@ -6,6 +6,7 @@ import SpinnerAsset from '../../components/SpinnerAsset'
 import { Col, Container, Form, Row, Button } from 'react-bootstrap';
 import SortByPrice from './SortByPrice';
 
+
 const AllReviews = (props) => {
 
   const { id } = props
@@ -61,7 +62,7 @@ const AllReviews = (props) => {
 
   return (
     <div>
-      {clicked ? (<SortByPrice />) : <> {showSearch}<Button onClick={handleSort}> Sort by price </Button> {review.results.map((review) => (<ReviewPage key={review.id} {...review} />))} <SpinnerAsset /> </>}
+      {clicked ? (<SortByPrice />) : <> {showSearch} <Button onClick={handleSort} className={styles.SortBtn}> Sort by price </Button> {review.results.map((review) => (<ReviewPage key={review.id} {...review} />))} <SpinnerAsset /> </>}
     </div>
   )
 }
