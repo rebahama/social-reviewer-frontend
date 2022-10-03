@@ -33,3 +33,44 @@ Social reviewer makes reviewing more fun and interacts the user with the reviewe
 * As a user I would like to be able to sign up and create my own account on the website.
 
 # Wireframes
+
+## Homepage
+The Homepage will welcome the user with a short text and below the text there will be a carousel with arrows. This carousel will contain, "Most liked reviews", "Most commented reviews" and also it will display a list with categories where the user will be able to click the category list. On the last page in the category there will also be a link that takes the user to show all the reviews that is on tha page. On the top the logo and navbar will always be visable to the user.
+
+![Wireframe homepage](docs/websitemockups/homepage.png)
+
+## All reviews
+This page will display all the reviews that have been created on the website. Inside the cards a image and some text that the user have been asked to input will be displayed. If the user is owner of the post then two symbols one for edit and one for delete will be displayed and clickable. A search bar will also be avalible where the user can search username and title and category to find a review.
+
+![Wireframe allreviews](docs/websitemockups/all-reviews.png)
+
+## My reviews
+ This page will display only the reviews that the user have created, this page will only be available when the user is logged in.
+
+![Wireframe myreviews](docs/websitemockups/my-reviews.png)
+
+## Profiles
+This page will display all the profiles that is created on the webpage, the logged in user will also be displayed with a edit button where the user can change "name" and "bio" content. The created review count will also be displayed here and show how many reviews the user have created.
+
+![Wireframe myreviews](docs/websitemockups/profiles.png)
+
+## Create review
+This page will only show up if the user is logged in. Here the user will be asked to input some information and upload a image, then the user can click submit and the review will be displayed on the diffrent review pages.
+
+![Wireframe createreviews](docs/websitemockups/create-reviews.png)
+
+
+## Edit review
+This page is identical to the "create review" page. Here the user will be able to edit the info that is alredy inputed.
+
+![Wireframe createreviews](docs/websitemockups/edit-review.png)
+
+## Edit Profile
+Here the user will be able to edit the profile details such as name,bio and upload a image for the user avatar.
+
+![Wireframe createreviews](docs/websitemockups/edit-profile.png)
+
+## Are you sure ? page
+This will show up every time a user makes a delete, exampale when deleting a review.
+
+![Wireframe delete](docs/websitemockups/delete.png)
