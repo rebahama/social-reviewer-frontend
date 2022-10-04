@@ -221,5 +221,3 @@ This is the sign in page, if the fields are empty a message will be displayed sa
 This page the user will be able to create an account, a warning field will be displayed if the user creates a username that exist or password not matching.
 
 ![Website sign-up](docs/website/sign-up.png)
-
-
