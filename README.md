@@ -102,3 +102,26 @@ The database is used together with framework Django, the software is called: Pos
 ## Profile
 
 ![Database profile](docs/database/database-profile.png)
+
+# Features and functionality
+
+## Homepage
+User will be welcomed with a short intro text that will encoruage the user to see all the reviews. There is a dynamic navbar that changes based on if the user is logged in or out. Below the intro text there is a carousel with arrow that displays:
+
+![Website homepage](docs/website/homepage.png)
+
+## Categories
+In the first page of the carousel, there is a option of categories to choose from, depending on what the user clicks on the user will be redirected to the reviews that is relevant to the category that is clicked on.
+
+![Website homepage-category](docs/website/homepage-category.png)
+
+## Most Liked
+The second page in the carousel displays a list of diffrent reviews that is sorted from the most liked review to the lowest, the review with the most likes will be displayed at the top of the list.
+
+![Website homepage-mostliked](docs/website/homepage-mostliked.png)
+
+## Most commented
+The third page in the carousel will display a list with diffent reviews that is sorted with the most commented reviews starting from the top down to the lowest. All the small cards can be clicked and will take the user to the relevant review that is clicked on.
+
+
+![Website homepage-mostcommented](docs/website/homepage-mostcommented.png)
