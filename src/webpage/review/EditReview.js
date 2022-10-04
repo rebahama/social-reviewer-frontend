@@ -6,6 +6,7 @@ import { useHistory } from 'react-router-dom';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { axiosReq } from '../../api/axios';
 
+
 function EditReview() {
   const [createReview, setCreateReview] = useState({
     title:"",
@@ -119,7 +120,7 @@ const showBlock = ()=>{
    <Container>
     <h3> Edit </h3>
     <Row md={4}>
-      <Col md={6}>
+      <Col md={6} sm={6} className={`offset-3 ${styles.Container}`}>
 
    <Form onSubmit={handleSubmit}>
   <Form.Group>
