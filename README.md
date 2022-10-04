@@ -105,6 +105,17 @@ The database is used together with framework Django, the software is called: Pos
 
 # Features and functionality
 
+
+## Navbar
+The navbar displays diffrent links depending on if the user is logged in or not.
+
+## Logged in user
+![Website loggedin-navbar](docs/website/navbar-loggedin.png)
+
+## Not logged in user
+![Website notloggedin-navbar](docs/website/navbar-notloggedin.png)
+
+
 ## Homepage
 User will be welcomed with a short intro text that will encoruage the user to see all the reviews. There is a dynamic navbar that changes based on if the user is logged in or out. Below the intro text there is a carousel with arrow that displays:
 
@@ -125,3 +136,90 @@ The third page in the carousel will display a list with diffent reviews that is 
 
 
 ![Website homepage-mostcommented](docs/website/homepage-mostcommented.png)
+
+## Checkout reviews
+This is the fourth and last item in the carousel, here an animation will be displayed and on the bottom there is a link that takes the user to a page where all the reviews on the webpage will be displayed.
+
+![Website homepage-mostcommented](docs/website/homepage-check.png)
+
+## Footer
+Bottom of the page a simple footer with links to social media will be displayed.
+
+![Website homepage-footer](docs/website/homepage-footer.png)
+
+# All reviews
+
+## The reveiw
+Here a review is displayed that have been created on the site, on the side there is a button for edit and one for delete that only displays when the user is the owner of the post and is logged in. On the bottom of the reveiw there is a symbol for like and one for how many comments the review has. The title is clickable and will take you to the deatiled review page.
+
+![Website review](docs/website/allreviews.png)
+
+## Detailed review
+This is the same as "the review" page, but the diffrence is that now you can comment on the post and see all the comments that have been made for this review.
+
+![Website review](docs/website/allreviews.png)
+
+## Comments
+
+On the detailed reivew page, you can comment a review. When you have commented the review will be updated and display the comment. If you are the owner of the comment there will be a button displayed that makes it possible to delete the comment. There is a window for "rating" that is a future function that is not fully functional yet. But the default rating have been set to "3" until that feature is complete. This won´t affect anything apart from it being displayed.
+
+![Website review](docs/website/review-comment.png)
+
+## Delete reivew
+When the user clicks on the trashcan that is displayed on the review card, a modal will be displayed that asks the user if they are sure that they want to delete the review. If the user clicks "delete" the review will be deleted and not exist on the webpage anymore. If "cancel" is clicked then the modal will be closed down.
+
+![Website review-delete](docs/website/delete-review.png)
+
+## Edit review
+When the user clicks on the "pen" symbol the user will be redirected to a edit page where the user can change the prepopulated fileds. When the user have changed the informaton a message will be displayed notifying the user that the info have been changed.
+
+![Website review-edit](docs/website/edit-review.png)
+
+## Search
+The user can use the search box in the "all reivews" page to serach for, categories,usernames and titles. Here the title have been inputed to the search box and the review is showing up.
+
+
+![Website review-edit](docs/website/review-search.png)
+
+## Sort by price
+This button here will sort all the reviews from the highest price to the lowest price.
+
+![Website review-sort](docs/website/review-sort.png)
+
+# Profiles
+This page will display all the profiles that have been created on the webpage.
+The user can see a bio and name on the profiles that have been created on the site. The user also can see how many reviews a profile have created and how many likes a profile have received, the profile like is a future functionality that have not been created yet. If the logged in owner scrolls down to the profile that us current logged in, the owner will be able to edit the profile leading to the "edit profile page"
+
+## Edit profile
+This page the user that is owner of the profile can change the "name" "biography" and upload an image.
+
+![Website review-sort](docs/website/profile-page.png)
+
+# My reviews
+This page only show the reviews that the current logged in user have created. The cards will also display a "edit" and a "view" link that takes the user to the deatiled review page.
+
+![Website my-reviews](docs/website/my-reviews.png)
+
+# Create reivew
+This page is where the user will be able to create a review. If the user lefts some filed that is required blank then a warining page will be displayed. After the user have filled in the fileds a message will be displayed saying that the review have been created.
+
+![Website create-reviews](docs/website/create-review.png)
+
+## Create review message
+
+![Website create-message](docs/website/create-message.png)
+
+# Account
+
+## Sign in
+
+This is the sign in page, if the fields are empty a message will be displayed saying that it needs to be inputed by the user.
+
+![Website sign-in](docs/website/sign-in.png)
+
+## Sign up
+This page the user will be able to create an account, a warning field will be displayed if the user creates a username that exist or password not matching.
+
+![Website sign-up](docs/website/sign-up.png)
+
+
