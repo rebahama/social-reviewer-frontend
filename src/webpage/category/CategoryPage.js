@@ -89,7 +89,7 @@ const CategoryPage = () => {
           </Carousel.Item>
           <Carousel.Item className={styles.ContainerCarouselFourth}>
             
-          <h3 className={styles.PopularText}> Create account or checkout the reviews</h3>
+          <h3 className={styles.PopularText}> Checkout the reviews</h3>
           <img
               className="d-block w-50"
               src={signupGif}
