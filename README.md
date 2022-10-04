@@ -221,3 +221,26 @@ This is the sign in page, if the fields are empty a message will be displayed sa
 This page the user will be able to create an account, a warning field will be displayed if the user creates a username that exist or password not matching.
 
 ![Website sign-up](docs/website/sign-up.png)
+
+
+# Future ideas
+ 
+ * A comment rating system where the user can vote in the comment on how good the review is from 1 to 5. The model and backend for this alredy is completed, the only step is to show it on the frontend.
+
+ * A like system for the profiles, the models and backend for this is alredy created, only the frontend needs to be implemented.
+
+ 
+
+# Technology
+
+* The structure of the webpage was created with HTML5.
+
+* The styling was created with CSS3.
+
+* React Bootstrap version 4.6.0 was used for the styling of this project.
+
+* React version 18.2.0 was used for this project.
+
+* React-router-dom version 5.3.0 is used as navigation and clicking links in the navbar.
+
+* Axios version 0.27.2 is installed to fetch the api endpoint.
