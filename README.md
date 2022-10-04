@@ -229,6 +229,7 @@ This page the user will be able to create an account, a warning field will be di
 
  * A like system for the profiles, the models and backend for this is alredy created, only the frontend needs to be implemented.
 
+* Add infinite scroll to all the page.
  
 
 # Technology
@@ -243,4 +244,52 @@ This page the user will be able to create an account, a warning field will be di
 
 * React-router-dom version 5.3.0 is used as navigation and clicking links in the navbar.
 
-* Axios version 0.27.2 is installed to fetch the api endpoint.
+* Axios version 0.27.2 is installed to fetch the api endpoints.
+
+# Supported screens
+
+this is sa text
+
+# Testing 
+testing can be found here.
+
+# Deployment
+
+* When creating the app use the command: npx create-react-app . --template git+https://github.com/Code-Institute-Org/cra-template-moments.git --use-npm
+
+This will install all the libraries that is required for the project with the right versions.
+
+* In Heroku hompage click on "create app".
+
+* After you have created the app then click on "deploy".
+
+* Click on github as deployment method and connect your github account to your Heroku account.
+
+* Click on deploy branch and your app should start be live after a few minutes.
+
+# Agile development
+Agile can be found here.
+
+
+# Source code
+1. Go to this [repository](https://github.com/rebahama/social-reviewer-frontend)
+
+2. Click on the green button texted "Gitpod"
+
+3. Type npm start to get the server up and running.
+
+
+# Credits
+
+* The symbols on the webpage can be found on Fontawesome [Fontawesome](https://fontawesome.com/).
+
+* Inspiration was taken from Code institute walkthorugh video of "Moments" [Moments](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+RA101+2021_T3/courseware/70a8c55db0504bbdb5bcc3bfcf580080/953cd4e5015f483bb05263db3e740e19/).
+
+* The offical React documentation was used to make good coding practices  [React](https://reactjs.org/docs/getting-started.html).
+
+* The animation from in the webpage was taken from [Lottiefiles](https://lottiefiles.com/).
+
+* The pictures from the page was taken from [Pixabay](https://pixabay.com/sv/).
+
+* Some help and reference was taken from the W3 school site [w3](https://www.w3schools.com/react/default.asp)
+ 
