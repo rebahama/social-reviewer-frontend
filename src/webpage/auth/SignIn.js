@@ -1,21 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import axios from 'axios';
 import { Link, useHistory } from "react-router-dom";
-import { Alert, Button, Container, Form, Col, Row } from 'react-bootstrap'
+import { Alert, Button, Container, Form, Col, Row } from 'react-bootstrap';
 import { useSetCurrentUser } from '../../context/CurrentUserContext';
-import styles from '../../styles/SignIn.module.css'
-import loginGif from '../../assets/login-gif.gif'
+import styles from '../../styles/SignIn.module.css';
+import loginGif from '../../assets/login-gif.gif';
 
 
 const SignIn = () => {
-  const setCurrentUser = useSetCurrentUser()
+  const setCurrentUser = useSetCurrentUser();
   const [SignIn, SetSignIn] = useState({
     username: "",
     password: "",
 
   });
   const { username, password } = SignIn;
-  const [error, setError] = useState({})
+  const [error, setError] = useState({});
   const history = useHistory();
 
 
@@ -29,7 +29,7 @@ const SignIn = () => {
       setError(err.response?.data)
     }
 
-  }
+  };
 
   const handleInput = (event) => {
     SetSignIn({
@@ -40,10 +40,11 @@ const SignIn = () => {
   };
 
   return (
+
     <Container>
-       <h3 className={styles.LogInText}> Sign in </h3>
-       <hr />
-      <div  className={styles.SignInFront}>
+      <h3 className={styles.LogInText}> Sign in </h3>
+      <hr />
+      <div className={styles.SignInFront}>
         <Row md={12}>
           <Col md={6}>
             <Form onSubmit={submitForm}>
@@ -76,12 +77,12 @@ const SignIn = () => {
                 <Alert variant="warning" key={idx}> {message} </Alert>
               )}
             </Form>
-            
           </Col>
-          <img src={loginGif} className={styles.LogInGif}  alt="login in to a page"/>
+          <img src={loginGif} className={styles.LogInGif} alt="login in to a page" />
         </Row>
       </div>
     </Container>
+    
   )
 }
 

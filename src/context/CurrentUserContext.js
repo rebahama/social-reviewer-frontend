@@ -2,11 +2,15 @@ import { createContext, useContext, useEffect, useState, useMemo } from 'react';
 import axios from 'axios';
 import { axiosReq, axiosRes } from "../api/axios";
 import { useHistory } from "react-router";
+
 export const CurrentUserContext = createContext();
 export const SetCurrentUserContext = createContext();
-
 export const useCurrentUser = () => useContext(CurrentUserContext);
 export const useSetCurrentUser = () => useContext(SetCurrentUserContext);
+
+/** Will set the current user that is logged in and will refresh tokens so that
+ * User will not be logged out every 5 minutes. Code is taken from Codeinstitue.
+ */
 
 export const CurrentUserProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null)
