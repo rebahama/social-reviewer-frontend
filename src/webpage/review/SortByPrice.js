@@ -30,6 +30,7 @@ function SortByPrice() {
       {sortedReviews.results.map((sort) => { return <ReviewPage key={sort.id} {...sort} /> })}
     </div>
   )
+
 }
 
 export default SortByPrice
