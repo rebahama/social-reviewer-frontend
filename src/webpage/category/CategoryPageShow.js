@@ -1,15 +1,18 @@
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom/cjs/react-router-dom.min'
-import { axiosReq } from '../../api/axios'
-import SpinnerAsset from '../../components/SpinnerAsset'
-import ReviewPage from '../review/ReviewPage'
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
+import { axiosReq } from '../../api/axios';
+import SpinnerAsset from '../../components/SpinnerAsset';
+import ReviewPage from '../review/ReviewPage';
 
 function CategoryPageShow() {
-  const [loaded, loadedcomplete] = useState(false)
-  const [category, setCategory] = useState({ results: [] })
-  
-  const { id } = useParams()
-  
+  /** Display the category page that is relevant to the id that is clicked
+   * when category page is clicked use the reveiwpage component to put the results
+   * inside that component for rendering the reviews.
+   */
+  const [loaded, loadedcomplete] = useState(false);
+  const [category, setCategory] = useState({ results: [] });
+  const { id } = useParams();
+
   useEffect(() => {
 
     const handleData = async () => {
@@ -27,7 +30,7 @@ function CategoryPageShow() {
 
 
 
-    }
+    };
     loadedcomplete(false)
     const time = setTimeout(() => {
       handleData()
@@ -39,17 +42,14 @@ function CategoryPageShow() {
       clearTimeout(time)
     }
 
-  }, [id])
+  }, [id]);
 
 
   return (
     <div> <h3> category </h3>
-      {loaded ? (<> 
+      {loaded ? (<>
         {category.results.title}
-      {category.results.map((review) => ( <ReviewPage key={review.id} {...review} /> ))} </>) : (<SpinnerAsset />)}
-      
-
-
+        {category.results.map((review) => (<ReviewPage key={review.id} {...review} />))} </>) : (<SpinnerAsset />)}
     </div>
   )
 }

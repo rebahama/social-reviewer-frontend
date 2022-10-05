@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min'
 import { axiosReq } from '../../api/axios';
 import ReviewPage from '../review/ReviewPage';
@@ -32,7 +32,7 @@ function Reviews() {
         }
         handleData()
 
-    }, [id])
+    }, [id]);
 
     return (
         <div>
@@ -41,7 +41,7 @@ function Reviews() {
 
                 return <Comments key={comments.id} {...comments} />
             })}
-            <CreateComment post={id} setReview={setReview} setComment={setComment}/>
+            <CreateComment post={id} setReview={setReview} setComment={setComment} />
         </div>
     )
 }
