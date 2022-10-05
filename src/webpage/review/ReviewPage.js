@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
-import styles from '../../styles/ReviewPage.module.css'
-import { Row, Col, Container, Modal, Button, Alert } from 'react-bootstrap'
-import { axiosRes } from '../../api/axios'
-import { Link, useHistory } from 'react-router-dom'
+import React, { useState } from 'react';
+import styles from '../../styles/ReviewPage.module.css';
+import { Row, Col, Container, Modal, Button, Alert } from 'react-bootstrap';
+import { axiosRes } from '../../api/axios';
+import { Link, useHistory } from 'react-router-dom';
 
 
 const ReviewPage = (props) => {
@@ -22,13 +22,8 @@ const ReviewPage = (props) => {
       cons,
       comment_counter,
       like_counter,
-
       setReview,
-
-
-
-
-   } = props
+   } = props;
 
    const [show, setShow] = useState(false);
    const [message, setMessage] = useState("");
@@ -57,7 +52,6 @@ const ReviewPage = (props) => {
          setReview((prevPosts) => ({
             ...prevPosts,
             results: prevPosts.results.map((post) => {
-
                return post.id === id
                   ? { ...post, likes_count: post.likes_count - 1, like_id: null }
                   : post;
@@ -72,19 +66,15 @@ const ReviewPage = (props) => {
       try {
          await axiosRes.delete(`/posts/${id}/`);
          history.goBack();
-         setMessage("Your review have deleted")
-         alert("Your review have been successfully deleted")
+         setMessage("Your review have deleted");
+         alert("Your review have been successfully deleted");
       } catch (err) {
          console.log(err);
       }
    };
 
+   const realOwner = (<> <Link to={`/reviews/${id}/edit`}><i className={`fa-regular fa-pen-to-square ${styles.TrashCan}`}> </i>  </Link>
 
-
-
-
-   const realOwner = <> <Link to={`/reviews/${id}/edit`}><i className={`fa-regular fa-pen-to-square ${styles.TrashCan}`}> </i>  </Link>
-      
       <i className={`fa-solid fa-trash ${styles.TrashCan}`} onClick={handleShow}> </i>
       <Modal show={show} onHide={handleClose}>
          <Modal.Header closeButton>
@@ -99,15 +89,14 @@ const ReviewPage = (props) => {
                <Button variant="danger"> Delete</Button> </Link>
          </Modal.Footer>
       </Modal>
-   </>
+   </>);
 
    return (
-      <div>
-                  
-         <Container>
-         <Alert variant="success" id="Displaying" className={styles.DisplayHide}>
-               <p>{message}</p>
 
+      <div>
+         <Container>
+            <Alert variant="success" id="Displaying" className={styles.DisplayHide}>
+               <p>{message}</p>
             </Alert>
             <Link to={`/reviews/${id}`}>
                <h3 className={styles.ReviewText}> {title}</h3>
@@ -132,11 +121,9 @@ const ReviewPage = (props) => {
                      <p className={styles.ContentText}> {content} </p>
                      <p className={styles.CreateDateText}>Created {created_at} ago by user : {owner}</p>
                      <div className={styles.LikeCommentContainer}>
-                     <i className={`fa-solid fa-thumbs-up ${styles.LikeThumb}`} onClick={handleLikes}> {like_counter}</i>
-                     
-                     <i className={`fa-solid fa-thumbs-down ${styles.LikeThumb}`} onClick={handleUnlike}></i>
-                     
-                     <Link to={`/reviews/${id}`}> <i className="fa-regular fa-comment-dots"> {comment_counter} </i></Link>
+                        <i className={`fa-solid fa-thumbs-up ${styles.LikeThumb}`} onClick={handleLikes}> {like_counter}</i>
+                        <i className={`fa-solid fa-thumbs-down ${styles.LikeThumb}`} onClick={handleUnlike}></i>
+                        <Link to={`/reviews/${id}`}> <i className="fa-regular fa-comment-dots"> {comment_counter} </i></Link>
                      </div>
                   </Col>
                </Row>
