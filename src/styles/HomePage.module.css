@@ -29,3 +29,13 @@ hr {
     margin-top: 5%;
     color: white;
 }
+
+@media screen and (max-width: 770px) {
+ .HeroText {
+
+    position: absolute;
+    bottom: 80%;
+    width: 100%;
+    
+ }
+}

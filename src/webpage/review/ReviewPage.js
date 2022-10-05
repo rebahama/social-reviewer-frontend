@@ -14,7 +14,6 @@ const ReviewPage = (props) => {
       created_at,
       id,
       image,
-   
       title,
       like_id,
       price,
@@ -25,7 +24,7 @@ const ReviewPage = (props) => {
       like_counter,
       setReview,
    } = props;
-   
+
    const currentUser = useCurrentUser();
    const is_owner = currentUser?.username === owner
    const [show, setShow] = useState(false);
