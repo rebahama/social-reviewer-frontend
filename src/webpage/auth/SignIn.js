@@ -5,6 +5,7 @@ import { Alert, Button, Container, Form, Col, Row } from 'react-bootstrap';
 import { useSetCurrentUser } from '../../context/CurrentUserContext';
 import styles from '../../styles/SignIn.module.css';
 import loginGif from '../../assets/login-gif.gif';
+import { setTokenTimestamp } from '../../utilis/utilis';
 
 
 const SignIn = () => {
@@ -25,6 +26,7 @@ const SignIn = () => {
     try {
       const { data } = await axios.post("/dj-rest-auth/login/", SignIn)
       setCurrentUser(data.user)
+      setTokenTimestamp(data)
       history.push('/')
     } catch (err) {
       setError(err.response?.data)

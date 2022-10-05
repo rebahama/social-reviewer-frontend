@@ -246,6 +246,8 @@ This page the user will be able to create an account, a warning field will be di
 
 * Axios version 0.27.2 is installed to fetch the api endpoints.
 
+* jwt-decode was installed for for decoding the jason web tokens.
+
 # API backend endpoint
 The documentation for the backend can be found here [social-reviewer-backend](https://github.com/rebahama/social-reviewer-backend#readme)
 
