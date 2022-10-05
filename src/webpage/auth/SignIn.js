@@ -8,6 +8,7 @@ import loginGif from '../../assets/login-gif.gif';
 
 
 const SignIn = () => {
+  /** When user signs in  */
   const setCurrentUser = useSetCurrentUser();
   const [SignIn, SetSignIn] = useState({
     username: "",

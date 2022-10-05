@@ -1,9 +1,9 @@
 import axios from 'axios';
-import React, { useState } from 'react'
-import { Alert, Button, Container, Form, Col, Row } from 'react-bootstrap'
+import React, { useState } from 'react';
+import { Alert, Button, Container, Form, Col, Row } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
-import rocketGif from '../../assets/rocket.gif'
-import styles from '../../styles/SignUp.module.css'
+import rocketGif from '../../assets/rocket.gif';
+import styles from '../../styles/SignUp.module.css';
 
 
 const SignUp = () => {
@@ -14,9 +14,9 @@ const SignUp = () => {
 
 
   });
-  const { username, password1, password2 } = signIn
-  const history = useHistory()
-  const [error, setError] = useState({})
+  const { username, password1, password2 } = signIn;
+  const history = useHistory();
+  const [error, setError] = useState({});
 
 
 
@@ -37,11 +37,10 @@ const SignUp = () => {
       setError(err.response?.data)
     }
 
-  }
+  };
 
 
   return (
-
 
     <Container >
       <h3 className={styles.AccountText}> Create an account </h3>
@@ -89,6 +88,7 @@ const SignUp = () => {
         <img src={rocketGif} className={styles.RocketImage} alt="rocket taking off"></img>
       </div>
     </Container>
+
   )
 }
 
