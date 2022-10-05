@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useCurrentUser } from '../../context/CurrentUserContext';
 import styles from '../../styles/ReviewPage.module.css';
 import { Row, Col, Container, Modal, Button, Alert } from 'react-bootstrap';
 import { axiosRes } from '../../api/axios';
@@ -13,7 +14,7 @@ const ReviewPage = (props) => {
       created_at,
       id,
       image,
-      is_owner,
+   
       title,
       like_id,
       price,
@@ -24,7 +25,9 @@ const ReviewPage = (props) => {
       like_counter,
       setReview,
    } = props;
-
+   
+   const currentUser = useCurrentUser();
+   const is_owner = currentUser?.username === owner
    const [show, setShow] = useState(false);
    const [message, setMessage] = useState("");
    const handleClose = () => setShow(false);
