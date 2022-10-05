@@ -1,7 +1,7 @@
-import React, { useState, useRef, useEffect } from 'react'
-import { Alert, Container, Form, Button,Col,Row } from 'react-bootstrap'
-import { useHistory, useParams } from 'react-router-dom/cjs/react-router-dom.min'
-import { axiosReq } from '../../api/axios'
+import React, { useState, useRef, useEffect } from 'react';
+import { Alert, Container, Form, Button, Col, Row } from 'react-bootstrap';
+import { useHistory, useParams } from 'react-router-dom/cjs/react-router-dom.min';
+import { axiosReq } from '../../api/axios';
 
 function PersonalProfilePage() {
 
@@ -10,19 +10,19 @@ function PersonalProfilePage() {
         name: "",
         content: "",
         image: ""
-    })
-    const history = useHistory()
-    const imageInput = useRef(null)
-    const { id } = useParams()
-    const { name, content, image } = profile
+    });
+    const history = useHistory();
+    const imageInput = useRef(null);
+    const { id } = useParams();
+    const { name, content, image } = profile;
     const [error, setError] = useState({});
 
     useEffect(() => {
         const handleProfileEdit = async () => {
 
             try {
-                const { data } = await axiosReq.get(`profiles/${id}`)
-                const { name, content, image, is_owner } = data
+                const { data } = await axiosReq.get(`profiles/${id}`);
+                const { name, content, image, is_owner } = data;
 
                 is_owner ? SetEditProfile({ name, image, content, is_owner }) : history.push("/")
 
@@ -35,7 +35,7 @@ function PersonalProfilePage() {
         }
 
 
-    }, [history, id])
+    }, [history, id]);
 
     const handleProfileEdit = (event) => {
         SetEditProfile({
@@ -52,21 +52,21 @@ function PersonalProfilePage() {
                 ...profile,
                 import: URL.createObjectURL(event.target.files[0])
 
-            })
+            });
 
         }
 
     }
 
     const handleSubmit = async (event) => {
-        event.preventDefault()
+        event.preventDefault();
         const formData = new FormData();
-        formData.append('name', name)
-        formData.append('content', content)
-        formData.append('image', image)
+        formData.append('name', name);
+        formData.append('content', content);
+        formData.append('image', image);
 
         if (imageInput?.current?.files[0])
-            formData.append('image', imageInput.current.files[0])
+            formData.append('image', imageInput.current.files[0]);
 
         try {
             await axiosReq.put(`/profiles/${id}/`, formData);
@@ -80,55 +80,46 @@ function PersonalProfilePage() {
 
     }
 
-
-
-
     return (
 
         <Container>
             <Row md={6}>
                 <Col md={6} sm={12} className={`offset-3`}>
                     <h3> My page</h3>
-                <Form onSubmit={handleSubmit}>
-                    <Form.Group>
-                        <Form.Label> Name </Form.Label>
-                        <Form.Control type="text" name="name" value={name} placeholder="Enter name" onChange={handleProfileEdit} />
-                    </Form.Group>
-                    {error?.name?.map((message, idx) => (
-                        <Alert variant="warning" key={idx}>
-                            {message}
-                        </Alert>
-                    ))}
+                    <Form onSubmit={handleSubmit}>
+                        <Form.Group>
+                            <Form.Label> Name </Form.Label>
+                            <Form.Control type="text" name="name" value={name} placeholder="Enter name" onChange={handleProfileEdit} />
+                        </Form.Group>
+                        {error?.name?.map((message, idx) => (
+                            <Alert variant="warning" key={idx}>
+                                {message}
+                            </Alert>
+                        ))}
+                        <Form.Group>
+                            <Form.Label> Bio content </Form.Label>
+                            <Form.Control as="textarea" name="content" placeholder="Biography" value={content} onChange={handleProfileEdit}></Form.Control>
+                        </Form.Group>
 
+                        {error?.content?.map((message, idx) => (
+                            <Alert variant="warning" key={idx}>
+                                {message}
+                            </Alert>
+                        ))}
+                        <Form.Label> Image upload </Form.Label>
+                        <Form.File id="image-upload" onChange={handleImage} ref={imageInput} accept="image/*" />
 
-                    <Form.Group>
-                        <Form.Label> Bio content </Form.Label>
-                        <Form.Control as="textarea" name="content" placeholder="Biography" value={content} onChange={handleProfileEdit}></Form.Control>
-                    </Form.Group>
-
-                    {error?.content?.map((message, idx) => (
-                        <Alert variant="warning" key={idx}>
-                            {message}
-                        </Alert>
-                    ))}
-
-
-                    <Form.Label> Image upload </Form.Label>
-                    <Form.File id="image-upload" onChange={handleImage} ref={imageInput} accept="image/*" />
-
-                    {error?.image?.map((message, idx) => (
-                        <Alert variant="warning" key={idx}>
-                            {message}
-                        </Alert>
-                    ))}
-                    <Button variant="primary" type="submit">
-                        Submit
-                    </Button>
-
-                </Form>
+                        {error?.image?.map((message, idx) => (
+                            <Alert variant="warning" key={idx}>
+                                {message}
+                            </Alert>
+                        ))}
+                        <Button variant="primary" type="submit">
+                            Submit
+                        </Button>
+                    </Form>
                 </Col>
             </Row>
-        
         </Container >
     )
 }
