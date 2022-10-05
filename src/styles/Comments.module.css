@@ -1,24 +1,30 @@
-.CommentContainer{
-    display: flex;
-    align-items: center;
-    justify-content:space-evenly;
+-Beautified CSS-
+ 
+/* style the container*/
+.CommentContainer {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
 }
-.CommentAvatar{
-    max-width: 9%;
-   
+
+/* style the image*/
+.CommentAvatar {
+	max-width: 9%;
+
 }
 
 .UserNameStyles {
-font-family: "Amatic SC", sans-serif;
-font-weight: bold;
-font-size: 30px;
+	font-family: "Amatic SC", sans-serif;
+	font-weight: bold;
+	font-size: 30px;
 }
-.ContentStyles{
-    padding: 20px;
-    width: 50%;
-    margin-top: 5%;
-    display: flex;
-    border-radius: 10px;
-    background-color:#f6f7f7ff;
-    
+
+.ContentStyles {
+	padding: 20px;
+	width: 50%;
+	margin-top: 5%;
+	display: flex;
+	border-radius: 10px;
+	background-color: #f6f7f7ff;
+
 }

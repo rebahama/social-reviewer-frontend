@@ -1,19 +1,25 @@
+
+-Beautified CSS-
+ 
+/*style the container*/
 .Container {
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    
+	padding: 30px;
+	display: flex;
+	flex-direction: column;
+
 }
+
+/* style the fields*/
 textarea {
-    resize: none;
+	resize: none;
 }
 
 .CreateText {
-    font-family: "Amatic SC", sans-serif;
-    font-size:50px;
-    font-weight: bold;
+	font-family: "Amatic SC", sans-serif;
+	font-size: 50px;
+	font-weight: bold;
 }
 
 .Hide {
-    display: none;
+	display: none;
 }

@@ -1,55 +1,64 @@
 /* style the category links inside carousel*/
-.CategoryLinks{
-    color:#000000;
-    font-size: 60px;
-    padding: 15px;
-    font-weight: bold;
-    font-family: "Amatic SC", sans-serif;
-    cursor: pointer;
-    color: #000000;
+.CategoryLinks {
+	color: #000000;
+	font-size: 60px;
+	padding: 15px;
+	font-weight: bold;
+	font-family: "Amatic SC", sans-serif;
+	cursor: pointer;
+	color: #000000;
 
 }
 
-.CategoryLinks:hover{
-    color: #40E0D0;
+.CategoryLinks:hover {
+	color: #40E0D0;
 }
+
+/* Style headings and text*/
 
 .CategoryHeading {
-    font-family: "Amatic SC", sans-serif;
-    font-size:50px;
-    font-weight: bold;
+	font-family: "Amatic SC", sans-serif;
+	font-size: 50px;
+	font-weight: bold;
 }
+
 .PopularText {
-    margin-bottom: 10%;
-    font-family: "Amatic SC", sans-serif;
-    font-size:50px;
-    font-weight: bold;
-    text-decoration: underline;
+	margin-bottom: 10%;
+	font-family: "Amatic SC", sans-serif;
+	font-size: 50px;
+	font-weight: bold;
+	text-decoration: underline;
 }
+
+/* Style the carousel items*/
 .ContainerCarousel {
-    background-color: #46beffff;
-    padding:50px;
+	background-color: #46beffff;
+	padding: 50px;
 }
-.ContainerCarouselThird{
-    background-color: #ffffff;
-    padding:50px;
+
+.ContainerCarouselThird {
+	background-color: #ffffff;
+	padding: 50px;
 }
+
 .ContainerCarouselFourth {
-    background-color: #3490dc;
-    
+	background-color: #3490dc;
+
 }
-.BtnCarouselFourth{
-    font-weight: bold;
-    border: none;
-    color: #000000;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 30px;
-    font-family: "Amatic SC", sans-serif;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 50%;
-    background-color: #e7e7e7;
+
+/* Style the button inside the fourth item in the carousel*/
+.BtnCarouselFourth {
+	font-weight: bold;
+	border: none;
+	color: #000000;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 30px;
+	font-family: "Amatic SC", sans-serif;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius: 50%;
+	background-color: #e7e7e7;
 }
