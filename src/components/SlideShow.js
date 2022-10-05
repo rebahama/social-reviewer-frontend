@@ -3,13 +3,13 @@ import logo from '../assets/Logo-social-reviewer.png'
 import { Row, Col, Container, Carousel } from 'react-bootstrap'
 
 function SlideShow() {
+    
     return (
         <Container>
             <Row className='justify-content-md-center'>
                 <Col md={8}>
                     <Carousel fade>
                         <Carousel.Item>
-                           
                             <img
                                 className="d-block w-100"
                                 src={logo}
@@ -26,7 +26,6 @@ function SlideShow() {
                                 src={logo}
                                 alt="Second slide"
                             />
-
                             <Carousel.Caption>
                                 <h3>Second slide label</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -38,7 +37,6 @@ function SlideShow() {
                                 src={logo}
                                 alt="Third slide"
                             />
-
                             <Carousel.Caption>
                                 <h3>Third slide label</h3>
                                 <p>
