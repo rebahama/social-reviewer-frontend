@@ -33,7 +33,7 @@ hr {
 @media screen and (max-width: 770px) {
  .HeroText {
 
-    position: absolute;
+    position: relative;
     bottom: 60%;
     width: 100%;
     

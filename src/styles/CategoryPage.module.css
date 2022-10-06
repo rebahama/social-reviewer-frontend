@@ -83,8 +83,8 @@
    @media screen and (max-width: 550px) {
 	
 	.CategoryLinks {
-		
-		font-size: 15px;
+		font-weight: bolder;
+		font-size: 20px;
 		padding: 0px;
 	}
 

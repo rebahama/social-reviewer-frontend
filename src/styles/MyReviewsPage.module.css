@@ -12,3 +12,25 @@
     font-size:50px;
     font-weight: bold;
 }
+.EditandDeleteBtn {
+    
+    font-weight: bold;
+	border: none;
+	color: #000000;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 25px;
+	font-family: "Amatic SC", sans-serif;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius: 50%;
+	background-color: #e7e7e7;
+
+}
+
+.EditandDeleteBtn:hover{
+    color: #40E0D0;
+}
+

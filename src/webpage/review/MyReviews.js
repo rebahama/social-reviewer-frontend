@@ -1,4 +1,5 @@
 import React, { useEffect, useState, } from 'react';
+import styles from '../../styles/MyReviewsPage.module.css';
 import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 import { axiosReq } from '../../api/axios'
 import MyReviewsPage from './MyReviewsPage';
@@ -42,8 +43,8 @@ function MyReviews() {
 
 
   return (
-
-    <div>{loaded ? (<> {Myreview.results.map((review) => { return <MyReviewsPage key={review.id} {...review} /> })} </>) : (<SpinnerAsset />)} </div>
+    
+    <div>{loaded ? (<> <h3 className={styles.CreateText}> My reviews</h3> {Myreview.results.map((review) => { return <MyReviewsPage key={review.id} {...review} /> })} </>) : (<SpinnerAsset />)} </div>
   )
 }
 
