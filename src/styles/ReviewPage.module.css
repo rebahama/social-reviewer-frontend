@@ -64,7 +64,8 @@
 }
 @media screen and (max-width: 770px) {
     .ReviewImage{
-        min-width: 100%;
+        min-width: 80%;
+        margin: auto;
         max-height: 330px;
    }
 }
