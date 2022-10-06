@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { axiosReq } from '../../api/axios';
+import styles from '../../styles/CreateReview.module.css';
 import ReviewPage from './ReviewPage';
 
 function SortByPrice() {
@@ -26,7 +27,7 @@ function SortByPrice() {
   return (
 
     <div>
-      <p> Reviews are sorted now by price from highest to lowest </p>
+      <p className={styles.SortText}> Reviews are sorted now by price from highest to lowest </p>
       {sortedReviews.results.map((sort) => { return <ReviewPage key={sort.id} {...sort} /> })}
     </div>
   )
