@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Alert, Container, Form, Button, Col, Row } from 'react-bootstrap';
+import styles from '../../styles/CreateReview.module.css';
 import { useHistory, useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { axiosReq } from '../../api/axios';
 
@@ -84,8 +85,8 @@ function PersonalProfilePage() {
 
         <Container>
             <Row md={6}>
-                <Col md={6} sm={12} className={`offset-3`}>
-                    <h3> My page</h3>
+                <Col md={6} sm={12} className={`offset-md-3`}>
+                    <h3 className={styles.CreateText}> My page</h3>
                     <Form onSubmit={handleSubmit}>
                         <Form.Group>
                             <Form.Label> Name </Form.Label>

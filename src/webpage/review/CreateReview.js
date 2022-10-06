@@ -89,7 +89,7 @@ function CreateReview() {
 
     <Container>
       <Row md={6}>
-        <Col md={6} sm={6} className={`offset-md-3 ${styles.Container}`}>
+        <Col md={6} sm={6}  className={`offset-md-3 ${styles.Container}`}>
           <h3 className={styles.CreateText}> Create a Review</h3>
           <div className={styles.Container}>
             <Form onSubmit={handleSubmit}>

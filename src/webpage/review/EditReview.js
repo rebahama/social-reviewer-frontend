@@ -119,7 +119,7 @@ function EditReview() {
     <Container>
       <h3> Edit </h3>
       <Row md={4}>
-        <Col md={6} sm={6} className={`offset-3 ${styles.Container}`}>
+        <Col md={6} sm={6} className={`offset-md-3 ${styles.Container}`}>
           <Form onSubmit={handleSubmit}>
             <Form.Group>
               <Form.Label> Title </Form.Label>
