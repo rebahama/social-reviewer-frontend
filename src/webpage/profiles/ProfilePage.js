@@ -10,37 +10,7 @@ const ProfilePage = (props) => {
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner
   const realOwner = (<Link to={`/profiles/${id}`}><h3> Click here to edit profile</h3> </Link>);
-  const [profile, setProfile] = useState({ results: [] });
-
-
-  useEffect(() => {
-    const handleData = async () => {
-      try {
-        const { data } = await axiosReq.get("/profiles/");
-        setProfile(data);
-        console.log(profile);
-      }
-      catch (err) {
-        console.log(err)
-
-      }
-
-    }
-
-    const time = setInterval(() => {
-      handleData()
-
-
-    }, 1000)
-
-
-    return () => {
-      clearInterval(time)
-    }
-
-
-  }, [id, profile]);
-
+  
   return (
 
     <Container>
