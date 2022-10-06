@@ -52,8 +52,8 @@ const CategoryPage = () => {
 
     <div>
       <Container>
-        <Carousel>
-          <Carousel.Item>
+        <Carousel slide={false}>
+          <Carousel.Item className={styles.ContainerCarousel}>
             <img
               className="d-block w-100"
               src={logo}
@@ -67,13 +67,13 @@ const CategoryPage = () => {
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item className={styles.ContainerCarousel}>
-            <h3 className={styles.PopularText}> Most liked Reviews </h3>
+            <h4 className={styles.PopularText}> Top 3 most liked reviews </h4>
             <img
               className="d-block w-50"
               src={reviewGif}
               alt="First slide"
             />
-            <Carousel.Caption>
+            <Carousel.Caption className={styles.ContainerCarouselSecond}>
               <MostLikedReview />
             </Carousel.Caption>
           </Carousel.Item>

@@ -28,7 +28,7 @@ const MostLikedReview = () => {
     
     <div>
       <Container>
-        {mostLiked.results.map(reviews =>
+        {mostLiked.results.slice(0, 3).map(reviews =>
           <div key={reviews.id}>
             <div className={`${styles.HeroImage}`}>
               <p className={styles.PopularDescribeText}> <i className="fa-regular fa-user"> {reviews.owner} </i>  </p> <i className="fa-solid fa-thumbs-up"> {reviews.like_counter} </i>

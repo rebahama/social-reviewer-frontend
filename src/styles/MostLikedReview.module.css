@@ -13,3 +13,19 @@
     letter-spacing: 1px;
     font-weight: bold;
 }
+
+@media screen and (max-width: 990px) {
+	
+    .PopularImage {
+        min-width: 20%;
+    }
+
+}
+
+@media screen and (max-width: 550px) {
+	
+    .PopularImage {
+        min-width: 40%;
+    }
+	
+}
