@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from '../../styles/Comments.module.css';
+import { useCurrentUser } from '../../context/CurrentUserContext';
 import { Button, Container, Modal, Row } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { axiosRes } from '../../api/axios';
@@ -7,7 +8,9 @@ import { axiosRes } from '../../api/axios';
 
 const Comments = (props) => {
   const history = useHistory();
-  const { profile_image, content, rating, owner, created_at, id, setPost, setComments, is_owner } = props;
+  const { profile_image, content, rating, owner, created_at, id, setPost, setComments,} = props;
+  const currentUser = useCurrentUser();
+  const is_owner = currentUser?.username === owner
 
   const handleCommentDelete = async () => {
 

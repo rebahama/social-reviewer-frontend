@@ -5,11 +5,10 @@ import { Container, Row, Card, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const MyReviewsPage = (props) => {
-  const { id, title, image,owner} = props;
+  const { id, title, image, owner} = props;
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner
   const realOwner = (<Link to={`/reviews/${id}/edit`} className={styles.EditandDeleteBtn}> Edit </Link>);
-
 
   return (
     <div>
