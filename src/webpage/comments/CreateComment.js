@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Form, Container, Button, Alert } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { axiosRes } from '../../api/axios';
-import { useCurrentUser} from '../../context/CurrentUserContext';
+import { useCurrentUser } from '../../context/CurrentUserContext';
 
 function CreateComment(props) {
 
@@ -11,7 +11,7 @@ function CreateComment(props) {
   const [content, setContent] = useState("");
   const history = useHistory();
   const [ratingValue, setRating] = useState("");
-  
+
   const handleComment = (event) => {
     setContent(event.target.value);
 
@@ -55,10 +55,10 @@ function CreateComment(props) {
 
 
 
-    
+
   };
 
-  
+
   const currentUser = useCurrentUser()
 
   const is_loggedin = <> <Form onSubmit={handleSubmit}>
@@ -87,11 +87,9 @@ function CreateComment(props) {
     </Button>
   </Form> </>
 
-
-
   return (
-    <Container>      
-      {currentUser ? is_loggedin:"Please Log in to create comment...."}
+    <Container>
+      {currentUser ? is_loggedin : "Please Log in to create comment...."}
     </Container>
 
   )

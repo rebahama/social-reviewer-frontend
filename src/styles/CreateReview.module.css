@@ -14,7 +14,7 @@ textarea {
 	
 }
 
-input[type=text], [type=number], [type=textfield]{
+input[type=text], [type=number], [type=textfield], [type=password]{
 	border-radius: 20px;
 }
 
