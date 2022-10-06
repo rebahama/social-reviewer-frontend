@@ -6,12 +6,16 @@
 	padding: 30px;
 	display: flex;
 	flex-direction: column;
-
 }
 
 /* style the fields*/
 textarea {
 	resize: none;
+	
+}
+
+input[type=text], [type=number], [type=textfield]{
+	border-radius: 20px;
 }
 
 .CreateText {
@@ -21,5 +25,6 @@ textarea {
 }
 
 .Hide {
+
 	display: none;
 }
