@@ -1,7 +1,23 @@
 # Social reviewer
+![Wireframe homepage](docs/website/front-page.png)
 
 According to our research many review site lacks the social media feeling, also another problem is that on many review sites only focus on a specific subject category.
 Social reviewer makes reviewing more fun and interacts the user with the reviewer in a fun way and the important part is that in the category you can choose to review everything from electronics to cars. Users can create account, create reviews, comment, upvote, see the most popular and most commented reviews. Users can also see all the profiles that are listed on the site. The target group here is anyone that would like all the reviews from diffrent categories to be on the same webpage in a fun way.
+
+# Project goals
+The project goals for this project is the following.
+
+* Learn how to connect your frontend project to the backend.
+
+* Learn how to reuse components throughout the page.
+
+* CRUD functionality with React.
+
+* Write clean code.
+
+* Debugging with React.
+
+* Use of network request with the async function.
 
 # Website link
 
@@ -222,6 +238,10 @@ This page the user will be able to create an account, a warning field will be di
 
 ![Website sign-up](docs/website/sign-up.png)
 
+# Reuse of components
+After working with a real project I can now understand why components are effectiv and time saveing in React. I can take an example from my code. If we look at this file here: [Navbarcomponent](https://github.com/rebahama/social-reviewer-frontend/blob/main/src/components/NavBar.js). This file contains alot of code and it is a navbar for a webpage. If I want to display this navbar maybe in another page inside my app I don´t need to write that whole js file again. 
+
+The only thing that I need to do is import and call that component in this format "< NavBar/>" , that line of code will call the whole file that is inside the link and it will display it on that new page. I noticed that when you are working in React and if your writing the same code throughout the page several times, then it´s best to make that code to a component so that you can use that particular code with just one line of code. The code will look cleaner and it´s good for performance.
 
 # Future ideas
  
@@ -230,6 +250,8 @@ This page the user will be able to create an account, a warning field will be di
  * A like system for the profiles, the models and backend for this is alredy created, only the frontend needs to be implemented.
 
 * Add infinite scroll to all the page.
+
+* Add register with email and log in with email.
  
 
 # Technology
@@ -253,7 +275,14 @@ The documentation for the backend can be found here [social-reviewer-backend](ht
 
 # Supported screens
 
-this is sa text
+* Ipad Air/Ipad Mini.
+
+* Iphone 4/6/7/XR/12 and 12 pro.
+
+* Samsung Galaxy S8/S20.
+
+* Nesthub Max.
+
 
 # Testing 
 testing can be found here.
@@ -263,6 +292,8 @@ testing can be found here.
 * When creating the app use the command: npx create-react-app . --template git+https://github.com/Code-Institute-Org/cra-template-moments.git --use-npm
 
 This will install all the libraries that is required for the project with the right versions.
+
+* To install the Heroku prebuild to render onepage application type: "npm install -g serve"
 
 * In Heroku hompage click on "create app".
 
