@@ -15,7 +15,7 @@ const ReviewPage = (props) => {
       id,
       image,
       title,
-      like_id,
+      likes_id,
       price,
       owner,
       pros,
@@ -32,6 +32,7 @@ const ReviewPage = (props) => {
    const handleClose = () => setShow(false);
    const handleShow = () => setShow(true);
    const history = useHistory();
+
    const handleLikes = async () => {
       try {
          const { data } = await axiosRes.post("/likes/", { post: id });
@@ -39,26 +40,28 @@ const ReviewPage = (props) => {
             ...prevPosts,
             results: prevPosts.results.map((post) => {
                return post.id === id
-                  ? { ...post, likes_count: post.likes_count + 1, like_id: data.id }
+                  ? { ...post, like_counter: post.likes_count + 1, likes_id: data.id }
                   : post;
             }),
          }));
       } catch (err) {
          console.log(err);
+         
       }
    };
 
    const handleUnlike = async () => {
       try {
-         await axiosRes.delete(`/likes/${like_id}/`);
+         await axiosRes.delete(`/likes/${likes_id}`);
          setReview((prevPosts) => ({
             ...prevPosts,
             results: prevPosts.results.map((post) => {
                return post.id === id
-                  ? { ...post, likes_count: post.likes_count - 1, like_id: null }
+                  ? { ...post, like_counter: post.like_counter - 1, likes_id: null }
                   : post;
             }),
          }));
+
       } catch (err) {
          console.log(err);
       }
