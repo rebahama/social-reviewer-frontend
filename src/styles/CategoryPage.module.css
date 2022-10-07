@@ -33,6 +33,7 @@
 /* Style the carousel items*/
 .ContainerCarousel {
 	background-color: #46beffff;
+	border-radius: 5%;
 	padding: 50px;
 }
 

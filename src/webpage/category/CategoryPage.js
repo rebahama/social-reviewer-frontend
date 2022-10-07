@@ -52,7 +52,7 @@ const CategoryPage = () => {
 
     <div>
       <Container>
-        <Carousel slide={false}>
+        <Carousel>
           <Carousel.Item className={styles.ContainerCarousel}>
             <img
               className="d-block w-100"
