@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { Alert, Button, Container, Form, Col, Row } from 'react-bootstrap';
-import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import { Link} from 'react-router-dom/cjs/react-router-dom.min';
 import rocketGif from '../../assets/rocket.gif';
 import styles from '../../styles/SignUp.module.css';
 
@@ -15,8 +15,8 @@ const SignUp = () => {
 
   });
   const { username, password1, password2 } = signIn;
-  const history = useHistory();
   const [error, setError] = useState({});
+  const [message, setMessage] = useState("")
 
 
 
@@ -32,7 +32,9 @@ const SignUp = () => {
     event.preventDefault();
     try {
       await axios.post("/dj-rest-auth/registration/", signIn)
-      history.push('/')
+      setMessage(<><p> Congratulations your account have been succsesfully created please click the symbol below to log in to your new account</p>
+      <Link to="/signin"  className={styles.CreateText}><i className="fa-solid fa-arrow-right-to-bracket"></i> </Link> </>)
+      
     } catch (err) {
       setError(err.response?.data)
     }
@@ -83,6 +85,7 @@ const SignUp = () => {
                 <Alert variant="warning" key={idx}> {message} </Alert>
               )}
             </Form>
+            {message}
           </Col>
         </Row>
         <img src={rocketGif} className={styles.RocketImage} alt="rocket taking off"></img>

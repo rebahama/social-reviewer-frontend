@@ -25,6 +25,7 @@ const SignIn = () => {
     event.preventDefault();
     try {
       const { data } = await axios.post("/dj-rest-auth/login/", SignIn)
+      
       setCurrentUser(data.user)
       setTokenTimestamp(data)
       history.push('/')

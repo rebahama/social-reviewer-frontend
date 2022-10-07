@@ -6,7 +6,7 @@
 	font-weight: bold;
 	font-family: "Amatic SC", sans-serif;
 	cursor: pointer;
-	color: #000000;
+	
 
 }
 
@@ -23,6 +23,7 @@
 }
 
 .PopularText {
+	
 	margin-bottom: 0%;
 	font-family: "Amatic SC", sans-serif;
 	font-size: 50px;
