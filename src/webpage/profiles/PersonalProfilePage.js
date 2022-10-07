@@ -31,10 +31,10 @@ function PersonalProfilePage() {
             catch (err) {
 
             }
-            handleProfileEdit()
+           
 
         }
-
+        handleProfileEdit()
 
     }, [history, id]);
 
