@@ -69,12 +69,12 @@ const SignIn = () => {
 
                 )}
 
-                <Link to="/signup">
+                <Link to="/signup" className={styles.SignUp}>
                   Don't have an account? <span>Sign up now!</span>
                 </Link>
               </Form.Group>
               <Button variant="primary" type="submit" >
-                Submit
+                Log in
               </Button>
 
               {error.non_field_errors?.map((message, idx) =>

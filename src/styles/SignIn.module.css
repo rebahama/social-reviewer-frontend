@@ -1,5 +1,5 @@
-.SignInFront{
-    color: white;
+.SignInFront {
+    color: #f4f4f4;
     padding: 80px;
     border-radius: 1%;
     background-color: #6A359C;
@@ -8,6 +8,9 @@
     flex-direction: column-reverse;
     justify-content: space-evenly;
     box-shadow: 0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+.SignUp {
+    color: #f4f4f4;
 }
 .LogInGif{
     max-width: 40%;
