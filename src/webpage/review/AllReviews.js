@@ -8,7 +8,6 @@ import SortByPrice from './SortByPrice';
 
 const AllReviews = (props) => {
 
-  const { id } = props;
   const [review, setReview] = useState({ results: [] });
   const [loaded, loadedcomplete] = useState(false);
   const [query, setQuery] = useState("");
@@ -38,7 +37,7 @@ const AllReviews = (props) => {
       clearInterval(time);
     }
 
-  }, [id, query]);
+  }, [query]);
 
   const handleSort = () => {
     setClick(true);

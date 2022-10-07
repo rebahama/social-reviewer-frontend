@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from '../../styles/Comments.module.css';
 import { useCurrentUser } from '../../context/CurrentUserContext';
-import { Button, Container, Modal, Row } from 'react-bootstrap';
+import { Button, Container, Modal } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { axiosRes } from '../../api/axios';
 
@@ -61,7 +61,7 @@ const Comments = (props) => {
 
     <Container>
       <div className={styles.CommentContainer}>
-        <img src={profile_image} className={styles.CommentAvatar} />
+        <img src={profile_image} className={styles.CommentAvatar} alt={owner} />
         <p className={styles.UserNameStyles}> Username: {owner}</p>
       </div>
       <div className={` offset-3 ${styles.ContentStyles}`}>

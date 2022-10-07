@@ -7,7 +7,7 @@ import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 
 
 function ShowAllProfile(props) {
-  const { id } = props;
+
   const [loaded, loadedcomplete] = useState(false);
   const [profile, setProfile] = useState({ results: [] });
   const { pathname } = useLocation()

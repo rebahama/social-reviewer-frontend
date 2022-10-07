@@ -21,7 +21,7 @@ function CreateReview() {
   const [error, setError] = useState({});
   const [message, setMessage] = useState("");
 
-  const [categorySub, setCategory] = useState({
+  const [categorySub] = useState({
     electronics: 1,
     clothes: 2,
     other: 3,
@@ -81,6 +81,7 @@ function CreateReview() {
         setError(err.response?.data)
 
       }
+    
     }
 
   };

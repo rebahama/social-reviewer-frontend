@@ -52,10 +52,7 @@ function CreateComment(props) {
     } catch (err) {
       setError(err.response?.data)
     }
-
-
-
-
+    
   };
 
 

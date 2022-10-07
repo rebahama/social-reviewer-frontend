@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useCurrentUser } from '../../context/CurrentUserContext';
 import { Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { axiosReq } from '../../api/axios';
 import styles from '../../styles/ProfilePage.module.css'
 
 const ProfilePage = (props) => {

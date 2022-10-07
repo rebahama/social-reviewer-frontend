@@ -22,7 +22,7 @@ function EditReview() {
   const { title, content, image, price, category, pros, cons } = createReview;
   const [error, setError] = useState({});
 
-  const [categorySub, setCategory] = useState({
+  const [categorySub] = useState({
     electronics: 1,
     clothes: 2,
     other: 3,
