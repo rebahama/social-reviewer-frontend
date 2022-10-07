@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import styles from '../../styles/Comments.module.css';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { axiosReq } from '../../api/axios';
 import SpinnerAsset from '../../components/SpinnerAsset';
@@ -48,8 +49,10 @@ function CategoryPageShow() {
   return (
     <div> <h3> category </h3>
       {loaded ? (<>
-        {category.results.title}
+
         {category.results.map((review) => (<ReviewPage key={review.id} {...review} />))} </>) : (<SpinnerAsset />)}
+        
+        {category.results.length ? "":<p className={styles.UserNameStyles }> No reviews have been created yet for this categorypage... </p>}
     </div>
   )
 }

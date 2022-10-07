@@ -4,7 +4,7 @@ import reviewGif from '../../assets/review-rating.gif';
 import commentGif from '../../assets/comment.gif';
 import signupGif from '../../assets/sign-up.gif';
 import { Carousel, Container, } from 'react-bootstrap';
-import logo from '../../assets/Logo-social-reviewer.png'
+import logo from '../../assets/homepage-anim.gif'
 import { Link } from 'react-router-dom';
 import { axiosReq } from '../../api/axios';
 import SpinnerAsset from '../../components/SpinnerAsset';
@@ -55,9 +55,9 @@ const CategoryPage = () => {
         <Carousel>
           <Carousel.Item className={styles.ContainerCarousel}>
             <img
-              className="d-block w-100"
+              className="d-block w-50"
               src={logo}
-              alt="First slide"
+              alt="animaton of two people holding stars"
             />
             <Carousel.Caption>
               {loaded ? (<> {category.results.map(category =>
@@ -78,7 +78,7 @@ const CategoryPage = () => {
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item className={styles.ContainerCarouselThird}>
-            <h3 className={styles.PopularText}> Most Commented Reviews </h3>
+            <h3 className={styles.PopularText}> Top 3 most commented reviews </h3>
             <img
               className="d-block w-50"
               src={commentGif}
@@ -96,6 +96,7 @@ const CategoryPage = () => {
               alt="First slide"
             />
             <Carousel.Caption>
+              
               <Link to="/reviews" className={styles.BtnCarouselFourth}> All reviews</Link>
             </Carousel.Caption>
           </Carousel.Item>

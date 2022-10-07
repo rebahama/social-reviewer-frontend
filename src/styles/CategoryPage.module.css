@@ -1,7 +1,7 @@
 /* style the category links inside carousel*/
 .CategoryLinks {
 	color: #000000;
-	font-size: 60px;
+	font-size: 35px;
 	padding: 15px;
 	font-weight: bold;
 	font-family: "Amatic SC", sans-serif;
@@ -39,11 +39,14 @@
 
 
 .ContainerCarouselThird {
-	background-color: #ffffff;
+	background-color: #4894bdff;
+	border-radius: 5%;
 	padding: 50px;
 }
 
 .ContainerCarouselFourth {
+	padding: 50px;
+	border-radius: 5%;
 	background-color: #3490dc;
 
 }
@@ -85,7 +88,7 @@
 	
 	.CategoryLinks {
 		font-weight: bolder;
-		font-size: 20px;
+		font-size: 15px;
 		padding: 0px;
 	}
 
