@@ -79,7 +79,7 @@ const ReviewPage = (props) => {
    };
 
    const realOwner = (<> <Link to={`/reviews/${id}/edit`}><i className={`fa-regular fa-pen-to-square ${styles.TrashCan}`}> </i>  </Link>
-
+   
       <i className={`fa-solid fa-trash ${styles.TrashCan}`} onClick={handleShow}> </i>
       <Modal show={show} onHide={handleClose}>
          <Modal.Header closeButton>
@@ -119,6 +119,7 @@ const ReviewPage = (props) => {
                      <p>{price} </p>
                      <h3 className={styles.HeadingFields}> <i className="fa-solid fa-table-columns"></i> Category </h3>
                      <p>{category_name}</p>
+                     
                      {is_owner && realOwner}
                   </Col>
                   <Col md={6}>

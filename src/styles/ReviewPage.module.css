@@ -47,6 +47,7 @@
     cursor: pointer;
 }
 .TrashCan{
+    display: block;
     font-size: 50px;
     padding: 20px;
 }

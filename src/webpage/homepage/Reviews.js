@@ -7,7 +7,9 @@ import CreateComment from '../comments/CreateComment';
 
 
 function Reviews() {
-
+/**Fetching both the comments and the reviews and 
+ * displaying the result in a object with array inside.
+ */
     const { id } = useParams();
     const [review, setReview] = useState({ results: [] });
     const [comments, setComment] = useState({ results: [] });
