@@ -50,7 +50,7 @@ function CategoryPageShow() {
     <div> <h3> category </h3>
       {loaded ? (<>
 
-        {category.results.map((review) => (<ReviewPage key={review.id} {...review} />))} </>) : (<SpinnerAsset />)}
+        {category.results.map((review) => (<ReviewPage  key={review.id} {...review} />))} </>) : (<SpinnerAsset />)}
         
         {category.results.length ? "":<p className={styles.UserNameStyles }> No reviews have been created yet for this categorypage... </p>}
     </div>

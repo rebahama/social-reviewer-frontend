@@ -54,6 +54,7 @@ const CategoryPage = () => {
       <Container>
         <Carousel>
           <Carousel.Item className={styles.ContainerCarousel}>
+            
             <img
               className="d-block w-50"
               src={logo}
