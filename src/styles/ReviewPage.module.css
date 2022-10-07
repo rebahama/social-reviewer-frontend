@@ -17,6 +17,7 @@
 }
 .HeadingFields {
     text-decoration: underline;
+    font-weight: bold;
 }
 .ContentText {
     font-family: "Amatic SC", sans-serif;
@@ -38,7 +39,7 @@
 .LikeCommentContainer {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding-right: 20px;
     margin: 20px;
 }

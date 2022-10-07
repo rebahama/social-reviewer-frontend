@@ -126,9 +126,12 @@ const ReviewPage = (props) => {
                      <h3> Description </h3>
                      <p className={styles.ContentText}> {content} </p>
                      <p className={styles.CreateDateText}>Created {created_at} ago by user : {owner}</p>
+                     {like_counter}
                      <div className={styles.LikeCommentContainer}>
-                        <i className={`fa-solid fa-thumbs-up ${styles.LikeThumb}`} onClick={handleLikes}> {like_counter}</i>
-                        <i className={`fa-solid fa-thumbs-down ${styles.LikeThumb}`} onClick={handleUnlike}></i>
+                        
+                        
+                        {likes_id ?<i className={`fa-solid fa-thumbs-down ${styles.LikeThumb}`} onClick={handleUnlike}></i>:<i className={`fa-solid fa-thumbs-up ${styles.LikeThumb}`} onClick={handleLikes}></i>}
+                     
                         <Link to={`/reviews/${id}`}> <i className="fa-regular fa-comment-dots"> {comment_counter} </i></Link>
                      </div>
                   </Col>

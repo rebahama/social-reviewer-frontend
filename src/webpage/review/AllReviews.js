@@ -63,6 +63,7 @@ const AllReviews = (props) => {
       <> {showSearch} <Button onClick={handleSort} className={styles.SortBtn}> Sort by price </Button>
       {loaded ? (<>{review.results.map((review) => (<ReviewPage key={review.id} {...review} />))}</>):
       <SpinnerAsset/>}</>}
+      
     </div>
   )
 }

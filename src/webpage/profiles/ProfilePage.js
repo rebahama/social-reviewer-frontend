@@ -9,7 +9,10 @@ const ProfilePage = (props) => {
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner
   const realOwner = (<Link to={`/profiles/${id}`}><h3> Click here to edit profile</h3> </Link>);
+
+
   
+
   return (
 
     <Container>
