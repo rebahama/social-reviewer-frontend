@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Form, Container, Button, Alert } from 'react-bootstrap';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { axiosRes } from '../../api/axios';
 import { useCurrentUser } from '../../context/CurrentUserContext';
 
@@ -86,7 +86,7 @@ function CreateComment(props) {
 
   return (
     <Container>
-      {currentUser ? is_loggedin : "Please Log in to create comment...."}
+      {currentUser ? is_loggedin : <p> <Link to="/signin"> Log in </Link>to comment....</p>}
     </Container>
 
   )
