@@ -1,3 +1,4 @@
+/*style container and text*/
 .ReviewContainer {
     padding: 40px;
 }
@@ -6,11 +7,13 @@
     font-size:50px;
     font-weight: bold;
 }
+/*style image*/
 .ReviewImage {
     border-radius: 3%;
     max-height: 400px;
     max-width: 50%;
 }
+/*style the fields*/
 .ExtraFields {
     font-family: "Amatic SC", sans-serif;
     font-size:35px;
@@ -19,6 +22,7 @@
     text-decoration: underline;
     font-weight: bold;
 }
+/*style the text*/
 .ContentText {
     font-family: "Amatic SC", sans-serif;
     font-weight: bold;
@@ -30,6 +34,7 @@
 .CreateDateText {
     font-weight: bold;
 }
+/*style symbols*/
 .LikeThumb {
     cursor: pointer;
 }
@@ -52,6 +57,7 @@
     font-size: 50px;
     padding: 20px;
 }
+/*style search bar*/
 .SearchBar {
     margin-top: 3%;
     border-radius: 20px;
@@ -64,6 +70,7 @@
     margin-top: 2%;
     margin-bottom: 2%;
 }
+
 @media screen and (max-width: 770px) {
     .ReviewImage{
         min-width: 80%;

@@ -7,6 +7,7 @@ import { Link, useHistory } from 'react-router-dom';
 
 
 const ReviewPage = (props) => {
+   /**Takes diffret props that comes from the API and destrucures so that you can use the props throughout the function */
 
    const {
       category_name,
@@ -24,13 +25,17 @@ const ReviewPage = (props) => {
       like_counter,
       setReview,
    } = props;
-
+/*currentUser variables makes it possible to know that a user is logged in*/
    const currentUser = useCurrentUser();
    const is_owner = currentUser?.username === owner
+   /*For displaying modal*/
    const [show, setShow] = useState(false);
+   /*Displaying message*/
    const [message, setMessage] = useState("");
+   /*For modal*/
    const handleClose = () => setShow(false);
    const handleShow = () => setShow(true);
+   /*Page redirection*/
    const history = useHistory();
 
    const handleLikes = async () => {
@@ -46,7 +51,7 @@ const ReviewPage = (props) => {
          }));
       } catch (err) {
          console.log(err);
-         
+
       }
    };
 
@@ -78,8 +83,9 @@ const ReviewPage = (props) => {
       }
    };
 
+   /*Show only when the user is the owner of the review*/
    const realOwner = (<> <Link to={`/reviews/${id}/edit`}><i className={`fa-regular fa-pen-to-square ${styles.TrashCan}`}> </i>  </Link>
-   
+
       <i className={`fa-solid fa-trash ${styles.TrashCan}`} onClick={handleShow}> </i>
       <Modal show={show} onHide={handleClose}>
          <Modal.Header closeButton>
@@ -95,9 +101,9 @@ const ReviewPage = (props) => {
          </Modal.Footer>
       </Modal>
    </>);
-
-const likedLoggedIn = (<> {likes_id ?<i className={`fa-solid fa-thumbs-down ${styles.LikeThumb}`} onClick={handleUnlike}></i>:
-<i className={`fa-solid fa-thumbs-up ${styles.LikeThumb}`} onClick={handleLikes}></i>} </>)
+/*Display if user is logged in*/
+   const likedLoggedIn = (<> {likes_id ? <i className={`fa-solid fa-thumbs-down ${styles.LikeThumb}`} onClick={handleUnlike}></i> :
+      <i className={`fa-solid fa-thumbs-up ${styles.LikeThumb}`} onClick={handleLikes}></i>} </>)
 
 
    return (
@@ -123,7 +129,7 @@ const likedLoggedIn = (<> {likes_id ?<i className={`fa-solid fa-thumbs-down ${st
                      <p>{price} </p>
                      <h3 className={styles.HeadingFields}> <i className="fa-solid fa-table-columns"></i> Category </h3>
                      <p>{category_name}</p>
-                     
+
                      {is_owner && realOwner}
                   </Col>
                   <Col md={6}>
@@ -132,10 +138,7 @@ const likedLoggedIn = (<> {likes_id ?<i className={`fa-solid fa-thumbs-down ${st
                      <p className={styles.CreateDateText}>Created {created_at} ago by user : {owner}</p>
                      {like_counter}
                      <div className={styles.LikeCommentContainer}>
-                        
-                     
-                        {currentUser ? likedLoggedIn:<i className={`fa-solid fa-thumbs-up ${styles.LikeThumb}`}></i>}
-                     
+                        {currentUser ? likedLoggedIn : <> <p> <Link to="/signin"> Log in </Link>to like this</p></>}
                         <Link to={`/reviews/${id}`}> <i className="fa-regular fa-comment-dots"> {comment_counter} </i></Link>
                      </div>
                   </Col>
