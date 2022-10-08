@@ -23,7 +23,7 @@
 }
 
 .PopularText {
-	
+	margin: auto;
 	margin-bottom: 0%;
 	font-family: "Amatic SC", sans-serif;
 	font-size: 50px;
@@ -53,7 +53,7 @@
 }
 
 .CategoryContainer {
-	
+	margin: auto;
 	margin-top: 4%;
 }
 
@@ -73,12 +73,29 @@
 	border-radius: 50%;
 	background-color: #e7e7e7;
 }
+/*Style the category list*/
 .CategoryText{
 	font-weight: bold;
 	font-size: 40px;
 	font-family: "Amatic SC", sans-serif;
 	padding: 20px;
 }
+
+i:hover{
+	color: #40E0D0;
+	cursor: pointer;
+}
+
+@media screen and (max-width: 1176px) {
+	
+	.CategoryContainer{
+		margin: auto;
+	}
+	
+
+
+}
+
 
 @media screen and (max-width: 990px) {
 	
@@ -93,6 +110,7 @@
 		padding: 20px;
 		
 	}
+	
 
    }
 
