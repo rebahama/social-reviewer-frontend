@@ -73,6 +73,9 @@
 	border-radius: 50%;
 	background-color: #e7e7e7;
 }
+.BtnCarouselFourth:hover{
+	color: #40E0D0;
+}
 /*Style the category list*/
 .CategoryText{
 	font-weight: bold;
@@ -92,8 +95,6 @@
 		margin: auto;
 	}
 	
-
-
 }
 
 
@@ -131,6 +132,7 @@
 
 	.BtnCarouselFourth {
 		padding: 5px 20px;
+		font-size: 15px;
 
 	}
 	
