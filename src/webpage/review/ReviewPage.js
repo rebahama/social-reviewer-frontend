@@ -102,9 +102,8 @@ const ReviewPage = (props) => {
       </Modal>
    </>);
 /*Display if user is logged in*/
-   const likedLoggedIn = (<> {likes_id ? <i className={`fa-solid fa-thumbs-down ${styles.LikeThumb}`} onClick={handleUnlike}></i> :
-      <i className={`fa-solid fa-thumbs-up ${styles.LikeThumb}`} onClick={handleLikes}></i>} </>)
-
+   const likedLoggedIn = (<> {likes_id ? <i className={`fa-solid fa-thumbs-down ${styles.LikeThumb}`} onClick={handleUnlike}> {like_counter} </i>  :
+      <i className={`fa-solid fa-thumbs-up ${styles.LikeThumb}`} onClick={handleLikes}> {like_counter}</i>} </>)
 
    return (
 
@@ -136,7 +135,7 @@ const ReviewPage = (props) => {
                      <h3> Description </h3>
                      <p className={styles.ContentText}> {content} </p>
                      <p className={styles.CreateDateText}>Created {created_at} ago by user : {owner}</p>
-                     {like_counter}
+                     
                      <div className={styles.LikeCommentContainer}>
                         {currentUser ? likedLoggedIn : <> <p> <Link to="/signin"> Log in </Link>to like this</p></>}
                         <Link to={`/reviews/${id}`}> <i className="fa-regular fa-comment-dots"> {comment_counter} </i></Link>
