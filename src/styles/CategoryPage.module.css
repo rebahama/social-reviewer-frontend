@@ -2,7 +2,7 @@
 .CategoryLinks {
 	color: #000000;
 	font-size: 35px;
-	padding: 15px;
+	padding: 5px;
 	font-weight: bold;
 	font-family: "Amatic SC", sans-serif;
 	cursor: pointer;
@@ -36,8 +36,8 @@
 	background-color: #46beffff;
 	border-radius: 5%;
 	padding: 50px;
+	
 }
-
 
 .ContainerCarouselThird {
 	background-color: #4894bdff;
@@ -50,6 +50,11 @@
 	border-radius: 5%;
 	background-color: #3490dc;
 
+}
+
+.CategoryContainer {
+	
+	margin-top: 4%;
 }
 
 /* Style the button inside the fourth item in the carousel*/
@@ -68,6 +73,12 @@
 	border-radius: 50%;
 	background-color: #e7e7e7;
 }
+.CategoryText{
+	font-weight: bold;
+	font-size: 40px;
+	font-family: "Amatic SC", sans-serif;
+	padding: 20px;
+}
 
 @media screen and (max-width: 990px) {
 	
@@ -78,7 +89,7 @@
 	}
 
 	.PopularText {
-		margin-bottom: 30%;
+		margin-bottom: 85%;
 		padding: 20px;
 		
 	}

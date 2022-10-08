@@ -3,7 +3,7 @@ import styles from '../../styles/CategoryPage.module.css';
 import reviewGif from '../../assets/review-rating.gif';
 import commentGif from '../../assets/comment.gif';
 import signupGif from '../../assets/sign-up.gif';
-import { Carousel, Container, } from 'react-bootstrap';
+import { Carousel, Container,Row } from 'react-bootstrap';
 import logo from '../../assets/homepage-anim.gif'
 import { Link } from 'react-router-dom';
 import { axiosReq } from '../../api/axios';
@@ -54,21 +54,8 @@ const CategoryPage = () => {
       <Container>
         <Carousel>
           <Carousel.Item className={styles.ContainerCarousel}>
+            <h3 className={styles.PopularText}>  Top 3 most liked reviews </h3> 
             
-            <img
-              className="d-block w-50"
-              src={logo}
-              alt="animaton of two people holding stars"
-            />
-            <Carousel.Caption>
-              {loaded ? (<> {category.results.map(category =>
-
-                (<Link to={`category/${category.id}`} key={category.id} className={styles.CategoryChoiches} > <h3 className={styles.CategoryLinks}> {category.title} </h3> </Link>))} </>)
-                : (<SpinnerAsset />)}
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item className={styles.ContainerCarousel}>
-            <h4 className={styles.PopularText}> Top 3 most liked reviews </h4>
             <img
               className="d-block w-50"
               src={reviewGif}
@@ -101,7 +88,22 @@ const CategoryPage = () => {
               <Link to="/reviews" className={styles.BtnCarouselFourth}> All reviews</Link>
             </Carousel.Caption>
           </Carousel.Item>
+        
         </Carousel>
+        <h3 className={styles.PopularText}> Check out all the categories</h3> <i class="fa-solid fa-circle-arrow-down"></i>
+         <Row>
+           
+            <div className={`${styles.ContainerCarousel} ${styles.CategoryContainer} offset-md-3`}>
+            <h3 className={styles.CategoryText}> Categories</h3>
+            
+           
+              {loaded ? (<> {category.results.map(category =>
+
+                (<Link to={`category/${category.id}`} key={category.id} className={styles.CategoryChoiches} > <h3 className={styles.CategoryLinks}> {category.title} </h3> </Link>))} </>)
+                : (<SpinnerAsset />)}
+                <img className="d-block w-50" src={logo} alt="animaton of two people holding stars"/>
+                </div>
+                </Row>
       </Container>
     </div>
     
