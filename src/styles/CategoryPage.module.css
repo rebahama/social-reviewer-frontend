@@ -81,7 +81,7 @@
 	padding: 20px;
 }
 
-i:hover{
+.CategorySymbols:hover {
 	color: #40E0D0;
 	cursor: pointer;
 }

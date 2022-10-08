@@ -101,7 +101,7 @@ const CategoryPage = () => {
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
-        <h3 className={styles.PopularText}> Check out all the categories</h3> <i onClick={categoryShow} class="fa-solid fa-circle-arrow-down"></i>
+        <h3 className={styles.PopularText}> Check out all the categories</h3> <i onClick={categoryShow} className={`fa-solid fa-circle-arrow-down ${styles.CategorySymbols}`}></i>
         <Row>
           <div id="categoryShow" className={`${styles.ContainerCarousel} ${styles.CategoryContainer} `}>
             <h3 className={styles.CategoryText}> Categories</h3>
