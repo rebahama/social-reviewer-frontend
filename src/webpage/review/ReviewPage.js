@@ -96,6 +96,10 @@ const ReviewPage = (props) => {
       </Modal>
    </>);
 
+const likedLoggedIn = (<> {likes_id ?<i className={`fa-solid fa-thumbs-down ${styles.LikeThumb}`} onClick={handleUnlike}></i>:
+<i className={`fa-solid fa-thumbs-up ${styles.LikeThumb}`} onClick={handleLikes}></i>} </>)
+
+
    return (
 
       <div>
@@ -129,8 +133,8 @@ const ReviewPage = (props) => {
                      {like_counter}
                      <div className={styles.LikeCommentContainer}>
                         
-                        
-                        {likes_id ?<i className={`fa-solid fa-thumbs-down ${styles.LikeThumb}`} onClick={handleUnlike}></i>:<i className={`fa-solid fa-thumbs-up ${styles.LikeThumb}`} onClick={handleLikes}></i>}
+                     
+                        {currentUser ? likedLoggedIn:<i className={`fa-solid fa-thumbs-up ${styles.LikeThumb}`}></i>}
                      
                         <Link to={`/reviews/${id}`}> <i className="fa-regular fa-comment-dots"> {comment_counter} </i></Link>
                      </div>

@@ -58,12 +58,12 @@ const AllReviews = (props) => {
   return (
     /**If clicked is true then run the run component if it is false then show the search button. If loaded is true run the .map array else run the spinner component. */
     <div>
-       {clicked ?
-      (<SortByPrice />):
-      <> {showSearch} <Button onClick={handleSort} className={styles.SortBtn}> Sort by price </Button>
-      {loaded ? (<>{review.results.map((review) => (<ReviewPage key={review.id} {...review} />))}</>):
-      <SpinnerAsset/>}</>}
-      
+
+      {clicked ?
+        (<SortByPrice />) :
+        <> {showSearch}  <Button onClick={handleSort} className={styles.SortBtn}> Sort by price </Button>
+          {loaded ? (<>{review.results.map((review) => (<ReviewPage key={review.id} {...review} />))}</>) :
+            <SpinnerAsset />}</>}
     </div>
   )
 }
