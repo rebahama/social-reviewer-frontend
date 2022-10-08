@@ -3,10 +3,10 @@ import { axiosReq } from '../../api/axios';
 import ReviewPage from './ReviewPage';
 import styles from '../../styles/ReviewPage.module.css';
 import SpinnerAsset from '../../components/SpinnerAsset';
-import { Col, Container, Form, Row, Button } from 'react-bootstrap';
+import { Col, Container, Form, Row} from 'react-bootstrap';
 import SortByPrice from './SortByPrice';
 
-const AllReviews = (props) => {
+const AllReviews = () => {
 
   const [review, setReview] = useState({ results: [] });
   const [loaded, loadedcomplete] = useState(false);
