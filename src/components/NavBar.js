@@ -13,21 +13,22 @@ const NavBar = () => {
      * Depending on the state of the user diffrent links will be visable to the site user. */
 
 
-
     const setCurrentUser = useSetCurrentUser()
     const [alertMessage, setAlertMessage] = useState(false)
     
     const handleLogOut = async () => {
         try {
-            await axios.post("dj-rest-auth/logout/");
+            await axios.post("dj-rest-auth/logout");
+            
             setAlertMessage(true)
-
             setTimeout(() => {
                 setAlertMessage(false);
             }, 5000);
 
             setCurrentUser(null);
+            
             removeTokenTimestamp();
+            
         }
         catch (err) {
             console.log(err);
