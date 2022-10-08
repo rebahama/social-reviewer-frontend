@@ -166,7 +166,7 @@ function CreateReview() {
                 </Alert>
               ))}
               <Button variant="primary" type="submit">
-                Submit
+                Create review
               </Button>
               <Alert variant="success" className="mt-3">
                 <p>{message}</p>

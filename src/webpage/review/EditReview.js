@@ -194,7 +194,7 @@ function EditReview() {
               {message}
             </Alert>
             <Button variant="primary" type="submit" onClick={showBlock}>
-              Submit
+             Update review
             </Button>
           </Form>
         </Col>

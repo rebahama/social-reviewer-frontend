@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from '../styles/NavBar.module.css';
-import { Navbar, Nav } from 'react-bootstrap';
+import { Navbar, Nav, Alert } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import { useCurrentUser, useSetCurrentUser } from '../context/CurrentUserContext';
 import axios from 'axios';
@@ -70,7 +70,7 @@ const NavBar = () => {
                     {currentUser ? loggedIn : loggedOut}
                     {currentUser ? UserName : emptyUsername}
                 </Nav>
-                {alertMessage && <p> You have been logged out</p>}
+                {alertMessage && <Alert variant="primary"> You have been logged out</Alert>}
             </Navbar.Collapse>
         </Navbar>
     )

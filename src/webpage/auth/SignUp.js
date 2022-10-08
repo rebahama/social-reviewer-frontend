@@ -32,7 +32,7 @@ const SignUp = () => {
     event.preventDefault();
     try {
       await axios.post("/dj-rest-auth/registration/", signIn)
-      setMessage(<><p> Congratulations your account have been succsesfully created please click the symbol below to log in to your new account</p>
+      setMessage(<><p> Congratulations! Your account have been successfully created please, click the symbol below to log in to your new account</p>
       <Link to="/signin"  className={styles.CreateText}><i className="fa-solid fa-arrow-right-to-bracket"></i> </Link> </>)
       
     } catch (err) {
@@ -79,7 +79,7 @@ const SignUp = () => {
 
               )}
               <Button variant="primary" type="submit">
-                Submit
+                Create account
               </Button>
               {error.non_field_errors?.map((message, idx) =>
                 <Alert variant="warning" key={idx}> {message} </Alert>
