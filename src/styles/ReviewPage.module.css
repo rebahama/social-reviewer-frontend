@@ -66,7 +66,11 @@
 .DisplayHide {
     display: none;
 }
-.SortBtn{
+.SortBtn:hover {
+    color: #40E0D0;
+    cursor: pointer;
+}
+.SortBtnPosition {
     margin-top: 2%;
     margin-bottom: 2%;
 }
