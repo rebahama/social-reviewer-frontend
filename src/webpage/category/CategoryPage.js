@@ -108,7 +108,7 @@ const CategoryPage = () => {
             {loaded ? (<> {category.results.map(category =>
               (<Link to={`category/${category.id}`} key={category.id} className={styles.CategoryChoiches} > <h3 className={styles.CategoryLinks}> {category.title} </h3> </Link>))} </>)
               : (<SpinnerAsset />)}
-            <img className="d-block w-50" src={logo} alt="animaton of two people holding stars" />
+            <img className="d-block w-50" src={logo} alt="animation of two people holding stars" />
           </div>
         </Row>
       </Container>

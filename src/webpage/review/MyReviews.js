@@ -9,7 +9,7 @@ import SpinnerAsset from '../../components/SpinnerAsset';
 function MyReviews() {
   const { pathname } = useLocation();
   const currentuser = useCurrentUser();
-  const id = currentuser?.profile_id
+  const id = currentuser?.profile_id;
   const [loaded, loadedcomplete] = useState(false);
   const [Myreview, setMyReview] = useState({ results: [] });
 
@@ -44,8 +44,12 @@ function MyReviews() {
 
   return (
     
-    <div>{loaded ? (<> <h3 className={styles.CreateText}> My reviews</h3> {Myreview.results.map((review) => { return <MyReviewsPage key={review.id} {...review} /> })} </>) : (<SpinnerAsset />)} </div>
+    <div> {loaded ? (<> <h3 className={styles.CreateText}> My reviews</h3>  {Myreview.results.map((review) =>
+    { return  <MyReviewsPage key={review.id} {...review} /> })}  </>) : (<SpinnerAsset />) }
+    </div>
+
   )
+  
 }
 
 export default MyReviews
