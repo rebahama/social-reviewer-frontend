@@ -28,7 +28,7 @@ const SignIn = () => {
       
       setCurrentUser(data.user)
       setTokenTimestamp(data)
-      history.push('/')
+      history.goBack();
     } catch (err) {
       setError(err.response?.data)
     }
