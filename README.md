@@ -188,7 +188,7 @@ Bottom of the page a simple footer with links to social media will be displayed.
 
 ![Website homepage-footer](docs/website/homepage-footer.png)
 
-# All reviews
+
 
 ## The review
 Here a review is displayed that have been created on the site, on the side there is a button for edit and one for deleting that only displays when the user is the owner of the post and is logged in. On the bottom of the review there is a symbol for a like and one for how many comments the review has. The title is clickable and will take you to the deatiled review page.
@@ -250,6 +250,36 @@ This page is where the user will be able to create a review. If the user lefts s
 
 ![Website create-message](docs/website/create-message.png)
 
+## Logged in user
+When user is logged in the following will be displayed for 10 seconds before disappearing from the page.
+
+![Website loggedin](docs/website/homepage-message.png)
+
+## Logged out
+When the user clicks the logged out button the following message will be displayed on the right side of the screen to notify that the user is now logged out. After 5 seconds the message will be gone.
+
+![Website loggedout](docs/website/logout-message.png)
+
+## Password not matching
+If user tries to input diffrent passwords in the field then following message will be displayed.
+
+![Website passwordnotmatching](docs/website/password-match.png)
+
+## Empty comment field
+If user tries to submit empty comment field following message will be displayed.
+![Website emptycomment](docs/website/comment-field.png)
+
+## Empty create fields
+If user tries to submit empty comment field following message will be displayed. Or if the image  uploaded file is not an image.
+
+![Website emptycreate](docs/website/create-field.png)
+
+## Unique title
+If a user tries to submit a review that alredy have the same title
+the following message will be displayed.
+![Website emptycomment](docs/website/review-title.png)
+
+
 # Account
 
 ## Sign in
@@ -263,10 +293,11 @@ This page the user will be able to create an account, a warning field will be di
 
 ![Website sign-up](docs/website/sign-up.png)
 
+# Error page
+When user tries to access a url that does not exist the following page will be displayed![error404](docs/testing/test-17.png)
 
 
 # Future ideas
- 
  * A comment rating system where the user can vote in the comment on how good the review is from 1 to 5. The model and backend for this is alredy completed, the only step is to show it on the frontend.
 
  * A like system for the profiles, the models and backend for this is alredy created, only the frontend needs to be implemented.
