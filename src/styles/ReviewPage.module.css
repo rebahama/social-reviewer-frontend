@@ -3,7 +3,7 @@
     padding: 40px;
 }
 .ReviewText {
-    font-family: "Amatic SC", sans-serif;
+    font-family: 'Architects Daughter', cursive;
     font-size:50px;
     font-weight: bold;
 }
@@ -16,6 +16,7 @@
 /*style the fields*/
 .ExtraFields {
     font-family: "Amatic SC", sans-serif;
+    font-weight: bold;
     font-size:35px;
 }
 .HeadingFields {
@@ -24,9 +25,8 @@
 }
 /*style the text*/
 .ContentText {
-    font-family: "Amatic SC", sans-serif;
-    font-weight: bold;
-    font-size: 30px;
+    font-family: 'Architects Daughter', cursive;
+    font-size: 25px;
     padding: 10px;
     border-radius: 10px;
     border: 1px solid black;

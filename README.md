@@ -130,7 +130,18 @@ The database is used together with framework Django, the software is called: Pos
 
 # Key designs
 ## Colors
-The website have mostly diffrent colors of tureqose, the background 
+* The backgrounds with the carosuel colors is of hex code :#40E0D0, #46beffff, and 4894bdff.
+* The text background in the homepage is #e7e7e7.
+* The signup and sigin page is #6A359C.
+
+
+## Typography:
+
+* Two diffrent fonts was selected for this project. Both are Google fonts.
+
+* Roboto Italic was used for the homepage and headings of the reviews.
+
+* Architects Daughter was used for the rest of the webpage. All the describe text and the carosuel text is also used by this font.
 
 
 # Features and functionality
