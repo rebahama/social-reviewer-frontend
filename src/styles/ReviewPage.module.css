@@ -9,6 +9,7 @@
 }
 /*style image*/
 .ReviewImage {
+    box-shadow: 0 10px 16px 0 rgb(0 0 0 / 10%), 0 6px 20px 0 rgb(0 0 0 / 10%);
     border-radius: 3%;
     max-height: 400px;
     max-width: 50%;
@@ -29,7 +30,8 @@
     font-size: 25px;
     padding: 10px;
     border-radius: 10px;
-    border: 1px solid black;
+    
+    box-shadow: 0 10px 16px 0 rgb(0 0 0 / 10%), 0 6px 20px 0 rgb(0 0 0 / 10%);
 }
 .CreateDateText {
     font-weight: bold;
@@ -61,6 +63,7 @@
 .SearchBar {
     margin-top: 3%;
     border-radius: 20px;
+    box-shadow: 0 10px 16px 0 rgb(0 0 0 / 10%), 0 6px 20px 0 rgb(0 0 0 / 10%);
     display: flex;
 }
 .DisplayHide {

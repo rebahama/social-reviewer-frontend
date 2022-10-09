@@ -54,12 +54,14 @@
 }
 
 .CategoryContainer {
+	box-shadow: 0 10px 16px 0 rgb(0 0 0 / 10%), 0 6px 20px 0 rgb(0 0 0 / 10%);
 	margin: auto;
 	margin-top: 4%;
 }
 
 /* Style the button inside the fourth item in the carousel*/
 .BtnCarouselFourth {
+	box-shadow: 0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 20%);
 	font-weight: bold;
 	border: none;
 	color: #000000;

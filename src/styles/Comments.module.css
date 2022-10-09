@@ -10,12 +10,14 @@
 
 /* style the image*/
 .CommentAvatar {
+	box-shadow: 0 10px 16px 0 rgb(0 0 0 / 10%), 0 6px 20px 0 rgb(0 0 0 / 10%);
 	max-width: 9%;
 	border-radius: 50%;
 
 }
 
 .UserNameStyles {
+	box-shadow: 0 10px 16px 0 rgb(0 0 0 / 10%), 0 6px 20px 0 rgb(0 0 0 / 10%);
 	font-family: "Amatic SC", sans-serif;
 	font-weight: bold;
 	font-size: 30px;
