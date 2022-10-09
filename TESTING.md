@@ -178,6 +178,8 @@ Users can create an account and a link will appear when the account have been cr
 
 * The all reviews page have diffrent cards, and on those cards there is a like button. The like button works without problem on that page. But the same cards are reused on other pages as categories, searching and reviewpage. The like count wont update without updating the page on the other pages. Due to little time left on the project I decided to solve that bug at a later stage, but the bug wont effect anything apart from that the user need do update the page to display the updated likes.
 
+* When I tried to submit a review in the create review page the input fields for category was empty and it resualted in an internal 500 error from the api. The solution for this was to set a number value for the category because the category api endpoint requested a value from 1 to 6, so I set a value of 1 that is equal to the electronics in the category field. The user can choose other categories as well.
+
 # Validation of files
 
 * All the Javascript files have been validated by [JShint](http://jshint.com/).
