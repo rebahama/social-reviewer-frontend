@@ -4,6 +4,12 @@
 According to our research many review site lacks the social media feeling, also another problem is that on many review sites only focus on a specific subject category.
 Social reviewer makes reviewing more fun and interacts the user with the reviewer in a fun way and the important part is that in the category you can choose to review everything from electronics to cars. Users can create account, create reviews, comment, upvote, see the most popular and most commented reviews. Users can also see all the profiles that are listed on the site. The target group here is anyone that would like all the reviews from diffrent categories to be on the same webpage in a fun way.
 
+
+# Website link
+
+* [Social reviewer website](https://social-reviewer-frontend.herokuapp.com)
+
+
 # Project goals
 The project goals for this project is the following.
 
@@ -19,9 +25,11 @@ The project goals for this project is the following.
 
 * Use of network request with the async function.
 
-# Website link
 
-* [Social reviewer website](https://social-reviewer-frontend.herokuapp.com)
+# Reuse of components
+After working with a real project I can now understand why components are effectiv and time saveing in React. I can take an example from my code. If we look at this file here: [Navbarcomponent](https://github.com/rebahama/social-reviewer-frontend/blob/main/src/components/NavBar.js). This file contains alot of code and it is a navbar for a webpage. If I want to display this navbar maybe in another page inside my app I don´t need to write that whole js file again. 
+
+The only thing that I need to do is import and call that component in this format "< NavBar/>" , that line of code will call the whole file that is inside the link and it will display it on that new page. I noticed that when you are working in React and if your writing the same code throughout the page several times, then it´s best to make that code to a component so that you can use that particular code with just one line of code. The code will look cleaner and it´s good for performance.
 
 # User stories
 * As a user I would like to view a public page where all the reviews are displayed on one page so I can see everything on one page.
@@ -118,6 +126,7 @@ The database is used together with framework Django, the software is called: Pos
 ## Profile
 
 ![Database profile](docs/database/database-profile.png)
+
 
 # Features and functionality
 
@@ -238,10 +247,7 @@ This page the user will be able to create an account, a warning field will be di
 
 ![Website sign-up](docs/website/sign-up.png)
 
-# Reuse of components
-After working with a real project I can now understand why components are effectiv and time saveing in React. I can take an example from my code. If we look at this file here: [Navbarcomponent](https://github.com/rebahama/social-reviewer-frontend/blob/main/src/components/NavBar.js). This file contains alot of code and it is a navbar for a webpage. If I want to display this navbar maybe in another page inside my app I don´t need to write that whole js file again. 
 
-The only thing that I need to do is import and call that component in this format "< NavBar/>" , that line of code will call the whole file that is inside the link and it will display it on that new page. I noticed that when you are working in React and if your writing the same code throughout the page several times, then it´s best to make that code to a component so that you can use that particular code with just one line of code. The code will look cleaner and it´s good for performance.
 
 # Future ideas
  
@@ -269,6 +275,9 @@ The only thing that I need to do is import and call that component in this forma
 * Axios version 0.27.2 is installed to fetch the api endpoints.
 
 * jwt-decode was installed for for decoding the jason web tokens.
+
+# Frontend libraries
+
 
 # API backend endpoint
 The documentation for the backend can be found here [social-reviewer-backend](https://github.com/rebahama/social-reviewer-backend#readme)
