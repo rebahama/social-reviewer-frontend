@@ -29,6 +29,7 @@ hr {
     background-color: #acadad;
     margin-bottom: 5%;
     margin-top: 5%;
+    box-shadow: 0 10px 16px 0 rgb(0 0 0 / 10%), 0 6px 20px 0 rgb(0 0 0 / 10%);
     color: white;
 }
 
