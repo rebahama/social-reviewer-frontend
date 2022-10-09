@@ -38,7 +38,7 @@ The only thing that I need to do is import and call that component in this forma
 
 * As a user I would like to be able to se how long a comment and a review was created so i know how relevant the review is.
 
-* As a logged in user, I would like to be able to access and list my personal created reviews, so I know which reveiws are mine.
+* As a logged in user, I would like to be able to access and list my personal created reviews, so I know which reviews are mine.
 
 * As a user I would like to be able to create a like and comment on diffrent reviews
 
@@ -46,11 +46,11 @@ The only thing that I need to do is import and call that component in this forma
 
 * As a user I would like to be able to search after a profile based on a name or username profile.
 
-* As a user I would like to be able to choose a category for my reviews so that I can on the review what category the reviews belong to.
+* As a user I would like to be able to choose a category for my reviews so that I can see on the review what category the reviews belong to.
 
-* As a user I would like to be able to edit/delete a review so that I can have the freedom to edit/delete the review
+* As a user I would like to be able to edit/delete a review so that I can have the freedom to edit/delete the review.
 
-* As a user I would like to be able to log out from the account whenever I want to
+* As a user I would like to be able to log out from the account whenever I want to.
 
 * As a user I would like to know if I am logged in so I don't have to log in every time.
 
@@ -174,8 +174,8 @@ Bottom of the page a simple footer with links to social media will be displayed.
 
 # All reviews
 
-## The reveiw
-Here a review is displayed that have been created on the site, on the side there is a button for edit and one for delete that only displays when the user is the owner of the post and is logged in. On the bottom of the reveiw there is a symbol for like and one for how many comments the review has. The title is clickable and will take you to the deatiled review page.
+## The review
+Here a review is displayed that have been created on the site, on the side there is a button for edit and one for deleting that only displays when the user is the owner of the post and is logged in. On the bottom of the review there is a symbol for a like and one for how many comments the review has. The title is clickable and will take you to the deatiled review page.
 
 ![Website review](docs/website/allreviews.png)
 
@@ -186,7 +186,7 @@ This is the same as "the review" page, but the diffrence is that now you can com
 
 ## Comments
 
-On the detailed reivew page, you can comment a review. When you have commented the review will be updated and display the comment. If you are the owner of the comment there will be a button displayed that makes it possible to delete the comment. There is a window for "rating" that is a future function that is not fully functional yet. But the default rating have been set to "3" until that feature is complete. This won´t affect anything apart from it being displayed.
+On the detailed review page, you can comment a review. When you have commented the review will be updated and display the comment. If you are the owner of the comment there will be a button displayed that makes it possible to delete the comment. There is a window for "rating" that is a future function that is not fully functional yet. But the default rating have been set to "3" until that feature is completeed. This won´t affect anything apart from it being displayed.
 
 ![Website review](docs/website/review-comment.png)
 
@@ -196,7 +196,7 @@ When the user clicks on the trashcan that is displayed on the review card, a mod
 ![Website review-delete](docs/website/delete-review.png)
 
 ## Edit review
-When the user clicks on the "pen" symbol the user will be redirected to a edit page where the user can change the prepopulated fileds. When the user have changed the informaton a message will be displayed notifying the user that the info have been changed.
+When the user clicks on the "pen" symbol the user will be redirected to a edit page where the user can change the prepopulated fileds. When the user have changed the informaton a message will be displayed notifying the user that the information have been changed.
 
 ![Website review-edit](docs/website/edit-review.png)
 
@@ -213,10 +213,10 @@ This button here will sort all the reviews from the highest price to the lowest 
 
 # Profiles
 This page will display all the profiles that have been created on the webpage.
-The user can see a bio and name on the profiles that have been created on the site. The user also can see how many reviews a profile have created and how many likes a profile have received, the profile like is a future functionality that have not been created yet. If the logged in owner scrolls down to the profile that us current logged in, the owner will be able to edit the profile leading to the "edit profile page"
+The user can see a bio and name on the profiles that have been created on the site. The user also can see how many reviews a profile have created and how many likes a profile have received, the profile like is a future functionality that have not been created yet. If the logged in owner scrolls down to the profile that is logged in, the owner will be able to edit the profile leading to the "edit profile page"
 
 ## Edit profile
-This page the user that is owner of the profile can change the "name" "biography" and upload an image.
+This page shows the user that is owner of the profile can change the "name" "biography" and upload an image.
 
 ![Website review-sort](docs/website/profile-page.png)
 
@@ -226,7 +226,7 @@ This page only show the reviews that the current logged in user have created. Th
 ![Website my-reviews](docs/website/my-reviews.png)
 
 # Create reivew
-This page is where the user will be able to create a review. If the user lefts some filed that is required blank then a warining page will be displayed. After the user have filled in the fileds a message will be displayed saying that the review have been created.
+This page is where the user will be able to create a review. If the user lefts some fields that is required blank then a warning page will be displayed. After the user have filled in the fileds a message will be displayed saying that the review have been created.
 
 ![Website create-reviews](docs/website/create-review.png)
 
@@ -251,7 +251,7 @@ This page the user will be able to create an account, a warning field will be di
 
 # Future ideas
  
- * A comment rating system where the user can vote in the comment on how good the review is from 1 to 5. The model and backend for this alredy is completed, the only step is to show it on the frontend.
+ * A comment rating system where the user can vote in the comment on how good the review is from 1 to 5. The model and backend for this is alredy completed, the only step is to show it on the frontend.
 
  * A like system for the profiles, the models and backend for this is alredy created, only the frontend needs to be implemented.
 
@@ -302,7 +302,7 @@ Testing of the application can be found here: [Testing](https://github.com/rebah
 
 This will install all the libraries that is required for the project with the right versions.
 
-* To install the Heroku prebuild to render onepage application type: "npm install -g serve"
+* To install the Heroku prebuild to render onepage application type: "npm install -g serve".
 
 * In Heroku hompage click on "create app".
 

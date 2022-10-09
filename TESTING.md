@@ -13,8 +13,8 @@ This page is called the " show reviews" page and here all the reviews that are c
 
 
 
-* As a user I would like to be able to delete my comments, and delete my likes if I changed my mind.
-Comments can be deleted with a button, and likes will display a thumbs down button if the user have alredy liked the reveiw. If the user have not liked the review yet a thumbs upp will be displayed. Like counter goes down when user clicks on the thumbs down.
+* As a user I would like to be able to delete my comments, and delete my likes if I change my mind.
+Comments can be deleted with a button, and likes will display a thumbs down button if the user have already liked the review. If the user have not liked the review yet a thumbs up will be displayed. Like counter goes down when user clicks on the thumbs down.
 
 
 Delete comments
@@ -25,7 +25,7 @@ Unlike review
 
 
 
-* As a user I would like to be able to se how long a comment and a review was created so i know how relevant the review is.
+* As a user I would like to be able to see how long a comment and a review was created so i know how relevant the review is.
 
 Comments and reviews display a date and time when the content was created.
 
@@ -36,12 +36,12 @@ Review created date.
 ![test-1](docs/testing/test-4.png)
 
 
-* As a logged in user, I would like to be able to access and list my personal created reviews, so I know which reveiws are mine.
+* As a logged in user, I would like to be able to access and list my personal created reviews, so I know which reviews are mine.
 
 
 
 
-When the user is logged in the user will be able to click on "My reveiws" and on that page only the content that the owner have created will be displayed.
+When the user is logged in the user will be able to click on "My reviews" and on that page only the content that the owner have created will be displayed.
 
 ![test-1](docs/testing/test-6.png)
 
@@ -53,7 +53,7 @@ Users can leave a comment on a review and the comment will be displayed on the s
 
 ![test-1](docs/testing/test-7.png)
 
-. If a user have alredy liked a review then a thumbs down will be displayed instead of a thumbs up, makeing it possible to unlike the reveiw instead.
+. If a user have alredy liked a review then a thumbs down will be displayed instead of a thumbs up, makeing it possible to unlike the review instead.
 
 Like it
 ![test-1](docs/testing/test-8.png)
@@ -65,7 +65,7 @@ Unliked it
 * As a user I would like to see how many likes and comments a review has so I Know how popular that review is.
 
 
-All the reveiws displays a like and comment counter showing how many likes or comments is in a reveiw. Testing have been down by adding comments and likes to see if the counter goes up or down.
+All the reviews displays a like and comment counter showing how many likes or comments is in a review. Testing have been down by adding comments and likes to see if the counter goes up or down and if the comments is displayed.
 ![test-1](docs/testing/test-10.png)
 
 
@@ -128,7 +128,7 @@ Users can create an account and a link will appear when the account have been cr
 
 # Empty required fields
 
-* When trying to submit empty fields that are required then messages like the one in the picture will be displayed. All the fields have been tested by submitting empty fields and no empty fields were sumbitted unless users  types in relevant data.
+* When trying to submit empty fields that are required then messages like the one in the picture will be displayed. All the fields have been tested by submitting empty fields and no empty fields were sumbitted unless users types in relevant data.
 
 ![test-1](docs/testing/test-18.png)
 
@@ -141,7 +141,7 @@ Users can create an account and a link will appear when the account have been cr
 
 * A user can only like a review once and dubplicate is not possible.
 
-* A user can not edit or delete a reveiw if the user is not the owner of the reveiw. Testing have been done and the symbols for editing and deleting only appear on the reviews if the logged in user is the owner of the review.
+* A user can not edit or delete a review if the user is not the owner of the review. Testing have been done and the symbols for editing and deleting only appear on the reviews if the logged in user is the owner of the review.
 
 * Testing have been done to copy the url and id number of another review and try to acessing it, but if the user is not the owner then user will be redirected away makeing it not possible to edit or delete another review.
 
