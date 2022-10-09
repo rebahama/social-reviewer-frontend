@@ -22,7 +22,6 @@ const Comments = (props) => {
     const {
       profile_image,
       content,
-      rating,
       owner,
       created_at,
       id,
@@ -58,7 +57,7 @@ const Comments = (props) => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     
-    const realowner = (<> <Button variant="primary" type="submit" onClick={handleShow}> Delete </Button>
+    const realowner = (<> <Button variant="primary" type="submit" className={`$offset-md-3 ${styles.DeleteBtn}`} onClick={handleShow}> Delete </Button>
 
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
@@ -86,8 +85,9 @@ const Comments = (props) => {
         <p> {content} </p>
       </div>
       <span> {created_at} </span>
-      <p> Rating: {rating}</p>
+      <div className={styles.DeleteBtnContainer}>
       {is_owner && realowner}
+      </div>
       <hr />
     </Container>
   )
