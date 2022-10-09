@@ -1,8 +1,8 @@
 # Manual testing
 
-## Testing stories
 
-# User stories
+
+## Testing Userstories
 
 
 * As a user I would like to view a public page where all the reviews are displayed on one page so I can see everything on one page.
@@ -174,6 +174,7 @@ Users can create an account and a link will appear when the account have been cr
 # Validation of files
 
 * All the Javascript files have been validated by [JShint](http://jshint.com/).
+
 My errors was, forgotten semicolons on several files. After adding semicolons all the errors was gone.
 
 * CSS3 files have been validated by the offical [Jigsaw](https://jigsaw.w3.org/css-validator/)

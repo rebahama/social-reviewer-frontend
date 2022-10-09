@@ -294,7 +294,7 @@ The documentation for the backend can be found here [social-reviewer-backend](ht
 
 
 # Testing 
-testing can be found here.
+Testing of the application can be found here: [Testing](https://github.com/rebahama/social-reviewer-frontend/blob/main/TESTING.md)
 
 # Deployment
 
@@ -328,7 +328,7 @@ Agile can be found here.
 
 * The symbols on the webpage can be found on Fontawesome [Fontawesome](https://fontawesome.com/).
 
-* Inspiration was taken from Code institute walkthorugh video of "Moments" [Moments](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+RA101+2021_T3/courseware/70a8c55db0504bbdb5bcc3bfcf580080/953cd4e5015f483bb05263db3e740e19/).
+* Inspiration and some help was taken from Code institute walkthorugh video of "Moments" [Moments](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+RA101+2021_T3/courseware/70a8c55db0504bbdb5bcc3bfcf580080/953cd4e5015f483bb05263db3e740e19/).
 
 * The offical React documentation was used to make good coding practices  [React](https://reactjs.org/docs/getting-started.html).
 
