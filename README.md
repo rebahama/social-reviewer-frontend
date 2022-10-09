@@ -128,6 +128,11 @@ The database is used together with framework Django, the software is called: Pos
 ![Database profile](docs/database/database-profile.png)
 
 
+# Key designs
+## Colors
+The website have mostly diffrent colors of tureqose, the background 
+
+
 # Features and functionality
 
 
@@ -313,7 +318,8 @@ This will install all the libraries that is required for the project with the ri
 * Click on deploy branch and your app should start be live after a few minutes.
 
 # Agile development
-Agile can be found here.
+
+My Agile documentation can be found here [Agile](https://github.com/rebahama/social-reviewer-frontend/blob/main/AGILE.MD)
 
 
 # Source code
