@@ -29,7 +29,7 @@ function CreateReview() {
     cons: "",
     image: "",
     price: "",
-    category: "",
+    category: 1,
   });
   const imageInput = useRef(null);
   const {
@@ -179,9 +179,9 @@ function CreateReview() {
               ))}
               <Form.Group>
                 <Form.Label>Category</Form.Label>
-                <Form.Control as="select" name="category" value={category} onChange={handleReview}>
+                <Form.Control as="select" name="category" value={category}  onChange={handleReview}>
                   <option className={styles.Hide}> </option>
-                  <option value={electronics}>Electronics </option>
+                  <option value={electronics} >Electronics </option>
                   <option value={clothes}>Clothes</option>
                   <option value={vehicles}>Vehicles</option>
                   <option value={sports}>Sports</option>
