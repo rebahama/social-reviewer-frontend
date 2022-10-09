@@ -1,10 +1,20 @@
 import axios from 'axios';
-import React, { useState } from 'react';
-import { Alert, Button, Container, Form, Col, Row } from 'react-bootstrap';
-import { Link} from 'react-router-dom/cjs/react-router-dom.min';
+import React, {
+  useState
+} from 'react';
+import {
+  Alert,
+  Button,
+  Container,
+  Form,
+  Col,
+  Row
+} from 'react-bootstrap';
+import {
+  Link
+} from 'react-router-dom/cjs/react-router-dom.min';
 import rocketGif from '../../assets/rocket.gif';
 import styles from '../../styles/SignUp.module.css';
-
 
 const SignUp = () => {
   const [signIn, setSignIn] = useState({
@@ -12,13 +22,14 @@ const SignUp = () => {
     password1: '',
     password2: '',
 
-
   });
-  const { username, password1, password2 } = signIn;
+  const {
+    username,
+    password1,
+    password2
+  } = signIn;
   const [error, setError] = useState({});
-  const [message, setMessage] = useState("")
-
-
+  const [message, setMessage] = useState("");
 
   const handleInput = (event) => {
     setSignIn({
@@ -31,12 +42,12 @@ const SignUp = () => {
 
     event.preventDefault();
     try {
-      await axios.post("/dj-rest-auth/registration/", signIn)
+      await axios.post("/dj-rest-auth/registration/", signIn);
       setMessage(<><p> Congratulations! Your account have been successfully created please, click the symbol below to log in to your new account</p>
-      <Link to="/signin"  className={styles.CreateText}><i className="fa-solid fa-arrow-right-to-bracket"></i> </Link> </>)
+      <Link to="/signin"  className={styles.CreateText}><i className="fa-solid fa-arrow-right-to-bracket"></i> </Link> </>);
       
     } catch (err) {
-      setError(err.response?.data)
+      setError(err.response?.data);
     }
 
   };
@@ -44,7 +55,7 @@ const SignUp = () => {
 
   return (
 
-    <Container >
+    <Container>
       <h3 className={styles.AccountText}> Create an account </h3>
       <hr />
       <div className={styles.AllContent}>
@@ -93,6 +104,6 @@ const SignUp = () => {
     </Container>
 
   )
-}
+};
 
 export default SignUp

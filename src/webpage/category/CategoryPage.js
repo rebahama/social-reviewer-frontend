@@ -1,65 +1,75 @@
-import React, { useEffect, useState } from 'react';
+import React, {
+  useEffect,
+  useState
+} from 'react';
 import styles from '../../styles/CategoryPage.module.css';
 import reviewGif from '../../assets/review-rating.gif';
 import commentGif from '../../assets/comment.gif';
 import signupGif from '../../assets/sign-up.gif';
-import { Carousel, Container, Row } from 'react-bootstrap';
-import logo from '../../assets/homepage-anim.gif'
-import { Link } from 'react-router-dom';
-import { axiosReq } from '../../api/axios';
+import {
+  Carousel,
+  Container,
+  Row
+} from 'react-bootstrap';
+import logo from '../../assets/homepage-anim.gif';
+import {
+  Link
+} from 'react-router-dom';
+import {
+  axiosReq
+} from '../../api/axios';
 import SpinnerAsset from '../../components/SpinnerAsset';
 import MostLikedReview from '../review/MostLikedReview';
 import MostCommentedReview from '../review/MostCommentedReview';
 
 const CategoryPage = () => {
-  /** Function for category, when the category is not loaded display a spinner until the get request
-   * is completed.
-   */
-  const [loaded, loadedcomplete] = useState(false);
-  const [category, setCategory] = useState({ results: [] });
+    /** Function for category, when the category is not loaded display a spinner until the get request
+     * is completed.
+     */
+    const [loaded, loadedcomplete] = useState(false);
+    const [category, setCategory] = useState({
+      results: []
+    });
 
-  useEffect(() => {
+    useEffect(() => {
 
-    const handleData = async () => {
+      const handleData = async () => {
 
-      try {
-        const { data } = await axiosReq.get("category/")
-        setCategory(data)
-        loadedcomplete(true)
-        console.log(data)
+        try {
+          const {
+            data
+          } = await axiosReq.get("category/");
+          setCategory(data);
+          loadedcomplete(true);
+          console.log(data);
 
-      }
-      catch (err) {
+        } catch (err) {
 
-      }
+        }
 
-    };
-    loadedcomplete(false)
-    const time = setTimeout(() => {
-      handleData()
+      };
+      loadedcomplete(false);
+      const time = setTimeout(() => {
+        handleData();
 
+      }, 1500);
 
-    }, 1500)
+      return () => {
+        clearTimeout(time);
+      };
 
+    }, []);
 
-    return () => {
-      clearTimeout(time)
-    }
-
-  }, []);
-
-  const categoryShow = () => {
-    const showCategory = document.getElementById("categoryShow")
+    const categoryShow = () => {
+      const showCategory = document.getElementById("categoryShow");
     
-    if (showCategory.style.display === "none") {
-      showCategory.style.display = "block"
-    }
-    else {
-      showCategory.style.display = "none"
-    }
-
-  }
-
+      if (showCategory.style.display === "none") {
+        showCategory.style.display = "block";
+      } else {
+        showCategory.style.display = "none";
+      }
+    
+    };
 
   return (
 
@@ -115,6 +125,6 @@ const CategoryPage = () => {
     </div>
 
   )
-}
+};
 
 export default CategoryPage

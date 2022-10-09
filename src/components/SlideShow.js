@@ -1,6 +1,11 @@
-import React from 'react'
-import logo from '../assets/Logo-social-reviewer.png'
-import { Row, Col, Container, Carousel } from 'react-bootstrap'
+import React from 'react';
+import logo from '../assets/Logo-social-reviewer.png';
+import {
+  Row,
+  Col,
+  Container,
+  Carousel
+} from 'react-bootstrap';
 
 function SlideShow() {
     /** A slidshow with diffrent component item inside that is rendered on the homepage.js file */
@@ -49,6 +54,6 @@ function SlideShow() {
             </Row>
         </Container>
     )
-}
+};
 
 export default SlideShow

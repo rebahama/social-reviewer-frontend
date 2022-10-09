@@ -1,5 +1,5 @@
-import React from 'react'
-import styles from '../styles/Footer.module.css'
+import React from 'react';
+import styles from '../styles/Footer.module.css';
 
 function Footer() {
       /* Display a footer*/
@@ -17,6 +17,6 @@ function Footer() {
                   </ul>
             </div>
       )
-}
+};
 
 export default Footer

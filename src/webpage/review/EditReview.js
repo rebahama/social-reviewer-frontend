@@ -1,12 +1,32 @@
-import React, { useRef, useEffect } from 'react'
-import { useState } from 'react';
-import styles from '../../styles/EditReviewPage.module.css'
-import { Alert, Button, Container, Form, Col, Row } from 'react-bootstrap';
-import { useHistory } from 'react-router-dom';
-import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
-import { axiosReq } from '../../api/axios';
+import React, {
+  useRef,
+  useEffect
+} from 'react';
+import {
+  useState
+} from 'react';
+import styles from '../../styles/EditReviewPage.module.css';
+import {
+  Alert,
+  Button,
+  Container,
+  Form,
+  Col,
+  Row
+} from 'react-bootstrap';
+import {
+  useHistory
+} from 'react-router-dom';
+import {
+  useParams
+} from 'react-router-dom/cjs/react-router-dom.min';
+import {
+  axiosReq
+} from '../../api/axios';
 
-
+/**Function for editing a review the handleimage will show the old image so that the user dont have to change
+ * image everytime when user changes other information.
+ */
 function EditReview() {
   const [createReview, setCreateReview] = useState({
     title: "",
@@ -18,8 +38,18 @@ function EditReview() {
     category: "",
   });
   const imageInput = useRef(null);
-  const { id } = useParams();
-  const { title, content, image, price, category, pros, cons } = createReview;
+  const {
+    id
+  } = useParams();
+  const {
+    title,
+    content,
+    image,
+    price,
+    category,
+    pros,
+    cons
+  } = createReview;
   const [error, setError] = useState({});
 
   const [categorySub] = useState({
@@ -30,8 +60,15 @@ function EditReview() {
     sports: 5,
     games: 6,
 
-  })
-  const { electronics, clothes, other, vehicles, sports, games } = categorySub;
+  });
+  const {
+    electronics,
+    clothes,
+    other,
+    vehicles,
+    sports,
+    games
+  } = categorySub;
   const history = useHistory();
 
   useEffect(() => {
@@ -39,19 +76,35 @@ function EditReview() {
     const handleRequestEdit = async () => {
 
       try {
-        const { data } = await axiosReq.get(`/posts/${id}/`);
-        const { title, content, pros, cons, image, price, category, is_owner } = data;
+        const {
+          data
+        } = await axiosReq.get(`/posts/${id}/`);
+        const {
+          title,
+          content,
+          pros,
+          cons,
+          image,
+          price,
+          category,
+          is_owner
+        } = data;
 
-        is_owner ? setCreateReview({ title, content, pros, cons, image, price, category }) : history.push("/")
-      }
-      catch (err) {
-        console.log(err)
+        is_owner ? setCreateReview({
+          title,
+          content,
+          pros,
+          cons,
+          image,
+          price,
+          category
+        }) : history.push("/");
+      } catch (err) {
+        console.log(err);
       }
 
-    }
+    };
     handleRequestEdit();
-
-
 
   }, [history, id]);
 
@@ -70,7 +123,7 @@ function EditReview() {
         ...createReview,
         import: URL.createObjectURL(event.target.files[0])
 
-      })
+      });
 
     }
 
@@ -88,7 +141,7 @@ function EditReview() {
     formData.append('category', category);
 
     if (imageInput?.current?.files[0])
-    formData.append('image', imageInput.current.files[0]);
+      formData.append('image', imageInput.current.files[0]);
 
     try {
 
@@ -96,21 +149,19 @@ function EditReview() {
       setMessage("Your information have been updated");
       history.push(`/reviews/${id}/edit`);
 
-    }
-    catch (err) {
-      console.log(err)
+    } catch (err) {
+      console.log(err);
       if (err.response?.data !== 401) {
-        setError(err.response?.data)
+        setError(err.response?.data);
 
       }
     }
 
   };
-
-
+/** Show element and hide ased on clicking */
   const showBlock = () => {
-    let displaying = document.getElementById('display')
-    displaying.style.display = 'block'
+    let displaying = document.getElementById('display');
+    displaying.style.display = 'block';
   };
 
 

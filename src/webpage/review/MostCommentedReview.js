@@ -1,28 +1,45 @@
-import React, { useEffect, useState } from 'react';
-import { Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import { axiosReq } from '../../api/axios';
+import React, {
+  useEffect,
+  useState
+} from 'react';
+import {
+  Container
+} from 'react-bootstrap';
+import {
+  Link
+} from 'react-router-dom';
+import {
+  axiosReq
+} from '../../api/axios';
 import styles from '../../styles/MostLikedReview.module.css';
 
 const MostCommentedReview = () => {
-  const [likedReview, setLikedReview] = useState({ mostLiked: { results: [] } });
-  const { mostLiked } = likedReview;
-
-  useEffect(() => {
-    const handleMount = async () => {
-      try {
-        const { data } = await axiosReq.get("posts/?ordering=-comment_counter");
-        setLikedReview((prevState) => ({
-          ...prevState,
-          mostLiked: data,
-        }));
-      } catch (err) {
-        console.log(err);
+    const [likedReview, setLikedReview] = useState({
+      mostLiked: {
+        results: []
       }
-    };
+    });
+    const {
+      mostLiked
+    } = likedReview;
 
-    handleMount();
-  }, []);
+    useEffect(() => {
+      const handleMount = async () => {
+        try {
+          const {
+            data
+          } = await axiosReq.get("posts/?ordering=-comment_counter");
+          setLikedReview((prevState) => ({
+            ...prevState,
+            mostLiked: data,
+          }));
+        } catch (err) {
+          console.log(err);
+        }
+      };
+
+      handleMount();
+    }, []);
 
   return (
 

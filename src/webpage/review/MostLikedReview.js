@@ -1,28 +1,47 @@
-import React, { useEffect, useState } from 'react';
-import { Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import { axiosReq } from '../../api/axios';
+import React, {
+  useEffect,
+  useState
+} from 'react';
+import {
+  Container
+} from 'react-bootstrap';
+import {
+  Link
+} from 'react-router-dom';
+import {
+  axiosReq
+} from '../../api/axios';
 import styles from '../../styles/MostLikedReview.module.css';
-
+/** Showing the 3 most liked reviews the array will always show only the 3 highest with the 
+ * help of the slice funciton.
+*/
 const MostLikedReview = () => {
-  const [likedReview, setLikedReview] = useState({ mostLiked: { results: [] } });
-  const { mostLiked } = likedReview;
-
-  useEffect(() => {
-    const handleMount = async () => {
-      try {
-        const { data } = await axiosReq.get("posts/?ordering=-like_counter");
-        setLikedReview((prevState) => ({
-          ...prevState,
-          mostLiked: data,
-        }));
-      } catch (err) {
-        console.log(err);
+    const [likedReview, setLikedReview] = useState({
+      mostLiked: {
+        results: []
       }
-    };
+    });
+    const {
+      mostLiked
+    } = likedReview;
 
-    handleMount();
-  }, []);
+    useEffect(() => {
+      const handleMount = async () => {
+        try {
+          const {
+            data
+          } = await axiosReq.get("posts/?ordering=-like_counter");
+          setLikedReview((prevState) => ({
+            ...prevState,
+            mostLiked: data,
+          }));
+        } catch (err) {
+          console.log(err);
+        }
+      };
+
+      handleMount();
+    }, []);
 
   return (
     

@@ -1,10 +1,25 @@
-import React, { useRef } from 'react';
-import { useState } from 'react';
-import { Alert, Button, Container, Form, Col, Row } from 'react-bootstrap';
-import { Link, useHistory } from 'react-router-dom';
-import { axiosReq } from '../../api/axios';
+import React, {
+  useRef
+} from 'react';
+import {
+  useState
+} from 'react';
+import {
+  Alert,
+  Button,
+  Container,
+  Form,
+  Col,
+  Row
+} from 'react-bootstrap';
+import {
+  Link,
+  useHistory
+} from 'react-router-dom';
+import {
+  axiosReq
+} from '../../api/axios';
 import styles from '../../styles/CreateReview.module.css';
-
 
 function CreateReview() {
   const [createReview, setCreateReview] = useState({
@@ -17,7 +32,15 @@ function CreateReview() {
     category: "",
   });
   const imageInput = useRef(null);
-  const { title, content, image, price, category, pros, cons } = createReview;
+  const {
+    title,
+    content,
+    image,
+    price,
+    category,
+    pros,
+    cons
+  } = createReview;
   const [error, setError] = useState({});
   const [message, setMessage] = useState("");
 
@@ -30,7 +53,14 @@ function CreateReview() {
     games: 6,
 
   });
-  const { electronics, clothes, other, vehicles, sports, games } = categorySub;
+  const {
+    electronics,
+    clothes,
+    other,
+    vehicles,
+    sports,
+    games
+  } = categorySub;
   const history = useHistory();
 
   const handleReview = (event) => {
@@ -55,7 +85,7 @@ function CreateReview() {
   };
 
   const handleSubmit = async (event) => {
-    event.preventDefault()
+    event.preventDefault();
     const formData = new FormData();
     formData.append('title', title);
     formData.append('content', content);
@@ -67,21 +97,20 @@ function CreateReview() {
 
     try {
 
-      const { data } = await axiosReq.post('/posts/', formData);
+      const {
+        data
+      } = await axiosReq.post('/posts/', formData);
       setMessage("Your review have been created");
-
       history.push(`/createreview`);
       <Link to={`/reviews/${data.id}`}>Check out your review </Link>
 
-
-    }
-    catch (err) {
+    } catch (err) {
       console.log(err)
       if (err.response?.data !== 401) {
-        setError(err.response?.data)
+        setError(err.response?.data);
 
       }
-    
+
     }
 
   };

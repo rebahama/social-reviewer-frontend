@@ -1,16 +1,29 @@
-import React, { useEffect, useState } from 'react';
-import { axiosReq } from '../../api/axios';
+import React, {
+  useEffect,
+  useState
+} from 'react';
+import {
+  axiosReq
+} from '../../api/axios';
 import styles from '../../styles/CreateReview.module.css';
 import ReviewPage from './ReviewPage';
 
 function SortByPrice() {
-  const [sortReview, setSortReview] = useState({ sortedReviews: { results: [] } });
-  const { sortedReviews } = sortReview;
+  const [sortReview, setSortReview] = useState({
+    sortedReviews: {
+      results: []
+    }
+  });
+  const {
+    sortedReviews
+  } = sortReview;
 
   useEffect(() => {
     const handleMount = async () => {
       try {
-        const { data } = await axiosReq.get("posts/?ordering=-price");
+        const {
+          data
+        } = await axiosReq.get("posts/?ordering=-price");
         setSortReview((prevState) => ({
           ...prevState,
           sortedReviews: data,

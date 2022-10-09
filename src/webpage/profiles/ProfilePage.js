@@ -1,17 +1,31 @@
 import React from 'react';
-import { useCurrentUser } from '../../context/CurrentUserContext';
-import { Col, Container, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import styles from '../../styles/ProfilePage.module.css'
+import {
+  useCurrentUser
+} from '../../context/CurrentUserContext';
+import {
+  Col,
+  Container,
+  Row
+} from 'react-bootstrap';
+import {
+  Link
+} from 'react-router-dom';
+import styles from '../../styles/ProfilePage.module.css';
 
 const ProfilePage = (props) => {
-  const { owner, review_counter, name, image, profile_like, id, content } = props;
-  const currentUser = useCurrentUser();
-  const is_owner = currentUser?.username === owner
-  const realOwner = (<Link to={`/profiles/${id}`}><h3> Click here to edit profile</h3> </Link>);
+    const {
+      owner,
+      review_counter,
+      name,
+      image,
+      profile_like,
+      id,
+      content
+    } = props;
 
-
-  
+const currentUser = useCurrentUser();
+const is_owner = currentUser?.username === owner;
+const realOwner = (<Link to={`/profiles/${id}`}><h3> Click here to edit profile</h3> </Link>);
 
   return (
 

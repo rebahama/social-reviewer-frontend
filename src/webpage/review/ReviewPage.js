@@ -1,87 +1,114 @@
-import React, { useState } from 'react';
-import { useCurrentUser } from '../../context/CurrentUserContext';
-import styles from '../../styles/ReviewPage.module.css';
-import { Row, Col, Container, Modal, Button, Alert } from 'react-bootstrap';
-import { axiosRes } from '../../api/axios';
-import { Link, useHistory } from 'react-router-dom';
-
-
-const ReviewPage = (props) => {
-   /**Takes diffret props that comes from the API and destrucures so that you can use the props throughout the function */
-
-   const {
-      category_name,
-      content,
-      created_at,
-      id,
-      image,
-      title,
-      likes_id,
-      price,
-      owner,
-      pros,
-      cons,
-      comment_counter,
-      like_counter,
-      setReview,
-   } = props;
-/*currentUser variables makes it possible to know that a user is logged in*/
-   const currentUser = useCurrentUser();
-   const is_owner = currentUser?.username === owner
-   /*For displaying modal*/
-   const [show, setShow] = useState(false);
-   /*Displaying message*/
-   const [message, setMessage] = useState("");
-   /*For modal*/
-   const handleClose = () => setShow(false);
-   const handleShow = () => setShow(true);
-   /*Page redirection*/
-   const history = useHistory();
-
-   const handleLikes = async () => {
-      try {
-         const { data } = await axiosRes.post("/likes/", { post: id });
+import React, {
+   useState
+ } from 'react';
+ import {
+   useCurrentUser
+ } from '../../context/CurrentUserContext';
+ import styles from '../../styles/ReviewPage.module.css';
+ import {
+   Row,
+   Col,
+   Container,
+   Modal,
+   Button,
+   Alert
+ } from 'react-bootstrap';
+ import {
+   axiosRes
+ } from '../../api/axios';
+ import {
+   Link,
+   useHistory
+ } from 'react-router-dom';
+ 
+ const ReviewPage = (props) => {
+     /**Takes diffret props that comes from the API and destrucures so that you can use the props throughout the function */
+ 
+     const {
+       category_name,
+       content,
+       created_at,
+       id,
+       image,
+       title,
+       likes_id,
+       price,
+       owner,
+       pros,
+       cons,
+       comment_counter,
+       like_counter,
+       setReview,
+     } = props;
+     /*currentUser variables makes it possible to know that a user is logged in*/
+     const currentUser = useCurrentUser();
+     const is_owner = currentUser?.username === owner;
+     /*For displaying modal*/
+     const [show, setShow] = useState(false);
+     /*Displaying message*/
+     const [message, setMessage] = useState("");
+     /*For modal*/
+     const handleClose = () => setShow(false);
+     const handleShow = () => setShow(true);
+     /*Page redirection*/
+     const history = useHistory();
+ 
+     const handleLikes = async () => {
+       try {
+         const {
+           data
+         } = await axiosRes.post("/likes/", {
+           post: id
+         });
          setReview((prevPosts) => ({
-            ...prevPosts,
-            results: prevPosts.results.map((post) => {
-               return post.id === id
-                  ? { ...post, like_counter: post.likes_count + 1, likes_id: data.id }
-                  : post;
-            }),
+           ...prevPosts,
+           results: prevPosts.results.map((post) => {
+             return post.id === id ?
+               {
+                 ...post,
+                 like_counter: post.likes_count + 1,
+                 likes_id: data.id
+               } :
+               post;
+           }),
          }));
-      } catch (err) {
+       } catch (err) {
          console.log(err);
-
-      }
-   };
-
-   const handleUnlike = async () => {
-      try {
+ 
+       }
+     };
+ 
+     const handleUnlike = async () => {
+       try {
          await axiosRes.delete(`/likes/${likes_id}`);
          setReview((prevPosts) => ({
-            ...prevPosts,
-            results: prevPosts.results.map((post) => {
-               return post.id === id
-                  ? { ...post, like_counter: post.like_counter - 1, likes_id: null }
-                  : post;
-            }),
+           ...prevPosts,
+           results: prevPosts.results.map((post) => {
+             return post.id === id ?
+               {
+                 ...post,
+                 like_counter: post.like_counter - 1,
+                 likes_id: null
+               } :
+               post;
+           }),
          }));
-
-      } catch (err) {
+ 
+       } catch (err) {
          console.log(err);
-      }
-   };
-
-   const handleDelete = async () => {
-      try {
+       }
+     };
+ 
+     const handleDelete = async () => {
+       try {
          await axiosRes.delete(`/posts/${id}/`);
          history.goBack();
          setMessage("Your review have deleted");
          alert("Your review have been successfully deleted");
-      } catch (err) {
+       } catch (err) {
          console.log(err);
-      }
-   };
+       }
+     };
 
    /*Show only when the user is the owner of the review*/
    const realOwner = (<> <Link to={`/reviews/${id}/edit`}><i className={`fa-regular fa-pen-to-square ${styles.TrashCan}`}> </i>  </Link>
@@ -101,6 +128,7 @@ const ReviewPage = (props) => {
          </Modal.Footer>
       </Modal>
    </>);
+
 /*Display if user is logged in*/
    const likedLoggedIn = (<> {likes_id ? <i className={`fa-solid fa-thumbs-down ${styles.LikeThumb}`} onClick={handleUnlike}> {like_counter} </i>  :
       <i className={`fa-solid fa-thumbs-up ${styles.LikeThumb}`} onClick={handleLikes}> {like_counter}</i>} </>)
@@ -128,7 +156,6 @@ const ReviewPage = (props) => {
                      <p>{price} </p>
                      <h3 className={styles.HeadingFields}> <i className="fa-solid fa-table-columns"></i> Category </h3>
                      <p>{category_name}</p>
-
                      {is_owner && realOwner}
                   </Col>
                   <Col md={6}>

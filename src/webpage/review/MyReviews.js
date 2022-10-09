@@ -1,47 +1,59 @@
-import React, { useEffect, useState, } from 'react';
+import React, {
+  useEffect,
+  useState,
+} from 'react';
 import styles from '../../styles/MyReviewsPage.module.css';
-import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
-import { axiosReq } from '../../api/axios'
+import {
+  useLocation
+} from 'react-router-dom/cjs/react-router-dom.min';
+import {
+  axiosReq
+} from '../../api/axios';
 import MyReviewsPage from './MyReviewsPage';
-import { useCurrentUser } from '../../context/CurrentUserContext';
+import {
+  useCurrentUser
+} from '../../context/CurrentUserContext';
 import SpinnerAsset from '../../components/SpinnerAsset';
 
 function MyReviews() {
-  const { pathname } = useLocation();
+  const {
+    pathname
+  } = useLocation();
   const currentuser = useCurrentUser();
   const id = currentuser?.profile_id;
   const [loaded, loadedcomplete] = useState(false);
-  const [Myreview, setMyReview] = useState({ results: [] });
+  const [Myreview, setMyReview] = useState({
+    results: []
+  });
 
   useEffect(() => {
     const handleData = async () => {
       try {
-        const { data } = await axiosReq.get(`/posts/?owner__profile=${id}`);
+        const {
+          data
+        } = await axiosReq.get(`/posts/?owner__profile=${id}`);
         setMyReview(data);
         loadedcomplete(true);
-      }
-      catch (err) {
-        console.log(err)
+      } catch (err) {
+        console.log(err);
 
       }
 
-    }
+    };
     loadedcomplete(false);
 
     const time = setInterval(() => {
       handleData();
 
-
-    }, 1000)
-
+    }, 1000);
 
     return () => {
       clearInterval(time);
-    }
+    };
 
   }, [id, pathname]);
 
-
+/** If the the results array is not loaded then dislay a spinner untill the loader is visable */
   return (
     
     <div> {loaded ? (<> <h3 className={styles.CreateText}> My reviews</h3>  {Myreview.results.map((review) =>

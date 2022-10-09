@@ -3,7 +3,10 @@ import NavBar from './components/NavBar';
 import SignUp from './webpage/auth/SignUp';
 import SignIn from './webpage/auth/SignIn';
 import HomePage from './webpage/homepage/HomePage';
-import { Route, Switch } from "react-router-dom";
+import {
+  Route,
+  Switch
+} from "react-router-dom";
 import './api/axios';
 import CreateReview from './webpage/review/CreateReview';
 import Reviews from './webpage/homepage/Reviews';
@@ -14,8 +17,6 @@ import PersonalProfilePage from './webpage/profiles/PersonalProfilePage';
 import MyReviews from './webpage/review/MyReviews';
 import CategoryPageShow from './webpage/category/CategoryPageShow';
 import NotFound from './components/NotFound';
-
-
 
 function App() {
 

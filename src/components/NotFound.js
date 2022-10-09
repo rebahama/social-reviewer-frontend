@@ -1,7 +1,10 @@
-import React from 'react'
-import styles from '../styles/NotFound.module.css'
-import notFound from '../assets/not-found.gif'
-import {Container, Row } from 'react-bootstrap'
+import React from 'react';
+import styles from '../styles/NotFound.module.css';
+import notFound from '../assets/not-found.gif';
+import {
+  Container,
+  Row
+} from 'react-bootstrap';
 
 function NotFound() {
   return (
@@ -13,6 +16,6 @@ function NotFound() {
     </Container>
 
   )
-}
+};
 
 export default NotFound

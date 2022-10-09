@@ -1,48 +1,61 @@
-import React, { useEffect, useState } from 'react';
-import { axiosReq } from '../../api/axios';
+import React, {
+  useEffect,
+  useState
+} from 'react';
+import {
+  axiosReq
+} from '../../api/axios';
 import ReviewPage from './ReviewPage';
 import styles from '../../styles/ReviewPage.module.css';
 import SpinnerAsset from '../../components/SpinnerAsset';
-import { Col, Container, Form, Row} from 'react-bootstrap';
+import {
+  Col,
+  Container,
+  Form,
+  Row
+} from 'react-bootstrap';
 import SortByPrice from './SortByPrice';
 
 const AllReviews = () => {
 
-  const [review, setReview] = useState({ results: [] });
-  const [loaded, loadedcomplete] = useState(false);
-  const [query, setQuery] = useState("");
-  const [clicked, setClick] = useState(false);
+    const [review, setReview] = useState({
+      results: []
+    });
+    const [loaded, loadedcomplete] = useState(false);
+    const [query, setQuery] = useState("");
+    const [clicked, setClick] = useState(false);
 
-  useEffect(() => {
-    const handleData = async () => {
-      try {
-        const { data } = await axiosReq.get(`/posts/?search=${query}`);
-        setReview(data);
-        loadedcomplete(true);
+    useEffect(() => {
+      const handleData = async () => {
+        try {
+          const {
+            data
+          } = await axiosReq.get(`/posts/?search=${query}`);
+          setReview(data);
+          loadedcomplete(true);
 
-      }
-      catch (err) {
-        console.log(err);
+        } catch (err) {
+          console.log(err);
 
-      }
+        }
 
-    }
-    loadedcomplete(false);
+      };
+      loadedcomplete(false);
 
-    const time = setInterval(() => {
-      handleData();
-    }, 1000)
+      const time = setInterval(() => {
+        handleData();
+      }, 1000);
 
-    return () => {
-      clearInterval(time);
-    }
+      return () => {
+        clearInterval(time);
+      };
 
-  }, [query]);
+    }, [query]);
 
-  const handleSort = () => {
-    setClick(true);
+    const handleSort = () => {
+      setClick(true);
 
-  }
+    };
 
   const showSearch = (
     <Container>
@@ -65,6 +78,7 @@ const AllReviews = () => {
           {loaded ? (<>{review.results.map((review) => (<ReviewPage key={review.id} {...review} />))}</>) :
             <SpinnerAsset />}</>}
     </div>
+
   )
 }
 

@@ -1,12 +1,27 @@
-import React, { useState } from 'react';
+import React, {
+  useState
+} from 'react';
 import axios from 'axios';
-import { Link, useHistory } from "react-router-dom";
-import { Alert, Button, Container, Form, Col, Row } from 'react-bootstrap';
-import { useSetCurrentUser } from '../../context/CurrentUserContext';
+import {
+  Link,
+  useHistory
+} from "react-router-dom";
+import {
+  Alert,
+  Button,
+  Container,
+  Form,
+  Col,
+  Row
+} from 'react-bootstrap';
+import {
+  useSetCurrentUser
+} from '../../context/CurrentUserContext';
 import styles from '../../styles/SignIn.module.css';
 import loginGif from '../../assets/login-gif.gif';
-import { setTokenTimestamp } from '../../utilis/utilis';
-
+import {
+  setTokenTimestamp
+} from '../../utilis/utilis';
 
 const SignIn = () => {
   /** When user signs in  */
@@ -16,21 +31,25 @@ const SignIn = () => {
     password: "",
 
   });
-  const { username, password } = SignIn;
+  const {
+    username,
+    password
+  } = SignIn;
   const [error, setError] = useState({});
   const history = useHistory();
-
 
   const submitForm = async (event) => {
     event.preventDefault();
     try {
-      const { data } = await axios.post("/dj-rest-auth/login/", SignIn)
-      
-      setCurrentUser(data.user)
-      setTokenTimestamp(data)
-      history.push("/")
+      const {
+        data
+      } = await axios.post("/dj-rest-auth/login/", SignIn)
+
+      setCurrentUser(data.user);
+      setTokenTimestamp(data);
+      history.push("/");
     } catch (err) {
-      setError(err.response?.data)
+      setError(err.response?.data);
     }
 
   };
@@ -88,6 +107,6 @@ const SignIn = () => {
     </Container>
     
   )
-}
+};
 
 export default SignIn
