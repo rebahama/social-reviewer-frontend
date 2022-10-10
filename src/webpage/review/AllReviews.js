@@ -67,7 +67,7 @@ const AllReviews = () => {
       <Row md={12}>
         <Col>
           <Form onSubmit={(event) => event.preventDefault()}>
-            <Form.Control type="text" className={styles.SearchBar} placeholder="Search a review" value={query} onChange={(event) => setQuery(event.target.value)} />
+            <Form.Control type="text" className={styles.SearchBar} placeholder= "Search a review" value={query} onChange={(event) => setQuery(event.target.value)}  />
           </Form>
         </Col>
       </Row>

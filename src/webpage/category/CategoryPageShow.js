@@ -66,8 +66,6 @@ function CategoryPageShow() {
 
       })}
       <hr/>
-      
-
 
       {loaded ? (<>
         {category.results.map((review) => (<ReviewPage  key={review.id} {...review} />))} </>) : (<SpinnerAsset />)}

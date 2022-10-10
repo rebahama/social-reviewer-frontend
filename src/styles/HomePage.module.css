@@ -25,13 +25,35 @@ hr {
     padding: 20px;
     border-radius: 50px;
     font-family: 'Architects Daughter', cursive;
-    background-color: #acadad;
+    background-color: #909191;
     margin-bottom: 5%;
     margin-top: 5%;
     box-shadow: 0 10px 16px 0 rgb(0 0 0 / 10%), 0 6px 20px 0 rgb(0 0 0 / 10%);
     color: white;
+    animation-name: hero-zoom;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+}
+/*style link in alert box*/
+.LinkColorName {
+    color: #000000;
 }
 
+.LinkColorName:hover {
+    color: #ffffff;
+}
+
+@keyframes hero-zoom {
+
+	/* intro text is animated here*/
+	from {
+		transform: scale(2);
+	}
+
+	to {
+		transform: scale(1);
+	}
+}
 @media screen and (max-width: 770px) {
  .HeroText {
 
