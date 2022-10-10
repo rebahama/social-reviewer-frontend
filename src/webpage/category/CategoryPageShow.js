@@ -26,31 +26,30 @@ function CategoryPageShow() {
   } = useParams();
 
   useEffect(() => {
-
+    let isMounted = true;
     const handleData = async () => {
 
       try {
         const {
           data
         } = await axiosReq.get(`/posts/?owner__profile=&category=${id}`);
+        if (isMounted){
         setCategory(data);
         console.log(data);
         loadedcomplete(true);
-
+      }
       } catch (err) {
         console.log(err);
       }
 
     };
     loadedcomplete(false);
-    const time = setTimeout(() => {
       handleData();
 
-    }, 1500);
+      return () => {
+        isMounted = false;
+      };
 
-    return () => {
-      clearTimeout(time);
-    };
 
   }, [id]);
 

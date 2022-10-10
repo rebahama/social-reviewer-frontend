@@ -32,31 +32,30 @@ const CategoryPage = () => {
     });
 
     useEffect(() => {
-
+      let isMounted = true;
       const handleData = async () => {
 
         try {
           const {
             data
           } = await axiosReq.get("category/");
+          if (isMounted){
           setCategory(data);
           loadedcomplete(true);
           console.log(data);
-
+        }
         } catch (err) {
 
         }
 
       };
       loadedcomplete(false);
-      const time = setTimeout(() => {
-        handleData();
-
-      }, 1500);
-
+      handleData();
       return () => {
-        clearTimeout(time);
+        isMounted = false;
       };
+
+     
 
     }, []);
 
