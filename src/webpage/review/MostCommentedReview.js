@@ -37,7 +37,6 @@ const MostCommentedReview = () => {
           }));
         }
         } catch (err) {
-          console.log(err);
         }
       };
 

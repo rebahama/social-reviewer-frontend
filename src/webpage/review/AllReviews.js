@@ -39,7 +39,7 @@ const AllReviews = () => {
           loadedcomplete(true);
         }
         } catch (err) {
-          console.log(err);
+
 
         }
 

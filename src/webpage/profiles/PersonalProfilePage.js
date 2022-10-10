@@ -104,7 +104,7 @@ import React, {
           await axiosReq.put(`/profiles/${id}/`, formData);
           history.push("/profilepage/");
         } catch (err) {
-          console.log(err);
+          
           if (err.response?.status !== 401) {
             setError(err.response?.data);
           }

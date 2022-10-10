@@ -100,7 +100,7 @@ function EditReview() {
           category
         }) : history.push("/");
       } catch (err) {
-        console.log(err);
+  
       }
 
     };
@@ -150,7 +150,6 @@ function EditReview() {
       history.push(`/reviews/${id}/edit`);
 
     } catch (err) {
-      console.log(err);
       if (err.response?.data !== 401) {
         setError(err.response?.data);
 

@@ -105,7 +105,7 @@ function CreateReview() {
       <Link to={`/reviews/${data.id}`}>Check out your review </Link>
 
     } catch (err) {
-      console.log(err)
+  
       if (err.response?.data !== 401) {
         setError(err.response?.data);
 

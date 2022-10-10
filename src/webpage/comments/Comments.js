@@ -38,7 +38,7 @@ const Comments = (props) => {
         history.go(0);
         alert("Your comment have been deleted");
       } catch (err) {
-        console.log(err);
+
       }
       setPost((prevPost) => ({
         results: [{

@@ -29,7 +29,7 @@ function SortByPrice() {
           sortedReviews: data,
         }));
       } catch (err) {
-        console.log(err);
+
       }
     };
 

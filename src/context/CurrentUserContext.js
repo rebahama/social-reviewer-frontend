@@ -42,7 +42,7 @@ export const useSetCurrentUser = () => useContext(SetCurrentUserContext);
       setCurrentUser(data);
 
     } catch (err) {
-      console.log(err);
+
     }
   }
 

@@ -42,7 +42,6 @@ const CategoryPage = () => {
           if (isMounted){
           setCategory(data);
           loadedcomplete(true);
-          console.log(data);
         }
         } catch (err) {
 

@@ -42,9 +42,9 @@ import React, {
             results: [review]
           });
           setComment(comments);
-          console.log(comments);
+
         } catch (err) {
-          console.log(err);
+
   
         }
   

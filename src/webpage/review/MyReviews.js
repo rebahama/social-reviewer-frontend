@@ -39,7 +39,6 @@ function MyReviews() {
           loadedcomplete(true);
         }
       } catch (err) {
-        console.log(err);
 
       }
 

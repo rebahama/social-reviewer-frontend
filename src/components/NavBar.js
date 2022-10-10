@@ -40,7 +40,7 @@ const NavBar = () => {
         removeTokenTimestamp();
 
       } catch (err) {
-        console.log(err);
+        
       }
 
     };

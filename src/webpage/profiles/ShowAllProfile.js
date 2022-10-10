@@ -28,7 +28,7 @@ function ShowAllProfile() {
           loadedcomplete(true);
         }
       } catch (err) {
-        console.log(err);
+  
 
       }
 

@@ -39,7 +39,7 @@ const MostLikedReview = () => {
           }));
         }
         } catch (err) {
-          console.log(err);
+
         }
       };
 

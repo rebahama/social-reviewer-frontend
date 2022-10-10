@@ -35,11 +35,11 @@ function CategoryPageShow() {
         } = await axiosReq.get(`/posts/?owner__profile=&category=${id}`);
         if (isMounted){
         setCategory(data);
-        console.log(data);
+
         loadedcomplete(true);
       }
       } catch (err) {
-        console.log(err);
+  
       }
 
     };

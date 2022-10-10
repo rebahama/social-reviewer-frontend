@@ -73,7 +73,6 @@ import React, {
            }),
          }));
        } catch (err) {
-         console.log(err);
  
        }
      };
@@ -95,7 +94,6 @@ import React, {
          }));
  
        } catch (err) {
-         console.log(err);
        }
      };
  
@@ -106,7 +104,7 @@ import React, {
          setMessage("Your review have deleted");
          alert("Your review have been successfully deleted");
        } catch (err) {
-         console.log(err);
+
        }
      };
 
