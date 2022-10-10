@@ -1,0 +1,13 @@
+.ContactUsGif {
+    width: 50%;
+}
+.ContainerGif {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+@media screen and (max-width: 570px) {
+    .ContactUsGif {
+        margin: auto;
+   }
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from '../styles/Footer.module.css';
 
 function Footer() {
@@ -14,7 +15,9 @@ function Footer() {
                               className="fa-brands fa-twitter"> </i></a></li>
                         <li className="list-inline-item"><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"><i
                               className="fa-brands fa-linkedin"> </i></a></li>
+                             <Link to="contact/"> <h3> Contact </h3></Link>
                   </ul>
+                  
             </div>
       )
 };
