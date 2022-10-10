@@ -1,25 +1,33 @@
-import React, { useEffect, useState } from 'react';
-import { axiosReq } from '../../api/axios';
+import React, {
+  useEffect,
+  useState
+} from 'react';
+import {
+  axiosReq
+} from '../../api/axios';
 import ProfilePage from './ProfilePage';
 import styles from '../../styles/ProfilePage.module.css';
 import SpinnerAsset from '../../components/SpinnerAsset';
-import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 
-
-function ShowAllProfile(props) {
+function ShowAllProfile() {
 
   const [loaded, loadedcomplete] = useState(false);
-  const [profile, setProfile] = useState({ results: [] });
-  const { pathname } = useLocation()
+  const [profile, setProfile] = useState({
+    results: []
+  });
 
   useEffect(() => {
+    let isMounted = true;
     const handleData = async () => {
       try {
-        const { data } = await axiosReq.get("/profiles/");
-        setProfile(data);
-        loadedcomplete(true);
-      }
-      catch (err) {
+        const {
+          data
+        } = await axiosReq.get("/profiles/");
+        if (isMounted) {
+          setProfile(data);
+          loadedcomplete(true);
+        }
+      } catch (err) {
         console.log(err);
 
       }
@@ -27,9 +35,11 @@ function ShowAllProfile(props) {
     }
     loadedcomplete(false)
     handleData();
+    return () => {
+      isMounted = false;
+    };
 
-
-  }, [pathname]);
+  }, []);
 
   return (
 
