@@ -26,14 +26,18 @@ const AllReviews = () => {
     const [clicked, setClick] = useState(false);
 
     useEffect(() => {
+      let isMounted = true;
+
+      
       const handleData = async () => {
         try {
           const {
             data
           } = await axiosReq.get(`/posts/?search=${query}`);
+          if(isMounted){
           setReview(data);
           loadedcomplete(true);
-
+        }
         } catch (err) {
           console.log(err);
 
@@ -47,6 +51,7 @@ const AllReviews = () => {
       }, 1000);
 
       return () => {
+        isMounted = false;
         clearInterval(time);
       };
 
