@@ -163,7 +163,7 @@ User will be welcomed with a short intro text that will encoruage the user to se
 ![Website homepage](docs/website/homepage.png)
 
 ## Categories
-In the first page of the carousel, there is a option of categories to choose from, depending on what the user clicks on the user will be redirected to the reviews that is relevant to the category that is clicked on.
+In the first page of the carousel, there is a option of categories to choose from, depending on what the user clicks on the user will be redirected to the reviews that is relevant to the category that is clicked on. On the top page of the category page there is a categor heading displayed that is relevant to what the user clicked on.
 
 ![Website homepage-category](docs/website/homepage-category.png)
 

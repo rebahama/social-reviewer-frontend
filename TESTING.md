@@ -180,6 +180,12 @@ Users can create an account and a link will appear when the account have been cr
 
 * When I tried to submit a review in the create review page the input fields for category was empty and it resualted in an internal 500 error from the api. The solution for this was to set a number value for the category because the category api endpoint requested a value from 1 to 6, so I set a value of 1 that is equal to the electronics in the category field. The user can choose other categories as well.
 
+* When I was finished with my website and started to do test, I had the inspect page functionality opened so that i could se what the problem was. When I clicked to fast to go from one page to another before the component was mounted I got the following error: 
+
+![test-1](docs/testing/memory-leak-allreviews.png)
+
+It was a memory leak and I solved the error by following tips from this page [Memoryleak](https://www.loginradius.com/blog/engineering/how-to-fix-memory-leaks-in-react/)
+
 # Validation of files
 
 * All the Javascript files have been validated by [JShint](http://jshint.com/).
