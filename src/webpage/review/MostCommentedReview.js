@@ -24,21 +24,27 @@ const MostCommentedReview = () => {
     } = likedReview;
 
     useEffect(() => {
+      let isMounted = true;
       const handleMount = async () => {
         try {
           const {
             data
           } = await axiosReq.get("posts/?ordering=-comment_counter");
+          if (isMounted){
           setLikedReview((prevState) => ({
             ...prevState,
             mostLiked: data,
           }));
+        }
         } catch (err) {
           console.log(err);
         }
       };
 
       handleMount();
+      return () => {
+        isMounted = false;
+      };
     }, []);
 
   return (
