@@ -18,3 +18,15 @@
     border-radius: 50%;
     
 }
+
+@media screen and (max-width: 770px) {
+    .ProfileImage{
+       max-width: 30%;
+   }
+}
+
+@media screen and (max-width: 500px) {
+    .ProfileImage{
+       max-width: 90%;
+   }
+}

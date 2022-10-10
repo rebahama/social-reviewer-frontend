@@ -104,7 +104,6 @@ import React, {
          setMessage("Your review have deleted");
          alert("Your review have been successfully deleted");
        } catch (err) {
-
        }
      };
 
