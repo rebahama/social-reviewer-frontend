@@ -27,13 +27,17 @@ function MyReviews() {
   });
 
   useEffect(() => {
+    let isMounted = true;
+
     const handleData = async () => {
       try {
         const {
           data
         } = await axiosReq.get(`/posts/?owner__profile=${id}`);
-        setMyReview(data);
-        loadedcomplete(true);
+        if (isMounted) {
+          setMyReview(data);
+          loadedcomplete(true);
+        }
       } catch (err) {
         console.log(err);
 
@@ -41,14 +45,9 @@ function MyReviews() {
 
     };
     loadedcomplete(false);
-
-    const time = setInterval(() => {
-      handleData();
-
-    }, 1000);
-
+    handleData();
     return () => {
-      clearInterval(time);
+      isMounted = false;
     };
 
   }, [id, pathname]);
