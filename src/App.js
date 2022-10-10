@@ -17,6 +17,7 @@ import PersonalProfilePage from './webpage/profiles/PersonalProfilePage';
 import MyReviews from './webpage/review/MyReviews';
 import CategoryPageShow from './webpage/category/CategoryPageShow';
 import NotFound from './components/NotFound';
+import ContactUs from './webpage/homepage/ContactUs';
 
 function App() {
 
@@ -35,6 +36,7 @@ function App() {
         <Route exact path="/profiles/:id" render={() => <PersonalProfilePage />} />
         <Route exact path="/myreviews/" render={() => <MyReviews />} />
         <Route exact path="/category/:id" render={() => <CategoryPageShow />} />
+        <Route exact path="/contact/" render={() => <ContactUs />} />
         <Route render={() => <NotFound />} />
       </Switch>
     </div>

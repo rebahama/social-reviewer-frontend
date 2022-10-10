@@ -1,6 +1,9 @@
 .NavBar {
     font-size: 1rem;
     font-weight: bold;
+    position: sticky;
+    z-index: 1;
+  top: 0;
 }
 /*Navbar links*/
 a:hover i {

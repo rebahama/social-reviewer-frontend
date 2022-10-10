@@ -62,7 +62,7 @@ const NavBar = () => {
     </>);
 
     return (
-        <Navbar bg="light" variant="light" className={styles.NavBar} expand="lg">
+        <Navbar bg="light" variant="light" className={`${styles.NavBar}`} expand="lg">
             <NavLink to="/">
                 <Navbar.Brand className={`"ml-auto" ${styles.BrandLogo}`}> <i className="fa-solid fa-star"></i> Social Reviewer </Navbar.Brand>
             </NavLink>
