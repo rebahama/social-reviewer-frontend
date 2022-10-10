@@ -55,7 +55,20 @@ function CategoryPageShow() {
 
   return (
 
-    <div> <h3> category </h3>
+    <div>
+    {category.results.category_name}
+      {category.results.slice(0,1).map((category)=>{
+       
+        return <h3 className={styles.CategoryHeading} key={category.id}>
+        
+        {category.category_name}</h3>
+        
+
+      })}
+      <hr/>
+      
+
+
       {loaded ? (<>
         {category.results.map((review) => (<ReviewPage  key={review.id} {...review} />))} </>) : (<SpinnerAsset />)}
         {category.results.length ? "":<p className={styles.UserNameStyles }> No reviews have been created yet for this categorypage... </p>}
