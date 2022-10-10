@@ -1,7 +1,7 @@
 # Social reviewer
 ![Wireframe homepage](docs/website/front-page.png)
 
-According to our research many review site lacks the social media feeling, also another problem is that on many review sites only focus on a specific subject category.
+According to our research many review site lacks the social media feeling, also another problem is that on many review sites the only focus is on only one category.
 Social reviewer makes reviewing more fun and interacts the user with the reviewer in a fun way and the important part is that in the category you can choose to review everything from electronics to cars. Users can create account, create reviews, comment, upvote, see the most popular and most commented reviews. Users can also see all the profiles that are listed on the site. The target group here is anyone that would like all the reviews from diffrent categories to be on the same webpage in a fun way.
 
 
@@ -101,7 +101,7 @@ This will show up every time a user makes a delete, exampale when deleting a rev
 
 # Database diagrams
 
-The database is used together with framework Django, the software is called: PostgresSql and it is a relational database. The is 6 diffrent models and all wil be displayed below:
+The database is used together with the Django framework, the software is called: PostgresSql and it is a relational database. There is 6 diffrent models and all wil be displayed below:
 
 ## Category
 
@@ -163,7 +163,7 @@ User will be welcomed with a short intro text that will encoruage the user to se
 ![Website homepage](docs/website/homepage.png)
 
 ## Categories
-In the first page of the carousel, there is a option of categories to choose from, depending on what the user clicks on the user will be redirected to the reviews that is relevant to the category that is clicked on. On the top page of the category page there is a categor heading displayed that is relevant to what the user clicked on.
+In the first page of the carousel, there is a option of categories to choose from, depending on what the user clicks on the user will be redirected to the reviews that is relevant to the category that is clicked on. On the top page of the category page there is a category heading displayed that is relevant to what the user clicked on.
 
 ![Website homepage-category](docs/website/homepage-category.png)
 
@@ -251,7 +251,7 @@ This page is where the user will be able to create a review. If the user lefts s
 ![Website create-message](docs/website/create-message.png)
 
 ## Logged in user
-When user is logged in the following will be displayed for 10 seconds before disappearing from the page.
+When user is logged in the following will be displayed and welcome the current user that is logged in.
 
 ![Website loggedin](docs/website/homepage-message.png)
 
@@ -324,7 +324,10 @@ When user tries to access a url that does not exist the following page will be d
 * jwt-decode was installed for for decoding the jason web tokens.
 
 # Frontend libraries
-
+The React frontend library have been used to fetch the api endpoints throughout the application. The navbar that 
+is showing on every link that the user clicks is visable thanks to to React and reuse of the component. The sorting 
+of the page from the highest price to the lowest is achieved with the help of React. The displaying of the most commented and the most
+liked reviews on the page is also displayed with the help of React.
 
 # API backend endpoint
 The documentation for the backend can be found here [social-reviewer-backend](https://github.com/rebahama/social-reviewer-backend#readme)
@@ -374,7 +377,7 @@ My Agile documentation can be found here [Agile](https://github.com/rebahama/soc
 
 # Credits
 
-* The symbols on the webpage can be found on Fontawesome [Fontawesome](https://fontawesome.com/).
+* The symbols on the webpage can be found on [Fontawesome](https://fontawesome.com/).
 
 * Inspiration and some help was taken from Code institute walkthorugh video of "Moments" [Moments](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+RA101+2021_T3/courseware/70a8c55db0504bbdb5bcc3bfcf580080/953cd4e5015f483bb05263db3e740e19/).
 

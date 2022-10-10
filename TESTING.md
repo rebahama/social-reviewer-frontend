@@ -147,7 +147,7 @@ Users can create an account and a link will appear when the account have been cr
 
 * When user logs out testing have been done to try to acessing restricted content.
 
-* In the profile page the "edit" links is only visable of the logged in user is the owner of the profile. If the id of another probile is copied and pasted in the url for editing then the user will automatically be redirected.
+* In the profile page the "edit" links is only visable if the logged in user is the owner of the profile. If the id of another probile is copied and pasted in the url for editing then the user will automatically be redirected.
 
 # Searching
 * Searching after title,catgory and username displays reviews relevant to the search word.
@@ -171,16 +171,14 @@ Users can create an account and a link will appear when the account have been cr
 ## Solved bugs
 * When I tried to make the user to be able to log out, I ran into some issues where the user would not be logged out when trying to click on "log out". It turned out that I did not match  the url path in the frontend for the API endpoint in the backend. I had forgotten to remove a trailing slash in the front end code and after removing the trailing slash I was able to log the user out when clicking log out.
 
-* When I tried to implement the like feature I could only like the page but not unlike. The console in the browser showed "undefined" id. It turned out that the like_id did not exist in the API endpoint. I had to review the backend code and add the like_id as a methodfield serializer and after that the like function was working and it was possbile to also unlike and the counter would go down.
-
-* In the create review page when choosing categories the API endpoint would display: error:"500 internal error" when trying to sumbit a created review. It turned out that one of the fields where the user can choose a category was empty and the API endpoint would only work if the data was prefilled.
+* When I tried to implement the like feature I could only like the page but not unlike. The console in the browser showed "undefined" id. It turned out that the like_id did not exist in the API endpoint. I had to review the backend code and add the like_id as a methodfield serializer and after that the like function was working and it was possible to also unlike and the counter would go down.
 
 
 * The all reviews page have diffrent cards, and on those cards there is a like button. The like button works without problem on that page. But the same cards are reused on other pages as categories, searching and reviewpage. The like count wont update without updating the page on the other pages. Due to little time left on the project I decided to solve that bug at a later stage, but the bug wont effect anything apart from that the user need do update the page to display the updated likes.
 
 * When I tried to submit a review in the create review page the input fields for category was empty and it resualted in an internal 500 error from the api. The solution for this was to set a number value for the category because the category api endpoint requested a value from 1 to 6, so I set a value of 1 that is equal to the electronics in the category field. The user can choose other categories as well.
 
-* When I was finished with my website and started to do test, I had the inspect page functionality opened so that i could se what the problem was. When I clicked to fast to go from one page to another before the component was mounted I got the following error: 
+* When I was finished with my website and started to do test, I had the inspect page functionality opened so that i could se what the problem was. When I clicked very fast to go from one page to another before the component was mounted I got the following error: 
 
 ![test-1](docs/testing/memory-leak-allreviews.png)
 
