@@ -2,7 +2,7 @@
     font-size: 1rem;
     font-weight: bold;
     position: sticky;
-    z-index: 1;
+    z-index: 20;
   top: 0;
 }
 /*Navbar links*/

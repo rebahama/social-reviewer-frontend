@@ -8,8 +8,8 @@
 }
 /*Intro text*/
 .HeroText {
-    color: black;
-    position: absolute;
+    color: #e44242;
+    position: relative;
     bottom: 60%;
     width: 100%;
     font-family: "Amatic SC", sans-serif;
