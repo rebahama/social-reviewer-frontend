@@ -22,19 +22,19 @@ import React, {
     const [alertMessage, setAlertMessage] = useState(false);
     const currentUser = useCurrentUser();
   
-    const DisplayName = () => {
-      setAlertMessage(true);
-      setTimeout(() => {
-        setAlertMessage(false);
-      }, 10000);
-  
-    };
-  
     useEffect(() => {
-      const timer = DisplayName();
-  
-      return () => clearTimeout(timer);
-  
+
+      const DisplayName = () => {
+    
+        setAlertMessage(true);
+        setTimeout(() => {
+          setAlertMessage(true);
+    
+        });
+    
+      };
+      DisplayName();
+    
     }, []);
    
     return (
