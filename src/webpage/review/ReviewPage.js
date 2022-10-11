@@ -143,7 +143,7 @@ import React, {
             <hr />
             <div className={styles.AllContent}>
                <Row md={12}>
-                  <img src={image} className={styles.ReviewImage} alt={title}></img>
+                  <img src={image} className={styles.ReviewImage} alt={title} width="600" height="400"/>
                   <Col md={6} className={styles.ExtraFields}>
                      <h3 className={styles.HeadingFields}> <i className="fa-solid fa-thumbs-up"></i> Pros</h3>
                      <p> {pros} </p>
