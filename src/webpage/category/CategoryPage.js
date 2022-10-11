@@ -3,15 +3,15 @@ import React, {
   useState
 } from 'react';
 import styles from '../../styles/CategoryPage.module.css';
-import reviewGif from '../../assets/review-rating.gif';
-import commentGif from '../../assets/comment.gif';
-import signupGif from '../../assets/sign-up.gif';
+import reviewGif from '../../assets/review-rating.mp4';
+import commentGif from '../../assets/comment.mp4';
+import signupGif from '../../assets/sign-up.mp4';
 import {
   Carousel,
   Container,
   Row
 } from 'react-bootstrap';
-import logo from '../../assets/homepage-anim.gif';
+import logo from '../../assets/homepage-anim.mp4';
 import {
   Link
 } from 'react-router-dom';
@@ -76,34 +76,34 @@ const CategoryPage = () => {
         <Carousel>
           <Carousel.Item className={styles.ContainerCarousel}>
             <h3 className={styles.PopularText}>  Top 3 most liked reviews </h3>
-
-            <img
-              className="d-block w-50"
-              src={reviewGif}
-              alt="First slide"
-            />
+            <video src={reviewGif} autoPlay
+            loop
+            muted
+            playsInline
+            className="d-block w-50"/> 
+           
             <Carousel.Caption className={styles.ContainerCarouselSecond}>
               <MostLikedReview />
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item className={styles.ContainerCarouselThird}>
             <h3 className={styles.PopularText}> Top 3 most commented reviews </h3>
-            <img
-              className="d-block w-50"
-              src={commentGif}
-              alt="First slide"
-            />
+             <video src={commentGif} autoPlay
+            loop
+            muted
+            playsInline
+            className="d-block w-50"/> 
             <Carousel.Caption>
               <MostCommentedReview />
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item className={styles.ContainerCarouselFourth}>
             <h3 className={styles.PopularText}> Checkout the reviews</h3>
-            <img
-              className="d-block w-50"
-              src={signupGif}
-              alt="First slide"
-            />
+            <video src={signupGif} autoPlay
+            loop
+            muted
+            playsInline
+            className="d-block w-50"/> 
             <Carousel.Caption>
               <Link to="/reviews" className={styles.BtnCarouselFourth}> All reviews</Link>
             </Carousel.Caption>
@@ -116,7 +116,11 @@ const CategoryPage = () => {
             {loaded ? (<> {category.results.map(category =>
               (<Link to={`category/${category.id}`} key={category.id} className={styles.CategoryChoiches} > <h3 className={styles.CategoryLinks}> {category.title} </h3> </Link>))} </>)
               : (<SpinnerAsset />)}
-            <img className="d-block w-50" src={logo} alt="animation of two people holding stars" />
+            <video src={logo} autoPlay
+            loop
+            muted
+            playsInline
+            className="d-block w-50"/> 
           </div>
         </Row>
       </Container>

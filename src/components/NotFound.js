@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../styles/NotFound.module.css';
-import notFound from '../assets/not-found.gif';
+import notFound from '../assets/not-found.mp4';
 import {
   Container,
   Row
@@ -11,7 +11,7 @@ function NotFound() {
 
     <Container>
       <Row className='offset-md-3 offset-sm-3'>
-        <img src={notFound} className={styles.NotFoundGif} alt="404 not found animation" />
+        <video src={notFound} autoPlay loop muted playsInline className={styles.NotFoundGif}/> 
       </Row>
     </Container>
 
