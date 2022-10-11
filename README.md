@@ -246,6 +246,11 @@ This page is where the user will be able to create a review. If the user lefts s
 
 ![Website create-reviews](docs/website/create-review.png)
 
+# Contact us
+This page is an animation that is displayed and some info on how to contact the content creater, in the future this page will be a form where user can send email directly.
+
+![website-contact-us](docs/website/contact-us.png)
+
 ## Create review message
 
 ![Website create-message](docs/website/create-message.png)
