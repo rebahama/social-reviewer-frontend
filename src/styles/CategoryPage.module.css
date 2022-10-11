@@ -12,6 +12,7 @@
 
 .CategoryLinks:hover {
 	color: #40E0D0;
+	transition: all 0.5s ease-in-out 0.1s;
 }
 
 /* Style headings and text*/
