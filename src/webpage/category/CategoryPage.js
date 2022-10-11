@@ -88,7 +88,7 @@ const CategoryPage = () => {
           </Carousel.Item>
           <Carousel.Item className={styles.ContainerCarouselThird}>
             <h3 className={styles.PopularText}> Top 3 most commented reviews </h3>
-             <video src={commentGif} autoPlay
+            <video src={commentGif} autoPlay
             loop
             muted
             playsInline

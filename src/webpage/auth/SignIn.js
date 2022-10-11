@@ -18,7 +18,7 @@ import {
   useSetCurrentUser
 } from '../../context/CurrentUserContext';
 import styles from '../../styles/SignIn.module.css';
-import loginGif from '../../assets/login-gif.gif';
+import loginGif from '../../assets/login-gif.mp4';
 import {
   setTokenTimestamp
 } from '../../utilis/utilis';
@@ -101,7 +101,11 @@ const SignIn = () => {
               )}
             </Form>
           </Col>
-          <img src={loginGif} className={styles.LogInGif} alt="login in to a page" />
+          <video src={loginGif} autoPlay
+            loop
+            muted
+            playsInline
+            className={styles.LogInGif}/>
         </Row>
       </div>
     </Container>

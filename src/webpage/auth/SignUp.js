@@ -13,7 +13,7 @@ import {
 import {
   Link
 } from 'react-router-dom/cjs/react-router-dom.min';
-import rocketGif from '../../assets/rocket.gif';
+import rocketGif from '../../assets/rocket.mp4';
 import styles from '../../styles/SignUp.module.css';
 
 const SignUp = () => {
@@ -99,7 +99,11 @@ const SignUp = () => {
             {message}
           </Col>
         </Row>
-        <img src={rocketGif} className={styles.RocketImage} alt="rocket taking off"></img>
+        <video src={rocketGif} autoPlay
+            loop
+            muted
+            playsInline
+            className={styles.RocketImage}/> 
       </div>
     </Container>
 
