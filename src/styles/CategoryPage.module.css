@@ -93,6 +93,13 @@
 	cursor: pointer;
 }
 
+.CategoryText {
+	font-weight: bold;
+	font-size: 40px;
+	font-family: "Amatic SC", sans-serif;
+	padding: 20px;	
+}
+
 @media screen and (max-width: 1176px) {
 	
 	.CategoryContainer{
@@ -132,7 +139,7 @@
 		padding: 20px;
 		
 	}
-
+	
 	.BtnCarouselFourth {
 		padding: 5px 20px;
 		font-size: 15px;

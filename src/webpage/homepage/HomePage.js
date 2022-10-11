@@ -46,10 +46,11 @@ import React, {
                 <h1 className={styles.HeroText}> Social Reviewer, the review site for all reviews!</h1>
             </Row>
             <hr />
-            <h2 className={styles.PresentationText}> Welcome to social reviewer,
+            <p className={styles.PresentationText}> Welcome to social reviewer,
             Are you tired to compare and search after diffrent reviews on many diffrent pages.
             Not anymore now you can find reviews about everything from cars to electronics, on the same page.
-            <Link className={styles.LinkColorName} to="/signup"> Create an account </Link>  to get started or checkout our reviews </h2>
+            <Link className={styles.LinkColorName} to="/signup"> Create an account </Link>  to get started or checkout our reviews </p>
+            
             <CategoryPage />
             <div>
                 <Footer />

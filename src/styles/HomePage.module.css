@@ -28,12 +28,14 @@ hr {
     background-color: #909191;
     margin-bottom: 5%;
     margin-top: 5%;
+    font-size: 20px;
     box-shadow: 0 10px 16px 0 rgb(0 0 0 / 10%), 0 6px 20px 0 rgb(0 0 0 / 10%);
     color: white;
     animation-name: hero-zoom;
 	animation-duration: 2s;
 	animation-fill-mode: forwards;
 }
+
 /*style link in alert box*/
 .LinkColorName {
     color: #000000;
