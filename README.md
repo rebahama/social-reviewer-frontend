@@ -99,34 +99,6 @@ This will show up every time a user makes a delete, exampale when deleting a rev
 
 ![Wireframe delete](docs/websitemockups/delete.png)
 
-# Database diagrams
-
-The database is used together with the Django framework, the software is called: PostgresSql and it is a relational database. There is 6 diffrent models and all wil be displayed below:
-
-## Category
-
-![Database category](docs/database/database-category.png)
-
-## Comments
-
-![Database comments](docs/database/database-comments.png)
-
-## Likes
-
-![Database likes](docs/database/database-likes.png)
-
-## Post
-
-![Database post](docs/database/database-post.png)
-
-## Profile grades
-
-![Database profile-grades](docs/database/database-profile-grades.png)
-
-## Profile
-
-![Database profile](docs/database/database-profile.png)
-
 
 # Key designs
 ## Colors
@@ -329,10 +301,14 @@ When user tries to access a url that does not exist the following page will be d
 * jwt-decode was installed for for decoding the jason web tokens.
 
 # Frontend libraries
-The React frontend library have been used to fetch the api endpoints throughout the application. The navbar that 
+* The React frontend library have been used to fetch the api endpoints throughout the application. The navbar that 
 is showing on every link that the user clicks is visable thanks to to React and reuse of the component. The sorting 
 of the page from the highest price to the lowest is achieved with the help of React. The displaying of the most commented and the most
 liked reviews on the page is also displayed with the help of React.
+
+* Styling of the page was used with both CSS3 and Bootstrap. I choose to combine these two technologies for the best user experience.
+If I had only Bootstrap for styling then I would not be able to customize the content, in my opinion it´s good to combine these technologies.
+
 
 # API backend endpoint
 The documentation for the backend can be found here [social-reviewer-backend](https://github.com/rebahama/social-reviewer-backend#readme)
