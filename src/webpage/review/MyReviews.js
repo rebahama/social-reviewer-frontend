@@ -56,6 +56,7 @@ function MyReviews() {
     
     <div> {loaded ? (<> <h3 className={styles.CreateText}> My reviews</h3>  {Myreview.results.map((review) =>
     { return  <MyReviewsPage key={review.id} {...review} /> })}  </>) : (<SpinnerAsset />) }
+    {Myreview.results.length ? "" :"No reviews created yet..."}
     </div>
 
   )
